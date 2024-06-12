@@ -1,0 +1,15 @@
+{
+  "prettier.bracketSpacing": false,
+  "editor.insertSpaces": false,
+  "editor.comments.insertSpace": false,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

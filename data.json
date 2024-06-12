@@ -1,0 +1,43 @@
+{
+	"_bodyBlob": {
+		"_data": {
+			"__collector": [Object
+			],
+			"blobId": "5C5D6C31-54BE-4677-9E10-B3A7AAC8BE48",
+			"name": "list-time-zone.json",
+			"offset": 0,
+			"size": 86550,
+			"type": "application/json"
+		}
+	},
+	"_bodyInit": {
+		"_data": {
+			"__collector": [Object
+			],
+			"blobId": "5C5D6C31-54BE-4677-9E10-B3A7AAC8BE48",
+			"name": "list-time-zone.json",
+			"offset": 0,
+			"size": 86550,
+			"type": "application/json"
+		}
+	},
+	"bodyUsed": false,
+	"headers": {
+		"map": {
+			"access-control-allow-origin": "*",
+			"alt-svc": "h3=\":443\"; ma=86400",
+			"cf-cache-status": "DYNAMIC",
+			"cf-ray": "89323dc2eca141a1-EWR",
+			"content-encoding": "gzip",
+			"content-type": "application/json; charset=utf-8",
+			"date": "Thu, 13 Jun 2024 12:56:32 GMT",
+			"server": "cloudflare",
+			"x-identity": "95d024c57d12ee678a40b9ecbad02e7a"
+		}
+	},
+	"ok": true,
+	"status": 200,
+	"statusText": "",
+	"type": "default",
+	"url": "https://api.timezonedb.com/v2.1/list-time-zone?key=2H337C01C21J&format=json"
+}
