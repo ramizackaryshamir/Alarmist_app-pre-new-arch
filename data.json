@@ -1,43 +1,2932 @@
 {
-	"_bodyBlob": {
-		"_data": {
-			"__collector": [Object
-			],
-			"blobId": "5C5D6C31-54BE-4677-9E10-B3A7AAC8BE48",
-			"name": "list-time-zone.json",
-			"offset": 0,
-			"size": 86550,
-			"type": "application/json"
+	"message": "",
+	"status": "OK",
+	"zones": [
+		{
+			"countryCode": "CI",
+			"countryName": "Ivory Coast",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Abidjan"
+		},
+		{
+			"countryCode": "GH",
+			"countryName": "Ghana",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Accra"
+		},
+		{
+			"countryCode": "ET",
+			"countryName": "Ethiopia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Addis_Ababa"
+		},
+		{
+			"countryCode": "DZ",
+			"countryName": "Algeria",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Algiers"
+		},
+		{
+			"countryCode": "ER",
+			"countryName": "Eritrea",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Asmara"
+		},
+		{
+			"countryCode": "ML",
+			"countryName": "Mali",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Bamako"
+		},
+		{
+			"countryCode": "CF",
+			"countryName": "Central African Republic",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Bangui"
+		},
+		{
+			"countryCode": "GM",
+			"countryName": "Gambia",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Banjul"
+		},
+		{
+			"countryCode": "GW",
+			"countryName": "Guinea-Bissau",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Bissau"
+		},
+		{
+			"countryCode": "MW",
+			"countryName": "Malawi",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Blantyre"
+		},
+		{
+			"countryCode": "CG",
+			"countryName": "Republic of the Congo",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Brazzaville"
+		},
+		{
+			"countryCode": "BI",
+			"countryName": "Burundi",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Bujumbura"
+		},
+		{
+			"countryCode": "EG",
+			"countryName": "Egypt",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Cairo"
+		},
+		{
+			"countryCode": "MA",
+			"countryName": "Morocco",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Casablanca"
+		},
+		{
+			"countryCode": "ES",
+			"countryName": "Spain",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Ceuta"
+		},
+		{
+			"countryCode": "GN",
+			"countryName": "Guinea",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Conakry"
+		},
+		{
+			"countryCode": "SN",
+			"countryName": "Senegal",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Dakar"
+		},
+		{
+			"countryCode": "TZ",
+			"countryName": "Tanzania",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Dar_es_Salaam"
+		},
+		{
+			"countryCode": "DJ",
+			"countryName": "Djibouti",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Djibouti"
+		},
+		{
+			"countryCode": "CM",
+			"countryName": "Cameroon",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Douala"
+		},
+		{
+			"countryCode": "MA",
+			"countryName": "Morocco",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/El_Aaiun"
+		},
+		{
+			"countryCode": "SL",
+			"countryName": "Sierra Leone",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Freetown"
+		},
+		{
+			"countryCode": "BW",
+			"countryName": "Botswana",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Gaborone"
+		},
+		{
+			"countryCode": "ZW",
+			"countryName": "Zimbabwe",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Harare"
+		},
+		{
+			"countryCode": "ZA",
+			"countryName": "South Africa",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Johannesburg"
+		},
+		{
+			"countryCode": "SS",
+			"countryName": "South Sudan",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Juba"
+		},
+		{
+			"countryCode": "UG",
+			"countryName": "Uganda",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Kampala"
+		},
+		{
+			"countryCode": "SD",
+			"countryName": "Sudan",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Khartoum"
+		},
+		{
+			"countryCode": "RW",
+			"countryName": "Rwanda",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Kigali"
+		},
+		{
+			"countryCode": "CD",
+			"countryName": "Democratic Republic of the Congo",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Kinshasa"
+		},
+		{
+			"countryCode": "NG",
+			"countryName": "Nigeria",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Lagos"
+		},
+		{
+			"countryCode": "GA",
+			"countryName": "Gabon",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Libreville"
+		},
+		{
+			"countryCode": "TG",
+			"countryName": "Togo",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Lome"
+		},
+		{
+			"countryCode": "AO",
+			"countryName": "Angola",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Luanda"
+		},
+		{
+			"countryCode": "CD",
+			"countryName": "Democratic Republic of the Congo",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Lubumbashi"
+		},
+		{
+			"countryCode": "ZM",
+			"countryName": "Zambia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Lusaka"
+		},
+		{
+			"countryCode": "GQ",
+			"countryName": "Equatorial Guinea",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Malabo"
+		},
+		{
+			"countryCode": "MZ",
+			"countryName": "Mozambique",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Maputo"
+		},
+		{
+			"countryCode": "LS",
+			"countryName": "Lesotho",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Maseru"
+		},
+		{
+			"countryCode": "SZ",
+			"countryName": "Eswatini",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Mbabane"
+		},
+		{
+			"countryCode": "SO",
+			"countryName": "Somalia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Mogadishu"
+		},
+		{
+			"countryCode": "LR",
+			"countryName": "Liberia",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Monrovia"
+		},
+		{
+			"countryCode": "KE",
+			"countryName": "Kenya",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Africa/Nairobi"
+		},
+		{
+			"countryCode": "TD",
+			"countryName": "Chad",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Ndjamena"
+		},
+		{
+			"countryCode": "NE",
+			"countryName": "Niger",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Niamey"
+		},
+		{
+			"countryCode": "MR",
+			"countryName": "Mauritania",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Nouakchott"
+		},
+		{
+			"countryCode": "BF",
+			"countryName": "Burkina Faso",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Ouagadougou"
+		},
+		{
+			"countryCode": "BJ",
+			"countryName": "Benin",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Porto-Novo"
+		},
+		{
+			"countryCode": "ST",
+			"countryName": "Sao Tome and Principe",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Africa/Sao_Tome"
+		},
+		{
+			"countryCode": "LY",
+			"countryName": "Libya",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Tripoli"
+		},
+		{
+			"countryCode": "TN",
+			"countryName": "Tunisia",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Africa/Tunis"
+		},
+		{
+			"countryCode": "NA",
+			"countryName": "Namibia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Africa/Windhoek"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -32400,
+			"timestamp": 1718428179,
+			"zoneName": "America/Adak"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "America/Anchorage"
+		},
+		{
+			"countryCode": "AI",
+			"countryName": "Anguilla",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Anguilla"
+		},
+		{
+			"countryCode": "AG",
+			"countryName": "Antigua and Barbuda",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Antigua"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Araguaina"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Buenos_Aires"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Catamarca"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Cordoba"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Jujuy"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/La_Rioja"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Mendoza"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Rio_Gallegos"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Salta"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/San_Juan"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/San_Luis"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Tucuman"
+		},
+		{
+			"countryCode": "AR",
+			"countryName": "Argentina",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Argentina/Ushuaia"
+		},
+		{
+			"countryCode": "AW",
+			"countryName": "Aruba",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Aruba"
+		},
+		{
+			"countryCode": "PY",
+			"countryName": "Paraguay",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Asuncion"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Atikokan"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Bahia"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Bahia_Banderas"
+		},
+		{
+			"countryCode": "BB",
+			"countryName": "Barbados",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Barbados"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Belem"
+		},
+		{
+			"countryCode": "BZ",
+			"countryName": "Belize",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Belize"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Blanc-Sablon"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Boa_Vista"
+		},
+		{
+			"countryCode": "CO",
+			"countryName": "Colombia",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Bogota"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Boise"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Cambridge_Bay"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Campo_Grande"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Cancun"
+		},
+		{
+			"countryCode": "VE",
+			"countryName": "Venezuela",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Caracas"
+		},
+		{
+			"countryCode": "GF",
+			"countryName": "French Guiana",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Cayenne"
+		},
+		{
+			"countryCode": "KY",
+			"countryName": "Cayman Islands",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Cayman"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Chicago"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Chihuahua"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Ciudad_Juarez"
+		},
+		{
+			"countryCode": "CR",
+			"countryName": "Costa Rica",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Costa_Rica"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Creston"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Cuiaba"
+		},
+		{
+			"countryCode": "CW",
+			"countryName": "Curacao",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Curacao"
+		},
+		{
+			"countryCode": "GL",
+			"countryName": "Greenland",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "America/Danmarkshavn"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Dawson"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Dawson_Creek"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Denver"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Detroit"
+		},
+		{
+			"countryCode": "DM",
+			"countryName": "Dominica",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Dominica"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Edmonton"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Eirunepe"
+		},
+		{
+			"countryCode": "SV",
+			"countryName": "El Salvador",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/El_Salvador"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Fort_Nelson"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Fortaleza"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Glace_Bay"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Goose_Bay"
+		},
+		{
+			"countryCode": "TC",
+			"countryName": "Turks and Caicos Islands",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Grand_Turk"
+		},
+		{
+			"countryCode": "GD",
+			"countryName": "Grenada",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Grenada"
+		},
+		{
+			"countryCode": "GP",
+			"countryName": "Guadeloupe",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Guadeloupe"
+		},
+		{
+			"countryCode": "GT",
+			"countryName": "Guatemala",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Guatemala"
+		},
+		{
+			"countryCode": "EC",
+			"countryName": "Ecuador",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Guayaquil"
+		},
+		{
+			"countryCode": "GY",
+			"countryName": "Guyana",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Guyana"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Halifax"
+		},
+		{
+			"countryCode": "CU",
+			"countryName": "Cuba",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Havana"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Hermosillo"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Indiana/Indianapolis"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Indiana/Knox"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Indiana/Marengo"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Indiana/Petersburg"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Indiana/Tell_City"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Indiana/Vevay"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Indiana/Vincennes"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Indiana/Winamac"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Inuvik"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Iqaluit"
+		},
+		{
+			"countryCode": "JM",
+			"countryName": "Jamaica",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Jamaica"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "America/Juneau"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Kentucky/Louisville"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Kentucky/Monticello"
+		},
+		{
+			"countryCode": "BQ",
+			"countryName": "Bonaire, Saint Eustatius and Saba",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Kralendijk"
+		},
+		{
+			"countryCode": "BO",
+			"countryName": "Bolivia",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/La_Paz"
+		},
+		{
+			"countryCode": "PE",
+			"countryName": "Peru",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Lima"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Los_Angeles"
+		},
+		{
+			"countryCode": "SX",
+			"countryName": "Sint Maarten",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Lower_Princes"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Maceio"
+		},
+		{
+			"countryCode": "NI",
+			"countryName": "Nicaragua",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Managua"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Manaus"
+		},
+		{
+			"countryCode": "MF",
+			"countryName": "Saint Martin",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Marigot"
+		},
+		{
+			"countryCode": "MQ",
+			"countryName": "Martinique",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Martinique"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Matamoros"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Mazatlan"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Menominee"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Merida"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "America/Metlakatla"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Mexico_City"
+		},
+		{
+			"countryCode": "PM",
+			"countryName": "Saint Pierre and Miquelon",
+			"gmtOffset": -7200,
+			"timestamp": 1718453379,
+			"zoneName": "America/Miquelon"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Moncton"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Monterrey"
+		},
+		{
+			"countryCode": "UY",
+			"countryName": "Uruguay",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Montevideo"
+		},
+		{
+			"countryCode": "MS",
+			"countryName": "Montserrat",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Montserrat"
+		},
+		{
+			"countryCode": "BS",
+			"countryName": "Bahamas",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Nassau"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/New_York"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "America/Nome"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -7200,
+			"timestamp": 1718453379,
+			"zoneName": "America/Noronha"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/North_Dakota/Beulah"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/North_Dakota/Center"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/North_Dakota/New_Salem"
+		},
+		{
+			"countryCode": "GL",
+			"countryName": "Greenland",
+			"gmtOffset": -3600,
+			"timestamp": 1718456979,
+			"zoneName": "America/Nuuk"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Ojinaga"
+		},
+		{
+			"countryCode": "PA",
+			"countryName": "Panama",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Panama"
+		},
+		{
+			"countryCode": "SR",
+			"countryName": "Suriname",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Paramaribo"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Phoenix"
+		},
+		{
+			"countryCode": "HT",
+			"countryName": "Haiti",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Port-au-Prince"
+		},
+		{
+			"countryCode": "TT",
+			"countryName": "Trinidad and Tobago",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Port_of_Spain"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Porto_Velho"
+		},
+		{
+			"countryCode": "PR",
+			"countryName": "Puerto Rico",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Puerto_Rico"
+		},
+		{
+			"countryCode": "CL",
+			"countryName": "Chile",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Punta_Arenas"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Rankin_Inlet"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Recife"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Regina"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Resolute"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Rio_Branco"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Santarem"
+		},
+		{
+			"countryCode": "CL",
+			"countryName": "Chile",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Santiago"
+		},
+		{
+			"countryCode": "DO",
+			"countryName": "Dominican Republic",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Santo_Domingo"
+		},
+		{
+			"countryCode": "BR",
+			"countryName": "Brazil",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Sao_Paulo"
+		},
+		{
+			"countryCode": "GL",
+			"countryName": "Greenland",
+			"gmtOffset": -3600,
+			"timestamp": 1718456979,
+			"zoneName": "America/Scoresbysund"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "America/Sitka"
+		},
+		{
+			"countryCode": "BL",
+			"countryName": "Saint Barthelemy",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/St_Barthelemy"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -9000,
+			"timestamp": 1718451579,
+			"zoneName": "America/St_Johns"
+		},
+		{
+			"countryCode": "KN",
+			"countryName": "Saint Kitts and Nevis",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/St_Kitts"
+		},
+		{
+			"countryCode": "LC",
+			"countryName": "Saint Lucia",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/St_Lucia"
+		},
+		{
+			"countryCode": "VI",
+			"countryName": "U.S. Virgin Islands",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/St_Thomas"
+		},
+		{
+			"countryCode": "VC",
+			"countryName": "Saint Vincent and the Grenadines",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/St_Vincent"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Swift_Current"
+		},
+		{
+			"countryCode": "HN",
+			"countryName": "Honduras",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "America/Tegucigalpa"
+		},
+		{
+			"countryCode": "GL",
+			"countryName": "Greenland",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "America/Thule"
+		},
+		{
+			"countryCode": "MX",
+			"countryName": "Mexico",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Tijuana"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Toronto"
+		},
+		{
+			"countryCode": "VG",
+			"countryName": "British Virgin Islands",
+			"gmtOffset": -14400,
+			"timestamp": 1718446179,
+			"zoneName": "America/Tortola"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Vancouver"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -25200,
+			"timestamp": 1718435379,
+			"zoneName": "America/Whitehorse"
+		},
+		{
+			"countryCode": "CA",
+			"countryName": "Canada",
+			"gmtOffset": -18000,
+			"timestamp": 1718442579,
+			"zoneName": "America/Winnipeg"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "America/Yakutat"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Antarctica/Casey"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Antarctica/Davis"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Antarctica/DumontDUrville"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Antarctica/Macquarie"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Antarctica/Mawson"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Antarctica/McMurdo"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "Antarctica/Palmer"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "Antarctica/Rothera"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Antarctica/Syowa"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Antarctica/Troll"
+		},
+		{
+			"countryCode": "AQ",
+			"countryName": "Antarctica",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Antarctica/Vostok"
+		},
+		{
+			"countryCode": "SJ",
+			"countryName": "Svalbard and Jan Mayen",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Arctic/Longyearbyen"
+		},
+		{
+			"countryCode": "YE",
+			"countryName": "Yemen",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Aden"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Almaty"
+		},
+		{
+			"countryCode": "JO",
+			"countryName": "Jordan",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Amman"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Asia/Anadyr"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Aqtau"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Aqtobe"
+		},
+		{
+			"countryCode": "TM",
+			"countryName": "Turkmenistan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Ashgabat"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Atyrau"
+		},
+		{
+			"countryCode": "IQ",
+			"countryName": "Iraq",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Baghdad"
+		},
+		{
+			"countryCode": "BH",
+			"countryName": "Bahrain",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Bahrain"
+		},
+		{
+			"countryCode": "AZ",
+			"countryName": "Azerbaijan",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Asia/Baku"
+		},
+		{
+			"countryCode": "TH",
+			"countryName": "Thailand",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Bangkok"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Barnaul"
+		},
+		{
+			"countryCode": "LB",
+			"countryName": "Lebanon",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Beirut"
+		},
+		{
+			"countryCode": "KG",
+			"countryName": "Kyrgyzstan",
+			"gmtOffset": 21600,
+			"timestamp": 1718482179,
+			"zoneName": "Asia/Bishkek"
+		},
+		{
+			"countryCode": "BN",
+			"countryName": "Brunei",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Brunei"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Chita"
+		},
+		{
+			"countryCode": "MN",
+			"countryName": "Mongolia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Choibalsan"
+		},
+		{
+			"countryCode": "LK",
+			"countryName": "Sri Lanka",
+			"gmtOffset": 19800,
+			"timestamp": 1718480379,
+			"zoneName": "Asia/Colombo"
+		},
+		{
+			"countryCode": "SY",
+			"countryName": "Syria",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Damascus"
+		},
+		{
+			"countryCode": "BD",
+			"countryName": "Bangladesh",
+			"gmtOffset": 21600,
+			"timestamp": 1718482179,
+			"zoneName": "Asia/Dhaka"
+		},
+		{
+			"countryCode": "TL",
+			"countryName": "Timor Leste",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Dili"
+		},
+		{
+			"countryCode": "AE",
+			"countryName": "United Arab Emirates",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Asia/Dubai"
+		},
+		{
+			"countryCode": "TJ",
+			"countryName": "Tajikistan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Dushanbe"
+		},
+		{
+			"countryCode": "CY",
+			"countryName": "Cyprus",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Famagusta"
+		},
+		{
+			"countryCode": "PS",
+			"countryName": "Palestinian Territory",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Gaza"
+		},
+		{
+			"countryCode": "PS",
+			"countryName": "Palestinian Territory",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Hebron"
+		},
+		{
+			"countryCode": "VN",
+			"countryName": "Vietnam",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Ho_Chi_Minh"
+		},
+		{
+			"countryCode": "HK",
+			"countryName": "Hong Kong",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Hong_Kong"
+		},
+		{
+			"countryCode": "MN",
+			"countryName": "Mongolia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Hovd"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Irkutsk"
+		},
+		{
+			"countryCode": "ID",
+			"countryName": "Indonesia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Jakarta"
+		},
+		{
+			"countryCode": "ID",
+			"countryName": "Indonesia",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Jayapura"
+		},
+		{
+			"countryCode": "IL",
+			"countryName": "Israel",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Jerusalem"
+		},
+		{
+			"countryCode": "AF",
+			"countryName": "Afghanistan",
+			"gmtOffset": 16200,
+			"timestamp": 1718476779,
+			"zoneName": "Asia/Kabul"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Asia/Kamchatka"
+		},
+		{
+			"countryCode": "PK",
+			"countryName": "Pakistan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Karachi"
+		},
+		{
+			"countryCode": "NP",
+			"countryName": "Nepal",
+			"gmtOffset": 20700,
+			"timestamp": 1718481279,
+			"zoneName": "Asia/Kathmandu"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Khandyga"
+		},
+		{
+			"countryCode": "IN",
+			"countryName": "India",
+			"gmtOffset": 19800,
+			"timestamp": 1718480379,
+			"zoneName": "Asia/Kolkata"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Krasnoyarsk"
+		},
+		{
+			"countryCode": "MY",
+			"countryName": "Malaysia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Kuala_Lumpur"
+		},
+		{
+			"countryCode": "MY",
+			"countryName": "Malaysia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Kuching"
+		},
+		{
+			"countryCode": "KW",
+			"countryName": "Kuwait",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Kuwait"
+		},
+		{
+			"countryCode": "MO",
+			"countryName": "Macao",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Macau"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Asia/Magadan"
+		},
+		{
+			"countryCode": "ID",
+			"countryName": "Indonesia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Makassar"
+		},
+		{
+			"countryCode": "PH",
+			"countryName": "Philippines",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Manila"
+		},
+		{
+			"countryCode": "OM",
+			"countryName": "Oman",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Asia/Muscat"
+		},
+		{
+			"countryCode": "CY",
+			"countryName": "Cyprus",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Nicosia"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Novokuznetsk"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Novosibirsk"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 21600,
+			"timestamp": 1718482179,
+			"zoneName": "Asia/Omsk"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Oral"
+		},
+		{
+			"countryCode": "KH",
+			"countryName": "Cambodia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Phnom_Penh"
+		},
+		{
+			"countryCode": "ID",
+			"countryName": "Indonesia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Pontianak"
+		},
+		{
+			"countryCode": "KP",
+			"countryName": "North Korea",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Pyongyang"
+		},
+		{
+			"countryCode": "QA",
+			"countryName": "Qatar",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Qatar"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Qostanay"
+		},
+		{
+			"countryCode": "KZ",
+			"countryName": "Kazakhstan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Qyzylorda"
+		},
+		{
+			"countryCode": "SA",
+			"countryName": "Saudi Arabia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Asia/Riyadh"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Asia/Sakhalin"
+		},
+		{
+			"countryCode": "UZ",
+			"countryName": "Uzbekistan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Samarkand"
+		},
+		{
+			"countryCode": "KR",
+			"countryName": "South Korea",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Seoul"
+		},
+		{
+			"countryCode": "CN",
+			"countryName": "China",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Shanghai"
+		},
+		{
+			"countryCode": "SG",
+			"countryName": "Singapore",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Singapore"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Asia/Srednekolymsk"
+		},
+		{
+			"countryCode": "TW",
+			"countryName": "Taiwan",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Taipei"
+		},
+		{
+			"countryCode": "UZ",
+			"countryName": "Uzbekistan",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Tashkent"
+		},
+		{
+			"countryCode": "GE",
+			"countryName": "Georgia",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Asia/Tbilisi"
+		},
+		{
+			"countryCode": "IR",
+			"countryName": "Iran",
+			"gmtOffset": 12600,
+			"timestamp": 1718473179,
+			"zoneName": "Asia/Tehran"
+		},
+		{
+			"countryCode": "BT",
+			"countryName": "Bhutan",
+			"gmtOffset": 21600,
+			"timestamp": 1718482179,
+			"zoneName": "Asia/Thimphu"
+		},
+		{
+			"countryCode": "JP",
+			"countryName": "Japan",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Tokyo"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Tomsk"
+		},
+		{
+			"countryCode": "MN",
+			"countryName": "Mongolia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Asia/Ulaanbaatar"
+		},
+		{
+			"countryCode": "CN",
+			"countryName": "China",
+			"gmtOffset": 21600,
+			"timestamp": 1718482179,
+			"zoneName": "Asia/Urumqi"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Asia/Ust-Nera"
+		},
+		{
+			"countryCode": "LA",
+			"countryName": "Laos",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Asia/Vientiane"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Asia/Vladivostok"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Asia/Yakutsk"
+		},
+		{
+			"countryCode": "MM",
+			"countryName": "Myanmar",
+			"gmtOffset": 23400,
+			"timestamp": 1718483979,
+			"zoneName": "Asia/Yangon"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Asia/Yekaterinburg"
+		},
+		{
+			"countryCode": "AM",
+			"countryName": "Armenia",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Asia/Yerevan"
+		},
+		{
+			"countryCode": "PT",
+			"countryName": "Portugal",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Atlantic/Azores"
+		},
+		{
+			"countryCode": "BM",
+			"countryName": "Bermuda",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "Atlantic/Bermuda"
+		},
+		{
+			"countryCode": "ES",
+			"countryName": "Spain",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Atlantic/Canary"
+		},
+		{
+			"countryCode": "CV",
+			"countryName": "Cabo Verde",
+			"gmtOffset": -3600,
+			"timestamp": 1718456979,
+			"zoneName": "Atlantic/Cape_Verde"
+		},
+		{
+			"countryCode": "FO",
+			"countryName": "Faroe Islands",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Atlantic/Faroe"
+		},
+		{
+			"countryCode": "PT",
+			"countryName": "Portugal",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Atlantic/Madeira"
+		},
+		{
+			"countryCode": "IS",
+			"countryName": "Iceland",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Atlantic/Reykjavik"
+		},
+		{
+			"countryCode": "GS",
+			"countryName": "South Georgia and the South Sandwich Islands",
+			"gmtOffset": -7200,
+			"timestamp": 1718453379,
+			"zoneName": "Atlantic/South_Georgia"
+		},
+		{
+			"countryCode": "SH",
+			"countryName": "Saint Helena",
+			"gmtOffset": 0,
+			"timestamp": 1718460579,
+			"zoneName": "Atlantic/St_Helena"
+		},
+		{
+			"countryCode": "FK",
+			"countryName": "Falkland Islands",
+			"gmtOffset": -10800,
+			"timestamp": 1718449779,
+			"zoneName": "Atlantic/Stanley"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 34200,
+			"timestamp": 1718494779,
+			"zoneName": "Australia/Adelaide"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Australia/Brisbane"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 34200,
+			"timestamp": 1718494779,
+			"zoneName": "Australia/Broken_Hill"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 34200,
+			"timestamp": 1718494779,
+			"zoneName": "Australia/Darwin"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 31500,
+			"timestamp": 1718492079,
+			"zoneName": "Australia/Eucla"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Australia/Hobart"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Australia/Lindeman"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 37800,
+			"timestamp": 1718498379,
+			"zoneName": "Australia/Lord_Howe"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Australia/Melbourne"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 28800,
+			"timestamp": 1718489379,
+			"zoneName": "Australia/Perth"
+		},
+		{
+			"countryCode": "AU",
+			"countryName": "Australia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Australia/Sydney"
+		},
+		{
+			"countryCode": "NL",
+			"countryName": "Netherlands",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Amsterdam"
+		},
+		{
+			"countryCode": "AD",
+			"countryName": "Andorra",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Andorra"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Europe/Astrakhan"
+		},
+		{
+			"countryCode": "GR",
+			"countryName": "Greece",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Athens"
+		},
+		{
+			"countryCode": "RS",
+			"countryName": "Serbia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Belgrade"
+		},
+		{
+			"countryCode": "DE",
+			"countryName": "Germany",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Berlin"
+		},
+		{
+			"countryCode": "SK",
+			"countryName": "Slovakia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Bratislava"
+		},
+		{
+			"countryCode": "BE",
+			"countryName": "Belgium",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Brussels"
+		},
+		{
+			"countryCode": "RO",
+			"countryName": "Romania",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Bucharest"
+		},
+		{
+			"countryCode": "HU",
+			"countryName": "Hungary",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Budapest"
+		},
+		{
+			"countryCode": "DE",
+			"countryName": "Germany",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Busingen"
+		},
+		{
+			"countryCode": "MD",
+			"countryName": "Moldova",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Chisinau"
+		},
+		{
+			"countryCode": "DK",
+			"countryName": "Denmark",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Copenhagen"
+		},
+		{
+			"countryCode": "IE",
+			"countryName": "Ireland",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Europe/Dublin"
+		},
+		{
+			"countryCode": "GI",
+			"countryName": "Gibraltar",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Gibraltar"
+		},
+		{
+			"countryCode": "GG",
+			"countryName": "Guernsey",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Europe/Guernsey"
+		},
+		{
+			"countryCode": "FI",
+			"countryName": "Finland",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Helsinki"
+		},
+		{
+			"countryCode": "IM",
+			"countryName": "Isle of Man",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Europe/Isle_of_Man"
+		},
+		{
+			"countryCode": "TR",
+			"countryName": "Turkey",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Istanbul"
+		},
+		{
+			"countryCode": "JE",
+			"countryName": "Jersey",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Europe/Jersey"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Kaliningrad"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Kirov"
+		},
+		{
+			"countryCode": "UA",
+			"countryName": "Ukraine",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Kyiv"
+		},
+		{
+			"countryCode": "PT",
+			"countryName": "Portugal",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Europe/Lisbon"
+		},
+		{
+			"countryCode": "SI",
+			"countryName": "Slovenia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Ljubljana"
+		},
+		{
+			"countryCode": "GB",
+			"countryName": "United Kingdom",
+			"gmtOffset": 3600,
+			"timestamp": 1718464179,
+			"zoneName": "Europe/London"
+		},
+		{
+			"countryCode": "LU",
+			"countryName": "Luxembourg",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Luxembourg"
+		},
+		{
+			"countryCode": "ES",
+			"countryName": "Spain",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Madrid"
+		},
+		{
+			"countryCode": "MT",
+			"countryName": "Malta",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Malta"
+		},
+		{
+			"countryCode": "AX",
+			"countryName": "Aland Islands",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Mariehamn"
+		},
+		{
+			"countryCode": "BY",
+			"countryName": "Belarus",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Minsk"
+		},
+		{
+			"countryCode": "MC",
+			"countryName": "Monaco",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Monaco"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Moscow"
+		},
+		{
+			"countryCode": "NO",
+			"countryName": "Norway",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Oslo"
+		},
+		{
+			"countryCode": "FR",
+			"countryName": "France",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Paris"
+		},
+		{
+			"countryCode": "ME",
+			"countryName": "Montenegro",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Podgorica"
+		},
+		{
+			"countryCode": "CZ",
+			"countryName": "Czechia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Prague"
+		},
+		{
+			"countryCode": "LV",
+			"countryName": "Latvia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Riga"
+		},
+		{
+			"countryCode": "IT",
+			"countryName": "Italy",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Rome"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Europe/Samara"
+		},
+		{
+			"countryCode": "SM",
+			"countryName": "San Marino",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/San_Marino"
+		},
+		{
+			"countryCode": "BA",
+			"countryName": "Bosnia and Herzegovina",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Sarajevo"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Europe/Saratov"
+		},
+		{
+			"countryCode": "UA",
+			"countryName": "Ukraine",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Simferopol"
+		},
+		{
+			"countryCode": "MK",
+			"countryName": "North Macedonia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Skopje"
+		},
+		{
+			"countryCode": "BG",
+			"countryName": "Bulgaria",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Sofia"
+		},
+		{
+			"countryCode": "SE",
+			"countryName": "Sweden",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Stockholm"
+		},
+		{
+			"countryCode": "EE",
+			"countryName": "Estonia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Tallinn"
+		},
+		{
+			"countryCode": "AL",
+			"countryName": "Albania",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Tirane"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Europe/Ulyanovsk"
+		},
+		{
+			"countryCode": "LI",
+			"countryName": "Liechtenstein",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Vaduz"
+		},
+		{
+			"countryCode": "VA",
+			"countryName": "Vatican",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Vatican"
+		},
+		{
+			"countryCode": "AT",
+			"countryName": "Austria",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Vienna"
+		},
+		{
+			"countryCode": "LT",
+			"countryName": "Lithuania",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Vilnius"
+		},
+		{
+			"countryCode": "RU",
+			"countryName": "Russia",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Europe/Volgograd"
+		},
+		{
+			"countryCode": "PL",
+			"countryName": "Poland",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Warsaw"
+		},
+		{
+			"countryCode": "HR",
+			"countryName": "Croatia",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Zagreb"
+		},
+		{
+			"countryCode": "CH",
+			"countryName": "Switzerland",
+			"gmtOffset": 7200,
+			"timestamp": 1718467779,
+			"zoneName": "Europe/Zurich"
+		},
+		{
+			"countryCode": "MG",
+			"countryName": "Madagascar",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Indian/Antananarivo"
+		},
+		{
+			"countryCode": "IO",
+			"countryName": "British Indian Ocean Territory",
+			"gmtOffset": 21600,
+			"timestamp": 1718482179,
+			"zoneName": "Indian/Chagos"
+		},
+		{
+			"countryCode": "CX",
+			"countryName": "Christmas Island",
+			"gmtOffset": 25200,
+			"timestamp": 1718485779,
+			"zoneName": "Indian/Christmas"
+		},
+		{
+			"countryCode": "CC",
+			"countryName": "Cocos Islands",
+			"gmtOffset": 23400,
+			"timestamp": 1718483979,
+			"zoneName": "Indian/Cocos"
+		},
+		{
+			"countryCode": "KM",
+			"countryName": "Comoros",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Indian/Comoro"
+		},
+		{
+			"countryCode": "TF",
+			"countryName": "French Southern Territories",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Indian/Kerguelen"
+		},
+		{
+			"countryCode": "SC",
+			"countryName": "Seychelles",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Indian/Mahe"
+		},
+		{
+			"countryCode": "MV",
+			"countryName": "Maldives",
+			"gmtOffset": 18000,
+			"timestamp": 1718478579,
+			"zoneName": "Indian/Maldives"
+		},
+		{
+			"countryCode": "MU",
+			"countryName": "Mauritius",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Indian/Mauritius"
+		},
+		{
+			"countryCode": "YT",
+			"countryName": "Mayotte",
+			"gmtOffset": 10800,
+			"timestamp": 1718471379,
+			"zoneName": "Indian/Mayotte"
+		},
+		{
+			"countryCode": "RE",
+			"countryName": "Reunion",
+			"gmtOffset": 14400,
+			"timestamp": 1718474979,
+			"zoneName": "Indian/Reunion"
+		},
+		{
+			"countryCode": "WS",
+			"countryName": "Samoa",
+			"gmtOffset": 46800,
+			"timestamp": 1718507379,
+			"zoneName": "Pacific/Apia"
+		},
+		{
+			"countryCode": "NZ",
+			"countryName": "New Zealand",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Auckland"
+		},
+		{
+			"countryCode": "PG",
+			"countryName": "Papua New Guinea",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Bougainville"
+		},
+		{
+			"countryCode": "NZ",
+			"countryName": "New Zealand",
+			"gmtOffset": 45900,
+			"timestamp": 1718506479,
+			"zoneName": "Pacific/Chatham"
+		},
+		{
+			"countryCode": "FM",
+			"countryName": "Micronesia",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Pacific/Chuuk"
+		},
+		{
+			"countryCode": "CL",
+			"countryName": "Chile",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "Pacific/Easter"
+		},
+		{
+			"countryCode": "VU",
+			"countryName": "Vanuatu",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Efate"
+		},
+		{
+			"countryCode": "TK",
+			"countryName": "Tokelau",
+			"gmtOffset": 46800,
+			"timestamp": 1718507379,
+			"zoneName": "Pacific/Fakaofo"
+		},
+		{
+			"countryCode": "FJ",
+			"countryName": "Fiji",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Fiji"
+		},
+		{
+			"countryCode": "TV",
+			"countryName": "Tuvalu",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Funafuti"
+		},
+		{
+			"countryCode": "EC",
+			"countryName": "Ecuador",
+			"gmtOffset": -21600,
+			"timestamp": 1718438979,
+			"zoneName": "Pacific/Galapagos"
+		},
+		{
+			"countryCode": "PF",
+			"countryName": "French Polynesia",
+			"gmtOffset": -32400,
+			"timestamp": 1718428179,
+			"zoneName": "Pacific/Gambier"
+		},
+		{
+			"countryCode": "SB",
+			"countryName": "Solomon Islands",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Guadalcanal"
+		},
+		{
+			"countryCode": "GU",
+			"countryName": "Guam",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Pacific/Guam"
+		},
+		{
+			"countryCode": "US",
+			"countryName": "United States",
+			"gmtOffset": -36000,
+			"timestamp": 1718424579,
+			"zoneName": "Pacific/Honolulu"
+		},
+		{
+			"countryCode": "KI",
+			"countryName": "Kiribati",
+			"gmtOffset": 46800,
+			"timestamp": 1718507379,
+			"zoneName": "Pacific/Kanton"
+		},
+		{
+			"countryCode": "KI",
+			"countryName": "Kiribati",
+			"gmtOffset": 50400,
+			"timestamp": 1718510979,
+			"zoneName": "Pacific/Kiritimati"
+		},
+		{
+			"countryCode": "FM",
+			"countryName": "Micronesia",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Kosrae"
+		},
+		{
+			"countryCode": "MH",
+			"countryName": "Marshall Islands",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Kwajalein"
+		},
+		{
+			"countryCode": "MH",
+			"countryName": "Marshall Islands",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Majuro"
+		},
+		{
+			"countryCode": "PF",
+			"countryName": "French Polynesia",
+			"gmtOffset": -34200,
+			"timestamp": 1718426379,
+			"zoneName": "Pacific/Marquesas"
+		},
+		{
+			"countryCode": "UM",
+			"countryName": "United States Minor Outlying Islands",
+			"gmtOffset": -39600,
+			"timestamp": 1718420979,
+			"zoneName": "Pacific/Midway"
+		},
+		{
+			"countryCode": "NR",
+			"countryName": "Nauru",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Nauru"
+		},
+		{
+			"countryCode": "NU",
+			"countryName": "Niue",
+			"gmtOffset": -39600,
+			"timestamp": 1718420979,
+			"zoneName": "Pacific/Niue"
+		},
+		{
+			"countryCode": "NF",
+			"countryName": "Norfolk Island",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Norfolk"
+		},
+		{
+			"countryCode": "NC",
+			"countryName": "New Caledonia",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Noumea"
+		},
+		{
+			"countryCode": "AS",
+			"countryName": "American Samoa",
+			"gmtOffset": -39600,
+			"timestamp": 1718420979,
+			"zoneName": "Pacific/Pago_Pago"
+		},
+		{
+			"countryCode": "PW",
+			"countryName": "Palau",
+			"gmtOffset": 32400,
+			"timestamp": 1718492979,
+			"zoneName": "Pacific/Palau"
+		},
+		{
+			"countryCode": "PN",
+			"countryName": "Pitcairn",
+			"gmtOffset": -28800,
+			"timestamp": 1718431779,
+			"zoneName": "Pacific/Pitcairn"
+		},
+		{
+			"countryCode": "FM",
+			"countryName": "Micronesia",
+			"gmtOffset": 39600,
+			"timestamp": 1718500179,
+			"zoneName": "Pacific/Pohnpei"
+		},
+		{
+			"countryCode": "PG",
+			"countryName": "Papua New Guinea",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Pacific/Port_Moresby"
+		},
+		{
+			"countryCode": "CK",
+			"countryName": "Cook Islands",
+			"gmtOffset": -36000,
+			"timestamp": 1718424579,
+			"zoneName": "Pacific/Rarotonga"
+		},
+		{
+			"countryCode": "MP",
+			"countryName": "Northern Mariana Islands",
+			"gmtOffset": 36000,
+			"timestamp": 1718496579,
+			"zoneName": "Pacific/Saipan"
+		},
+		{
+			"countryCode": "PF",
+			"countryName": "French Polynesia",
+			"gmtOffset": -36000,
+			"timestamp": 1718424579,
+			"zoneName": "Pacific/Tahiti"
+		},
+		{
+			"countryCode": "KI",
+			"countryName": "Kiribati",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Tarawa"
+		},
+		{
+			"countryCode": "TO",
+			"countryName": "Tonga",
+			"gmtOffset": 46800,
+			"timestamp": 1718507379,
+			"zoneName": "Pacific/Tongatapu"
+		},
+		{
+			"countryCode": "UM",
+			"countryName": "United States Minor Outlying Islands",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Wake"
+		},
+		{
+			"countryCode": "WF",
+			"countryName": "Wallis and Futuna",
+			"gmtOffset": 43200,
+			"timestamp": 1718503779,
+			"zoneName": "Pacific/Wallis"
 		}
-	},
-	"_bodyInit": {
-		"_data": {
-			"__collector": [Object
-			],
-			"blobId": "5C5D6C31-54BE-4677-9E10-B3A7AAC8BE48",
-			"name": "list-time-zone.json",
-			"offset": 0,
-			"size": 86550,
-			"type": "application/json"
-		}
-	},
-	"bodyUsed": false,
-	"headers": {
-		"map": {
-			"access-control-allow-origin": "*",
-			"alt-svc": "h3=\":443\"; ma=86400",
-			"cf-cache-status": "DYNAMIC",
-			"cf-ray": "89323dc2eca141a1-EWR",
-			"content-encoding": "gzip",
-			"content-type": "application/json; charset=utf-8",
-			"date": "Thu, 13 Jun 2024 12:56:32 GMT",
-			"server": "cloudflare",
-			"x-identity": "95d024c57d12ee678a40b9ecbad02e7a"
-		}
-	},
-	"ok": true,
-	"status": 200,
-	"statusText": "",
-	"type": "default",
-	"url": "https://api.timezonedb.com/v2.1/list-time-zone?key=2H337C01C21J&format=json"
+	]
 }
