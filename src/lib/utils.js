@@ -32,24 +32,6 @@ export const showLocalTime = () => {
   return hour + ':' + minute + ':' + second;
 };
 
-//export const fetchAllTimes = async () => {
-//  const data = fetch(
-//    'https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_98pZ7wTOYBCGewZWMp0wZhhrvR3e5dPvtTYns7oO0qNa7BAyLjA67pRs4vyItbpy',
-//    {
-//      method: 'GET',
-//    },
-//  )
-//    .then((response) => {
-//      if (response.ok) {
-//        return response.json();
-//      }
-//      Promise.reject(response);
-//    })
-//    .then((body) => body);
-
-//  console.log(await data);
-//};
-
 export const showISO = (timestampMS, styleLight, styleDark) => {
   const zoneISO = new Date(timestampMS * 1000).toISOString();
   const zoneISOhhmmss = zoneISO.slice(11, 16);

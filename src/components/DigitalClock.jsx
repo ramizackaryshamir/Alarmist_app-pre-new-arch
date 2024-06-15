@@ -1,10 +1,15 @@
 import React, {useState, useEffect} from 'react'; //{useEffect, useState}
 import {SafeAreaView, View, Text} from 'react-native';
 //import {Colors} from 'react-native/Libraries/NewAppScreen';
-//import {fetchAllTimes} from '../lib/utils';
+import {showLocalTime} from '../lib/utils';
 
 const DigitalCLock = () => {
-  const [allTimes, setAllTimes] = useState();
+  const [localTime, setLocalTime] = useState('');
+  const [allTimes, setAllTimes] = useState({
+    countryName: '',
+    timeStamp: '',
+  });
+
   useEffect(() => {
     const fetchAllTimes = async () => {
       const response = await fetch(
@@ -28,16 +33,21 @@ const DigitalCLock = () => {
     fetchAllTimes();
   }, []);
 
-  console.log(allTimes);
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setLocalTime(showLocalTime());
+    }, 1000);
+    return () => clearTimeout(time);
+  }, [localTime]);
+
   return (
-    <SafeAreaView>
-      <View>
-        <Text>
-          Time
-          {/*{localTime}*/}
-        </Text>
-      </View>
-    </SafeAreaView>
+    <>
+      <SafeAreaView>
+        <View>
+          <Text>{localTime}</Text>
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 
