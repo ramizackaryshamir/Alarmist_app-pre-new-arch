@@ -4,21 +4,31 @@ import {SafeAreaView, View, Text} from 'react-native';
 //import {fetchAllTimes} from '../lib/utils';
 
 const DigitalCLock = () => {
+  const [allTimes, setAllTimes] = useState();
   useEffect(() => {
     const fetchAllTimes = async () => {
       const response = await fetch(
-        'https://jsonplaceholder.typicode.com/todos/1',
-      )
-        .then((res) => res.json())
-        .then((body) => console.log(body))
-        .catch((error) => {
-          console.log(error);
-        });
+        'https://api.timezonedb.com/v2.1/list-time-zone?key=2H337C01C21J&format=json',
+        {
+          method: 'GET',
+        },
+      ).then((res) => {
+        return res.ok
+          ? Promise.resolve(res)
+          : Promise.reject(new Error(res.statusText));
+      });
 
-      return response;
+      const data = await response
+        .json()
+        .then((body) => setAllTimes(body))
+        .catch((error) => console.log(error));
+
+      return data;
     };
     fetchAllTimes();
-  });
+  }, []);
+
+  console.log(allTimes);
   return (
     <SafeAreaView>
       <View>
