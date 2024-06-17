@@ -1,34 +1,10 @@
-import React, {useState, useEffect} from 'react'; //{useEffect, useState}
-import {View, Text, StyleSheet, useWindowDimensions} from 'react-native';
-//import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {showLocalTime} from '../lib/utils';
+import React, {useState, useEffect} from 'react';
+import {View, Text} from 'react-native';
+import Block from '../Block/Block';
+import {showLocalTime} from '../../lib/utils';
+import {useStyles} from './useStyles';
 
-const useStyles = () => {
-  const {width, height, fontScale} = useWindowDimensions();
-  const styles = StyleSheet.create({
-    clockContainer: {
-      width: width,
-      height: height * 0.5,
-      backgroundColor: 'yellow',
-    },
-    clock: {
-      //justifyContent: 'center',
-      //alignItems: 'center',
-      flex: 4,
-      borderWidth: 8,
-      borderColor: '#0A3A40',
-      borderRadius: 15,
-      backgroundColor: '#223240',
-    },
-    clockText: {
-      fontSize: 100,
-      color: 'white',
-    },
-  });
-  return styles;
-};
 const DigitalCLock = () => {
-  //const [localTime, setLocalTime] = useState('');
   const [localTime, setLocalTime] = useState({
     hour: '',
     minute: '',
@@ -72,11 +48,9 @@ const DigitalCLock = () => {
   return (
     <>
       <View style={styles.clockContainer}>
-        <View style={styles.clock}>
-          <Text style={styles.clockText}>{localTime.hour}</Text>
-          <Text style={styles.clockText}>{localTime.minute}</Text>
-          <Text style={styles.clockText}>{localTime.second}</Text>
-        </View>
+        <Text style={styles.clockText}>
+          {localTime.hour} {localTime.minute} {localTime.second}
+        </Text>
       </View>
     </>
   );

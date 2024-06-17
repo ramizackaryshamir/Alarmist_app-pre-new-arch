@@ -4,9 +4,8 @@ import {
   View,
   StyleSheet,
   useWindowDimensions,
-  //Text,
 } from 'react-native';
-import DigitalCLock from '../components/DigitalClock';
+import DigitalCLock from '../components/DigitalClock/DigitalClock';
 
 const useStyles = () => {
   const dimensions = useWindowDimensions();
