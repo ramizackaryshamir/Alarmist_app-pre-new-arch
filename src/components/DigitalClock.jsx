@@ -1,15 +1,44 @@
 import React, {useState, useEffect} from 'react'; //{useEffect, useState}
-import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, useWindowDimensions} from 'react-native';
 //import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {showLocalTime} from '../lib/utils';
 
+const useStyles = () => {
+  const {width, height, fontScale} = useWindowDimensions();
+  const styles = StyleSheet.create({
+    clockContainer: {
+      width: width,
+      height: height * 0.5,
+      backgroundColor: 'yellow',
+    },
+    clock: {
+      //justifyContent: 'center',
+      //alignItems: 'center',
+      flex: 4,
+      borderWidth: 8,
+      borderColor: '#0A3A40',
+      borderRadius: 15,
+      backgroundColor: '#223240',
+    },
+    clockText: {
+      fontSize: 100,
+      color: 'white',
+    },
+  });
+  return styles;
+};
 const DigitalCLock = () => {
-  const [localTime, setLocalTime] = useState('');
+  //const [localTime, setLocalTime] = useState('');
+  const [localTime, setLocalTime] = useState({
+    hour: '',
+    minute: '',
+    second: '',
+  });
   const [allTimes, setAllTimes] = useState({
     countryName: '',
     timeStamp: '',
   });
-
+  const styles = useStyles();
   useEffect(() => {
     const fetchAllTimes = async () => {
       const response = await fetch(
@@ -38,39 +67,19 @@ const DigitalCLock = () => {
       setLocalTime(showLocalTime());
     }, 1000);
     return () => clearTimeout(time);
-  }, [localTime]);
-
+  }, [localTime.hour, localTime.minute, localTime.second]);
+  console.log(localTime);
   return (
     <>
-      {/*<SafeAreaView>*/}
       <View style={styles.clockContainer}>
         <View style={styles.clock}>
-          <Text style={styles.clockText}>{localTime}</Text>
+          <Text style={styles.clockText}>{localTime.hour}</Text>
+          <Text style={styles.clockText}>{localTime.minute}</Text>
+          <Text style={styles.clockText}>{localTime.second}</Text>
         </View>
       </View>
-      {/*</SafeAreaView>*/}
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  clockContainer: {
-    width: '80%',
-    height: 120,
-    backgroundColor: 'blue',
-  },
-  clock: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-    borderWidth: 8,
-    borderColor: '#2d2d2d',
-    borderRadius: 15,
-    backgroundColor: '#f70300',
-  },
-  clockText: {
-    color: 'white',
-  },
-});
 
 export default DigitalCLock;

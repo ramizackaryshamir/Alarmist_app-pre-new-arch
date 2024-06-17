@@ -29,7 +29,7 @@ export const showLocalTime = () => {
   minute = minute < 10 ? '0' + minute : minute;
   second = second < 10 ? '0' + second : second;
 
-  return hour + ':' + minute + ':' + second;
+  return {hour, minute, second};
 };
 
 export const showISO = (timestampMS, styleLight, styleDark) => {
