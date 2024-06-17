@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import Block from '../Block/Block';
 import {showLocalTime} from '../../lib/utils';
 import {useStyles} from './useStyles';
@@ -47,11 +47,17 @@ const DigitalCLock = () => {
   console.log(localTime);
   return (
     <>
-      <View style={styles.clockContainer}>
-        <Text style={styles.clockText}>
-          {localTime.hour} {localTime.minute} {localTime.second}
-        </Text>
-      </View>
+      <SafeAreaView style={styles.safeAreaView}>
+        <View style={styles.clockContainer}>
+          <View style={styles.clockTop}>
+            <Text style={styles.clockText}>{localTime.hour}</Text>
+            <Text style={styles.clockText}>{localTime.minute}</Text>
+          </View>
+          <View style={styles.clockBottom}>
+            <Text style={styles.clockText}>{localTime.second}</Text>
+          </View>
+        </View>
+      </SafeAreaView>
     </>
   );
 };

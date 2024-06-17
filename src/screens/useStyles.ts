@@ -4,9 +4,6 @@ export const useStyles = () => {
   const {height, width} = useWindowDimensions();
 
   const styles = StyleSheet.create({
-    safeAreaView: {
-      backgroundColor: '#61E3FA',
-    },
     homeScreenContainer: {
       display: 'flex',
       flexDirection: 'column',
