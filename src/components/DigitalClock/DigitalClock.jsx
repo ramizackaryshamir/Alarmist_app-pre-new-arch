@@ -39,12 +39,20 @@ const DigitalCLock = () => {
   }, []);
 
   useEffect(() => {
+    const {hour, minute, second} = showLocalTime();
+
     const time = setTimeout(() => {
-      setLocalTime(showLocalTime());
+      setLocalTime({
+        hour: hour,
+        minute: minute,
+        second: second,
+      });
     }, 1000);
     return () => clearTimeout(time);
   }, [localTime.hour, localTime.minute, localTime.second]);
+
   console.log(localTime);
+
   return (
     <>
       <SafeAreaView style={styles.safeAreaView}>
