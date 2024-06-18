@@ -6,11 +6,11 @@ export const useStyles = () => {
   const styles = StyleSheet.create({
     homeScreenContainer: {
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      height: height,
-      width: width,
+      height: height - 200,
+      width: width - 100,
       backgroundColor: '#61E3FA',
     },
   });
