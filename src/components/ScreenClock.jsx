@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text} from 'react-native';
-import {useStyles} from '../../hooks/useStyles';
-import {useTime} from '../../hooks/useTime';
+import {useStyles} from '../hooks/useStyles';
+import {useTime} from '../hooks/useTime';
 
 const ScreenClock = () => {
   const styles = useStyles();

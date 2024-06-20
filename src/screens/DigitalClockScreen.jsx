@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import DigitalClock from '../components/DigitalClock/DigitalClock';
+import DigitalClock from '../components/DigitalClock';
 import {useStyles} from '../hooks/useStyles';
 
 const DigitalClockScreen = ({navigation}) => {

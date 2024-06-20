@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {useStyles} from '../../hooks/useStyles';
-import {useTime} from '../../hooks/useTime';
+import {useStyles} from '../hooks/useStyles';
+import {useTime} from '../hooks/useTime';
 
 const DigitalClock = ({navigation, route}) => {
   const styles = useStyles();

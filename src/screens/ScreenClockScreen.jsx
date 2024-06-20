@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import ScreenClock from '../components/ScreenClock/ScreenClock';
+import ScreenClock from '../components/ScreenClock';
 import {useStyles} from '../hooks/useStyles';
 
 const ScreenClockScreen = ({navigation}) => {
