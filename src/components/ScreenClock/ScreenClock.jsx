@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
-import {useStyles} from './useStyles';
-import {useTime} from '../useTime';
+import {View, Text} from 'react-native';
+import {useStyles} from '../../hooks/useStyles';
+import {useTime} from '../../hooks/useTime';
 
 const ScreenClock = () => {
   const styles = useStyles();
@@ -37,21 +37,15 @@ const ScreenClock = () => {
   }, []);
 
   return (
-    <>
-      <SafeAreaView style={styles.safeAreaView}>
-        <View Style={styles.screenContainer}>
-          <View style={styles.clockContainer}>
-            <View style={styles.clockTop}>
-              <Text style={styles.clockText}>{localTime.hour}</Text>
-              <Text style={styles.clockText}>{localTime.minute}</Text>
-            </View>
-            <View style={styles.clockBottom}>
-              <Text style={styles.clockText}>{localTime.second}</Text>
-            </View>
-          </View>
-        </View>
-      </SafeAreaView>
-    </>
+    <View style={styles.screenClockContainer}>
+      <View style={styles.screenClockTop}>
+        <Text style={styles.screenClockText}>{localTime.hour}</Text>
+        <Text style={styles.screenClockText}>{localTime.minute}</Text>
+      </View>
+      <View style={styles.screenClockBottom}>
+        <Text style={styles.screenClockText}>{localTime.second}</Text>
+      </View>
+    </View>
   );
 };
 

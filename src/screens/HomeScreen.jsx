@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View, Button} from 'react-native';
-import {useStyles} from './useStyles';
+import {useStyles} from '../hooks/useStyles';
 
 const HomeScreen = ({navigation}) => {
   const styles = useStyles();
