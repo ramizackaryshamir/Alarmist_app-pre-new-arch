@@ -2,26 +2,11 @@ import React, {useEffect, useState, useContext} from 'react';
 import {SafeAreaView, View, Text} from 'react-native';
 import {showLocalTime} from '../../lib/utils';
 import {useStyles} from './useStyles';
+import {useTime} from '../useTime';
 
 const DigitalClock = ({navigation, route}) => {
   const styles = useStyles();
-  const [localTime, setLocalTime] = useState({
-    hour: '',
-    minute: '',
-    second: '',
-  });
-  useEffect(() => {
-    const {hour, minute, second} = showLocalTime();
-
-    const time = setTimeout(() => {
-      setLocalTime({
-        hour: hour,
-        minute: minute,
-        second: second,
-      });
-    }, 1000);
-    return () => clearTimeout(time);
-  }, [localTime.hour, localTime.minute, localTime.second]);
+  const localTime = useTime();
 
   return (
     <View style={styles.screenContainer}>
