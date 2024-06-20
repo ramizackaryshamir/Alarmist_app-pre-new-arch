@@ -24,17 +24,17 @@ const DigitalClock = ({navigation, route}) => {
   }, [localTime.hour, localTime.minute, localTime.second]);
 
   return (
-    <SafeAreaView style={styles.safeAreaView}>
+    <View style={styles.screenContainer}>
       <View style={styles.clockContainer}>
-        <View style={styles.clockTop}>
+        <View style={styles.clockRight}>
           <Text style={styles.clockText}>{localTime.hour}</Text>
           <Text style={styles.clockText}>{localTime.minute}</Text>
         </View>
-        <View style={styles.clockBottom}>
+        <View style={styles.clockLeft}>
           <Text style={styles.clockText}>{localTime.second}</Text>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 export default DigitalClock;

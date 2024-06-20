@@ -7,13 +7,16 @@ export const useStyles = () => {
       flex: 1,
       backgroundColor: '#61E3FA',
     },
+    screenContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: width,
+      height: height,
+    },
     clockContainer: {
       justifyContent: 'space-around',
       width: width - 50,
       height: height - 50,
-      borderWidth: 8,
-      borderColor: '#0A3A40',
-      borderRadius: 15,
       backgroundColor: '#61E3FA',
     },
     clockTop: {

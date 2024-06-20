@@ -57,13 +57,15 @@ const ScreenClock = () => {
   return (
     <>
       <SafeAreaView style={styles.safeAreaView}>
-        <View style={styles.clockContainer}>
-          <View style={styles.clockTop}>
-            <Text style={styles.clockText}>{localTime.hour}</Text>
-            <Text style={styles.clockText}>{localTime.minute}</Text>
-          </View>
-          <View style={styles.clockBottom}>
-            <Text style={styles.clockText}>{localTime.second}</Text>
+        <View Style={styles.screenContainer}>
+          <View style={styles.clockContainer}>
+            <View style={styles.clockTop}>
+              <Text style={styles.clockText}>{localTime.hour}</Text>
+              <Text style={styles.clockText}>{localTime.minute}</Text>
+            </View>
+            <View style={styles.clockBottom}>
+              <Text style={styles.clockText}>{localTime.second}</Text>
+            </View>
           </View>
         </View>
       </SafeAreaView>

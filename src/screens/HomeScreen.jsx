@@ -1,24 +1,23 @@
 import React from 'react';
-import {View, Button} from 'react-native';
-import ScreenClock from '../components/ScreenClock/ScreenClock';
+import {SafeAreaView, View, Button} from 'react-native';
 import {useStyles} from './useStyles';
-import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = ({navigation}) => {
   const styles = useStyles();
   return (
     <>
-      <View>
+      <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.homeScreenContainer}>
-          <ScreenClock />
-        </View>
-        <View>
+          <Button
+            onPress={() => navigation.navigate('Screen Clock')}
+            title="Go to Screen Clock"
+          />
           <Button
             onPress={() => navigation.navigate('Digital Clock')}
             title="Go to Digital Clock"
           />
         </View>
-      </View>
+      </SafeAreaView>
     </>
   );
 };
