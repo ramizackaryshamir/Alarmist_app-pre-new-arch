@@ -6,7 +6,6 @@ import {useTime} from '../hooks/useTime';
 const ScreenClock = () => {
   const styles = useStyles();
   const localTime = useTime();
-  console.log(localTime.second);
 
   const [allTimes, setAllTimes] = useState({
     countryName: '',

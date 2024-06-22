@@ -6,7 +6,8 @@ export const useStyles = () => {
   const styles = StyleSheet.create({
     safeAreaView: {
       flex: 1,
-      backgroundColor: 'purple',
+      //backgroundColor: 'green',
+      backgroundColor: '#B2A137',
     },
     homeScreenContainer: {
       flex: 1,
@@ -16,7 +17,7 @@ export const useStyles = () => {
       alignItems: 'center',
       height: height,
       width: width,
-      backgroundColor: 'yellow',
+      backgroundColor: '#F2D935',
     },
     digitalClockScreenContainer: {
       flex: 1,
@@ -26,7 +27,7 @@ export const useStyles = () => {
       alignItems: 'center',
       height: height,
       width: width,
-      backgroundColor: 'green',
+      backgroundColor: '#F2D935',
     },
     digitalClockContainer: {
       flexDirection: 'row',
@@ -54,13 +55,13 @@ export const useStyles = () => {
       alignItems: 'center',
       height: height,
       width: width,
-      backgroundColor: '#61E3FA',
+      backgroundColor: '#F2D935',
     },
     screenClockContainer: {
       justifyContent: 'space-around',
       width: width - 50,
       height: height - 50,
-      backgroundColor: '#61E3FA',
+      backgroundColor: '#F2D935',
     },
     screenClockTop: {
       flexDirection: 'row',

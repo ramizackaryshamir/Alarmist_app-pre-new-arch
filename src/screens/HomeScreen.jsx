@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View, Button} from 'react-native';
+import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 
 const HomeScreen = ({navigation}) => {
@@ -17,6 +18,7 @@ const HomeScreen = ({navigation}) => {
             title="Go to Digital Clock"
           />
         </View>
+        <Menu />
       </SafeAreaView>
     </>
   );
