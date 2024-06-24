@@ -8,17 +8,8 @@ const HomeScreen = ({navigation}) => {
   return (
     <>
       <SafeAreaView style={styles.safeAreaView}>
-        <View style={styles.homeScreenContainer}>
-          <Button
-            onPress={() => navigation.navigate('Screen Clock')}
-            title="Go to Screen Clock"
-          />
-          <Button
-            onPress={() => navigation.navigate('Digital Clock')}
-            title="Go to Digital Clock"
-          />
-        </View>
-        <Menu />
+        <View style={styles.homeScreenContainer} />
+        <Menu navigation={navigation} />
       </SafeAreaView>
     </>
   );
