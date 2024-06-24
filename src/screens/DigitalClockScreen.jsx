@@ -1,18 +1,18 @@
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
+import {View, useWindowDimensions, Text} from 'react-native';
 import DigitalClock from '../components/DigitalClock';
+import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 
 const DigitalClockScreen = ({navigation}) => {
   const styles = useStyles();
-
+  const {height, width} = useWindowDimensions();
   return (
     <>
-      <SafeAreaView style={styles.safeAreaView}>
-        <View style={styles.digitalClockScreenContainer}>
-          <DigitalClock />
-        </View>
-      </SafeAreaView>
+      <View style={styles.digitalClockScreenContainer}>
+        <DigitalClock />
+      </View>
+      <Menu navigation={navigation} />
     </>
   );
 };

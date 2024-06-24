@@ -4,11 +4,6 @@ export const useStyles = () => {
   const {height, width} = useWindowDimensions();
 
   const styles = StyleSheet.create({
-    safeAreaView: {
-      flex: 1,
-      //backgroundColor: 'green',
-      backgroundColor: '#B2A137',
-    },
     homeScreenContainer: {
       flex: 1,
       display: 'flex',
@@ -34,7 +29,7 @@ export const useStyles = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
       width: width > 500 ? '35%' : '80%',
-      height: height > 600 ? '20%' : '40%',
+      height: height > 600 ? '20%' : '50%',
       borderWidth: 8,
       borderColor: '#0A3A40',
       borderRadius: 15,
@@ -55,12 +50,12 @@ export const useStyles = () => {
       alignItems: 'center',
       height: height,
       width: width,
-      backgroundColor: '#F2D935',
+      backgroundColor: 'blue',
     },
     screenClockContainer: {
       justifyContent: 'space-around',
-      width: width - 50,
-      height: height - 50,
+      width: width,
+      height: height > 500 ? '100%' : '100%',
       backgroundColor: '#F2D935',
     },
     screenClockTop: {
@@ -79,8 +74,11 @@ export const useStyles = () => {
     menuContainer: {
       flexDirection: 'row',
       justifyContent: 'space-evenly',
-      alignItems: 'center',
-      height: 35,
+      position: 'relative',
+      bottom: 0,
+      paddingTop: 15,
+      width: width,
+      height: 55,
       backgroundColor: '#B2A137',
     },
   });

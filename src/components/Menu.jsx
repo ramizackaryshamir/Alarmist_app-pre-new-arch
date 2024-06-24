@@ -12,7 +12,9 @@ const Menu = ({navigation}) => {
       <Pressable onPress={() => navigation.navigate('Digital Clock')}>
         <Text>Digital Clock</Text>
       </Pressable>
-      <Text>Alarm Drawer</Text>
+      <Pressable onPress={() => navigation.navigate('Home')}>
+        <Text>Alarm Drawer</Text>
+      </Pressable>
       <Text>Settings</Text>
     </View>
   );
