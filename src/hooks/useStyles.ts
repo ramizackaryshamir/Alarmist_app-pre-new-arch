@@ -76,6 +76,13 @@ export const useStyles = () => {
       fontSize: 100,
       color: 'white',
     },
+    menuContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      height: 35,
+      backgroundColor: '#B2A137',
+    },
   });
 
   return styles;
