@@ -11,9 +11,34 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Digital Clock" component={DigitalClockScreen} />
-        <Stack.Screen name="Screen Clock" component={ScreenClockScreen} />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerStyle: {backgroundColor: '#F2D935'},
+            headerTintColor: '#F2D935',
+          }}
+        />
+        <Stack.Screen
+          name="Digital Clock"
+          component={DigitalClockScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#F2D935',
+            },
+            headerTintColor: '#F2D935',
+          }}
+        />
+        <Stack.Screen
+          name="Screen Clock"
+          component={ScreenClockScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#F2D935',
+            },
+            headerTintColor: '#F2D935',
+          }}
+        />
         <Stack.Screen name="Menu" component={Menu} />
       </Stack.Navigator>
     </NavigationContainer>

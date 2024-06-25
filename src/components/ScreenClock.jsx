@@ -43,6 +43,7 @@ const ScreenClock = () => {
       </View>
       <View style={styles.screenClockBottom}>
         <Text style={styles.screenClockText}>{localTime.second}</Text>
+        {/*<Text>{localTime.second.toString().split()}</Text>*/}
       </View>
     </View>
   );

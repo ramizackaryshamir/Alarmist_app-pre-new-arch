@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {useStyles} from '../hooks/useStyles';
 import {useTime} from '../hooks/useTime';
 
-const DigitalClock = ({navigation, route}) => {
+const DigitalClock = () => {
   const styles = useStyles();
   const localTime = useTime();
 

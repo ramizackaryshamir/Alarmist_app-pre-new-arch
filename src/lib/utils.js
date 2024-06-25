@@ -28,7 +28,7 @@ export const showLocalTime = () => {
   hour = hour < 10 ? '0' + hour : hour;
   minute = minute < 10 ? '0' + minute : minute;
   second = second < 10 ? '0' + second : second;
-
+  console.log('localTime utils', typeof hour, minute, second);
   return {hour, minute, second};
 };
 

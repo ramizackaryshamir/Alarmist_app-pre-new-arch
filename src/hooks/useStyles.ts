@@ -35,7 +35,9 @@ export const useStyles = () => {
       borderRadius: 15,
       backgroundColor: '#223240',
     },
-    digitalClockRight: {flexDirection: 'row'},
+    digitalClockRight: {
+      flexDirection: 'row',
+    },
     digitalClockText: {
       justifyContent: 'center',
       alignItems: 'center',
