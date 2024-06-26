@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, Image} from 'react-native';
 import {useStyles} from '../hooks/useStyles';
-
+import DigitalClockSvg from '../assets/digital-clock-icon.svg';
 const Menu = ({navigation}) => {
   const styles = useStyles();
   return (
@@ -11,6 +11,7 @@ const Menu = ({navigation}) => {
       </Pressable>
       <Pressable onPress={() => navigation.navigate('Digital Clock')}>
         <Text>Digital Clock</Text>
+        {/*<Image source={DigitalClockSvg} style={styles.menuLogoImage} />*/}
       </Pressable>
       <Pressable onPress={() => navigation.navigate('Home')}>
         <Text>Alarm Drawer</Text>

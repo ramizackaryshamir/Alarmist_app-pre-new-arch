@@ -5,9 +5,10 @@ import HomeScreen from './src/screens/HomeScreen';
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
 import Menu from './src/components/Menu';
+import ErrorBoundary from './src/components/ErrorBoundary';
 
 const Stack = createNativeStackNavigator();
-const App = () => {
+const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -17,7 +18,6 @@ const App = () => {
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
             headerTintColor: '#F2D935',
-            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -28,7 +28,6 @@ const App = () => {
               backgroundColor: '#F2D935',
             },
             headerTintColor: '#F2D935',
-            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -39,7 +38,6 @@ const App = () => {
               backgroundColor: '#F2D935',
             },
             headerTintColor: '#F2D935',
-            headerShown: false,
           }}
         />
         <Stack.Screen name="Menu" component={Menu} />
@@ -47,4 +45,4 @@ const App = () => {
     </NavigationContainer>
   );
 };
-export default App;
+export default StackNavigator;
