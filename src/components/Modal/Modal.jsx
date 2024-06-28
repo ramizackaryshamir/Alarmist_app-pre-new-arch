@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, View, SafeAreaView, StyleSheet} from 'react-native';
+import {TouchableOpacity, View, StyleSheet} from 'react-native';
 import ColorOptionButton from './ColorOptionButton';
-
+import {useStyles} from '../../hooks/useStyles';
 const Modal = ({}) => {
+  const styles = useStyles();
   const [modal, showModal] = useState(false);
   const [color, setColor] = useState({
     _E8E500: '#E8E500',
@@ -14,11 +15,10 @@ const Modal = ({}) => {
 
   return (
     <>
-      <TouchableOpacity style={styles.toggleModalButton} onPress={showModal} />
       {modal && (
         <View style={styles.modalContainer}>
           <TouchableOpacity onPress={() => !showModal()}>
-            <View style={styles.buttonContainer}>
+            <View style={styles.modalOptionButtonsContainer}>
               <ColorOptionButton
                 //onPress={() => console.log(setColor())}
                 colorOption={color._E8E500}
@@ -43,32 +43,9 @@ const Modal = ({}) => {
           </TouchableOpacity>
         </View>
       )}
+      <TouchableOpacity style={styles.toggleModalButton} onPress={showModal} />
     </>
   );
 };
 
-const styles = StyleSheet.create({
-  toggleModalButton: {
-    position: 'relative',
-    top: 40,
-    width: 20,
-    height: 20,
-    backgroundColor: 'green',
-  },
-  modalContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
-    top: 20,
-    height: 70,
-    width: 300,
-    backgroundColor: 'blue',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginRight: 10,
-    marginLeft: 10,
-  },
-});
 export default Modal;

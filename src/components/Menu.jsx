@@ -1,7 +1,12 @@
 import React from 'react';
-import {View, Text, Pressable, Image} from 'react-native';
+import {
+  View,
+  Text,
+  Pressable,
+  //Image
+} from 'react-native';
 import {useStyles} from '../hooks/useStyles';
-import DigitalClockSvg from '../assets/digital-clock-icon.svg';
+//import DigitalClockSvg from '../assets/digital-clock-icon.svg';
 const Menu = ({navigation}) => {
   const styles = useStyles();
   return (

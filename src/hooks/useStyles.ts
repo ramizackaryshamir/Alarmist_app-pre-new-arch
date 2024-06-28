@@ -83,7 +83,29 @@ export const useStyles = () => {
       height: 55,
       backgroundColor: '#B2A137',
     },
+    modalContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'absolute',
+      top: width > 500 ? '75%' : '60%',
+      width: 300,
+      height: 70,
+      zIndex: 100,
+      backgroundColor: 'blue',
+    },
+    modalOptionButtonsContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      marginRight: 10,
+      marginLeft: 10,
+    },
+    toggleModalButton: {
+      position: 'relative',
+      top: 20,
+      width: 20,
+      height: 20,
+      backgroundColor: 'green',
+    },
   });
-
   return styles;
 };
