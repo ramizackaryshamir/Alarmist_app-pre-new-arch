@@ -17,7 +17,10 @@ const DigitalClock = () => {
         </View>
         <Text style={styles.digitalClockText}>{localTime.second}</Text>
       </View>
-      <Modal />
+      <View style={styles.settingsContainer}>
+        <Modal />
+        <Modal />
+      </View>
     </>
   );
 };

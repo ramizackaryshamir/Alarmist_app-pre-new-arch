@@ -36,14 +36,13 @@ const ScreenClock = () => {
   }, []);
 
   return (
-    <View style={styles.screenClockContainer}>
-      <View style={styles.screenClockTop}>
+    <View style={styles.screenClockScreenContainer}>
+      <View style={styles.screenClockContainer}>
         <Text style={styles.screenClockText}>{localTime.hour}</Text>
+        <View>
+          <Text>{localTime.second}</Text>
+        </View>
         <Text style={styles.screenClockText}>{localTime.minute}</Text>
-      </View>
-      <View style={styles.screenClockBottom}>
-        <Text style={styles.screenClockText}>{localTime.second}</Text>
-        {/*<Text>{localTime.second.toString().split()}</Text>*/}
       </View>
     </View>
   );

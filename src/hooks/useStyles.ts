@@ -10,8 +10,8 @@ export const useStyles = () => {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      height: height,
       width: width,
+      height: height,
       backgroundColor: '#F2D935',
     },
     digitalClockScreenContainer: {
@@ -20,8 +20,8 @@ export const useStyles = () => {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      height: height,
       width: width,
+      height: height,
       backgroundColor: '#F2D935',
     },
     digitalClockContainer: {
@@ -47,30 +47,23 @@ export const useStyles = () => {
     screenClockScreenContainer: {
       flex: 1,
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      height: height,
       width: width,
+      height: height,
       backgroundColor: 'blue',
     },
     screenClockContainer: {
-      justifyContent: 'space-around',
-      width: width,
-      height: height > 500 ? '100%' : '100%',
-      backgroundColor: '#F2D935',
-    },
-    screenClockTop: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-    },
-    screenClockBottom: {
-      alignItems: 'center',
-    },
-    screenClockText: {
+      flexDirection: width > 500 ? 'row' : 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      fontSize: 100,
+      width: width,
+      height: height,
+      backgroundColor: '#F2D935',
+    },
+    screenClockText: {
+      fontSize: 300,
       color: 'white',
     },
     menuContainer: {
@@ -83,11 +76,17 @@ export const useStyles = () => {
       height: 55,
       backgroundColor: '#B2A137',
     },
+    settingsContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: 100,
+    },
     modalContainer: {
       justifyContent: 'center',
       alignItems: 'center',
       position: 'absolute',
-      top: width > 500 ? '75%' : '60%',
+      top: width > 500 ? '30%' : '60%',
+      left: -100,
       width: 300,
       height: 70,
       zIndex: 100,
