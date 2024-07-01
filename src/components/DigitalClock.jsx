@@ -2,11 +2,11 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import Modal from './Modal/Modal';
 import {useStyles} from '../hooks/useStyles';
-import {useTime} from '../hooks/useTime';
+import {useShowTime} from '../hooks/useShowTime';
 
 const DigitalClock = () => {
   const styles = useStyles();
-  const localTime = useTime();
+  const localTime = useShowTime();
 
   return (
     <>
