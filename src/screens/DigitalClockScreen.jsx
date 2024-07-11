@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, useWindowDimensions, Text} from 'react-native';
+import {View, useWindowDimensions} from 'react-native';
 import DigitalClock from '../components/DigitalClock';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
