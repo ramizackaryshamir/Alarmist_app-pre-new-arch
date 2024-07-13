@@ -1,15 +1,6 @@
-import React, {
-  useId,
-  useCallback,
-  useMemo,
-  useRef,
-  useEffect,
-  useState,
-  useContext,
-} from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import ColorOptionButton from './ColorOptionButton';
-
 import {useStyles} from '../../../hooks/useStyles';
 const ColorOptionsMenu = () => {
   const [color, setColor] = useState({

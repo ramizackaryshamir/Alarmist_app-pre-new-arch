@@ -3,7 +3,6 @@ import {View, useWindowDimensions} from 'react-native';
 import DigitalClock from '../components/DigitalClock';
 import Modal from '../components/Modal/Modal';
 import ColorOptionsMenu from '../components//Modal/ColorOptionsMenu/ColorOptionsMenu';
-import AlarmPicker from '../components/Modal/AlarmPicker';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 

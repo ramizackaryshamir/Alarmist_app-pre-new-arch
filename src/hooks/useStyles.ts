@@ -14,6 +14,13 @@ export const useStyles = () => {
       height: height,
       backgroundColor: '#F2D935',
     },
+    homeScreenAddAlramButton: {
+      bottom: 300,
+      left: 130,
+      width: 30,
+      height: 30,
+      backgroundColor: 'red',
+    },
     digitalClockScreenContainer: {
       flex: 1,
       display: 'flex',
@@ -90,7 +97,8 @@ export const useStyles = () => {
       width: 300,
       height: 70,
       zIndex: 100,
-      backgroundColor: 'blue',
+      borderRadius: 20,
+      backgroundColor: 'rgba(28, 18, 255, 1)',
     },
     modalOptionButtonsContainer: {
       flexDirection: 'row',
@@ -104,6 +112,50 @@ export const useStyles = () => {
       width: 20,
       height: 20,
       backgroundColor: 'green',
+    },
+    bottomSheetContainer: {
+      top: 70,
+      width: width,
+      height: height,
+      backgroundColor: 'red',
+    },
+    bottomSheetSettings: {
+      borderWidth: 5,
+      borderColor: 'green',
+      borderRadius: 5,
+    },
+    bottomSheetButton: {
+      width: '100%',
+      height: 40,
+      paddingLeft: 5,
+      paddingRight: 5,
+      borderWidth: 1,
+      color: 'white',
+      backgroundColor: 'orange',
+    },
+    bottomSheetInput: {
+      height: 40,
+      paddingLeft: 5,
+      paddingRight: 5,
+      color: 'white',
+    },
+    bottomSheetSwitchView: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingLeft: 5,
+      paddingRight: 5,
+    },
+    bottomSheetSwitchViewText: {
+      color: 'white',
+    },
+    alarmPickerButton: {
+      position: 'relative',
+      bottom: 320,
+      left: 120,
+      width: 20,
+      height: 20,
+      backgroundColor: 'red',
     },
   });
   return styles;

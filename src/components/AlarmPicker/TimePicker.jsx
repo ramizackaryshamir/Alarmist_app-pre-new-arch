@@ -1,14 +1,22 @@
 import React, {useState} from 'react';
-import {Button} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import DatePicker from 'react-native-date-picker';
-const AlarmPicker = () => {
+import {useStyles} from '../../hooks/useStyles';
+
+const TimePicker = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [time, setTime] = useState(new Date());
+
+  const styles = useStyles();
   return (
     <>
-      <Button title="Open" onPress={() => setIsOpen(true)} />
+      <TouchableOpacity
+        title="Open"
+        onPress={() => setIsOpen(true)}
+        style={styles.alarmPickerButton}
+      />
       <DatePicker
-        modal
+        //modal
         open={isOpen}
         date={time}
         onConfirm={(value) => {
@@ -16,9 +24,10 @@ const AlarmPicker = () => {
           setTime(value);
         }}
         onCancel={() => setIsOpen(false)}
+        title="Alarm"
       />
     </>
   );
 };
 
-export default AlarmPicker;
+export default TimePicker;
