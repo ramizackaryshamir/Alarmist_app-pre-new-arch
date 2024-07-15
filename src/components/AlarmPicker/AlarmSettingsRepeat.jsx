@@ -1,6 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
 const AlarmSettingsRepeat = () => {
-  return <View />;
+  return (
+    <View>
+      <Text>Alarm Settings: Repeat</Text>
+    </View>
+  );
 };
+
+export default AlarmSettingsRepeat;
