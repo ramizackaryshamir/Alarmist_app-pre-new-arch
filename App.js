@@ -29,7 +29,8 @@ const App = () => {
           component={AlarmBottomSheetModal}
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
-            headerTintColor: '#F2D935',
+            //headerTintColor: '#F2D935',
+            headerBackTitle: 'Cancel',
             headerShown: true,
             headerRight: () => (
               <TouchableOpacity
@@ -41,74 +42,24 @@ const App = () => {
                 <Text>Save</Text>
               </TouchableOpacity>
             ),
-            headerLeft: () => (
-              <TouchableOpacity
-                style={{
-                  width: 70,
-                  height: 70,
-                }}
-              >
-                <Text>Cancel</Text>
-              </TouchableOpacity>
-            ),
           }}
         />
         <Stack.Screen
-          name="Alarm Settings: Repeat"
+          name="Repeat"
           component={AlarmSettingsRepeat}
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
-            headerTintColor: '#F2D935',
+            //headerTintColor: '#F2D935',
             headerShown: true,
-            headerRight: () => (
-              <TouchableOpacity
-                style={{
-                  width: 70,
-                  height: 70,
-                }}
-              >
-                <Text>Save</Text>
-              </TouchableOpacity>
-            ),
-            headerLeft: () => (
-              <TouchableOpacity
-                style={{
-                  width: 70,
-                  height: 70,
-                }}
-              >
-                <Text>Cancel</Text>
-              </TouchableOpacity>
-            ),
           }}
         />
         <Stack.Screen
-          name="Alarm Settings: Sound"
+          name="Sound"
           component={AlarmSettingsSound}
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
-            headerTintColor: '#F2D935',
+            //headerTintColor: '#F2D935',
             headerShown: true,
-            headerRight: () => (
-              <TouchableOpacity
-                style={{
-                  width: 70,
-                  height: 70,
-                }}
-              >
-                <Text>Save</Text>
-              </TouchableOpacity>
-            ),
-            headerLeft: () => (
-              <TouchableOpacity
-                style={{
-                  width: 70,
-                  height: 70,
-                }}
-              >
-                <Text>Cancel</Text>
-              </TouchableOpacity>
-            ),
           }}
         />
         <Stack.Screen

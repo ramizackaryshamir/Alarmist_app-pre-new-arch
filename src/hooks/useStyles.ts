@@ -153,6 +153,31 @@ export const useStyles = () => {
     bottomSheetText: {
       color: 'white',
     },
+    alarmSettingsRepeatContainer: {
+      alignItems: 'center',
+      width: width,
+      height: height,
+      paddingTop: 20,
+      backgroundColor: 'green',
+    },
+    alarmSettingsRepeatOptionsContainer: {
+      width: width - 20,
+      marginTop: 50,
+      borderColor: 'black',
+      borderWidth: 5,
+      borderRadius: 5,
+      backgroundColor: 'white',
+    },
+    alarmSettingsRepeatOption: {
+      justifyContent: 'center',
+      height: 40,
+      paddingLeft: 10,
+      marginBottom: 5,
+      backgroundColor: 'green',
+    },
+    alarmSettingsSoundContainer: {
+      paddingTop: 20,
+    },
     alarmPickerButton: {
       position: 'relative',
       bottom: 320,
