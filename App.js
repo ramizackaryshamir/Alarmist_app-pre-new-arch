@@ -8,6 +8,7 @@ import AlarmSettingsSound from './src/components/AlarmPicker/AlarmSettingsSound'
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
 import Menu from './src/components/Menu';
+import {TouchableOpacity, Button, Text} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -30,6 +31,26 @@ const App = () => {
             headerStyle: {backgroundColor: '#F2D935'},
             headerTintColor: '#F2D935',
             headerShown: true,
+            headerRight: () => (
+              <TouchableOpacity
+                style={{
+                  width: 70,
+                  height: 70,
+                }}
+              >
+                <Text>Save</Text>
+              </TouchableOpacity>
+            ),
+            headerLeft: () => (
+              <TouchableOpacity
+                style={{
+                  width: 70,
+                  height: 70,
+                }}
+              >
+                <Text>Cancel</Text>
+              </TouchableOpacity>
+            ),
           }}
         />
         <Stack.Screen
@@ -39,6 +60,26 @@ const App = () => {
             headerStyle: {backgroundColor: '#F2D935'},
             headerTintColor: '#F2D935',
             headerShown: true,
+            headerRight: () => (
+              <TouchableOpacity
+                style={{
+                  width: 70,
+                  height: 70,
+                }}
+              >
+                <Text>Save</Text>
+              </TouchableOpacity>
+            ),
+            headerLeft: () => (
+              <TouchableOpacity
+                style={{
+                  width: 70,
+                  height: 70,
+                }}
+              >
+                <Text>Cancel</Text>
+              </TouchableOpacity>
+            ),
           }}
         />
         <Stack.Screen
@@ -48,6 +89,26 @@ const App = () => {
             headerStyle: {backgroundColor: '#F2D935'},
             headerTintColor: '#F2D935',
             headerShown: true,
+            headerRight: () => (
+              <TouchableOpacity
+                style={{
+                  width: 70,
+                  height: 70,
+                }}
+              >
+                <Text>Save</Text>
+              </TouchableOpacity>
+            ),
+            headerLeft: () => (
+              <TouchableOpacity
+                style={{
+                  width: 70,
+                  height: 70,
+                }}
+              >
+                <Text>Cancel</Text>
+              </TouchableOpacity>
+            ),
           }}
         />
         <Stack.Screen
