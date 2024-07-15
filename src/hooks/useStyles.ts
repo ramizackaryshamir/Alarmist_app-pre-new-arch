@@ -114,7 +114,6 @@ export const useStyles = () => {
       backgroundColor: 'green',
     },
     bottomSheetContainer: {
-      top: 70,
       width: width,
       height: height,
       backgroundColor: 'red',
@@ -125,6 +124,8 @@ export const useStyles = () => {
       borderRadius: 5,
     },
     bottomSheetButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
       width: '100%',
       height: 40,
       paddingLeft: 5,
@@ -146,7 +147,7 @@ export const useStyles = () => {
       paddingLeft: 5,
       paddingRight: 5,
     },
-    bottomSheetSwitchViewText: {
+    bottomSheetText: {
       color: 'white',
     },
     alarmPickerButton: {

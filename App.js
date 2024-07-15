@@ -29,7 +29,7 @@ const App = () => {
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
             headerTintColor: '#F2D935',
-            headerShown: false,
+            headerShown: true,
           }}
         />
         <Stack.Screen

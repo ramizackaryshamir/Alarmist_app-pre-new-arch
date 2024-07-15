@@ -15,17 +15,20 @@ const AlarmBottomSheetModal = ({navigation}) => {
           onPress={() => {
             navigation.navigate('Alarm Settings: Repeat');
           }}
-        />
+        >
+          <Text style={styles.bottomSheetText}>Sound</Text>
+        </TouchableOpacity>
         <TextInput style={styles.bottomSheetInput} />
         <TouchableOpacity
           style={styles.bottomSheetButton}
-          name="Repeat"
           onPress={() => {
             navigation.navigate('Alarm Settings: Sound');
           }}
-        />
+        >
+          <Text style={styles.bottomSheetText}>Repeat</Text>
+        </TouchableOpacity>
         <View style={styles.bottomSheetSwitchView}>
-          <Text style={styles.bottomSheetSwitchViewText}>Snooze</Text>
+          <Text style={styles.bottomSheetText}>Snooze</Text>
           <Switch value={isEnabled} />
         </View>
       </View>
