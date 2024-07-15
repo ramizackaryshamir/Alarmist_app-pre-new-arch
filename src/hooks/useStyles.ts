@@ -153,7 +153,7 @@ export const useStyles = () => {
     bottomSheetText: {
       color: 'white',
     },
-    alarmSettingsRepeatContainer: {
+    alarmSettingsRepeatPageContainer: {
       alignItems: 'center',
       width: width,
       height: height,
@@ -169,8 +169,11 @@ export const useStyles = () => {
       backgroundColor: 'white',
     },
     alarmSettingsRepeatOption: {
-      justifyContent: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
       height: 40,
+      paddingRight: 10,
       paddingLeft: 10,
       marginBottom: 5,
       backgroundColor: 'green',
