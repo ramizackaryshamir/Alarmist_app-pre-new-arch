@@ -178,9 +178,22 @@ export const useStyles = () => {
       marginBottom: 5,
       backgroundColor: 'green',
     },
-    alarmSettingsSoundContainer: {
+    alarmSettingsSoundPageContainer: {
+      alignItems: 'center',
+      width: width,
+      height: height,
       paddingTop: 20,
+      backgroundColor: 'green',
     },
+    alarmSettingsSoundFlatListContainer: {
+      width: width - 20,
+      marginTop: 50,
+      borderColor: 'black',
+      borderWidth: 5,
+      borderRadius: 5,
+      backgroundColor: 'white',
+    },
+
     alarmPickerButton: {
       position: 'relative',
       bottom: 320,

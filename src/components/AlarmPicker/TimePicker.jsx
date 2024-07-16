@@ -16,7 +16,6 @@ const TimePicker = () => {
         style={styles.alarmPickerButton}
       />
       <DatePicker
-        //modal
         open={isOpen}
         date={time}
         onConfirm={(value) => {

@@ -3,8 +3,12 @@ import {View, TouchableOpacity, TextInput, Text, Switch} from 'react-native';
 import TimePicker from './TimePicker';
 import {useStyles} from '../../hooks/useStyles';
 const AlarmBottomSheetModal = ({navigation}) => {
-  const [isEnabled, isetIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(false);
   const styles = useStyles();
+
+  const toggleSwitch = () => {
+    setIsEnabled((prevState) => !prevState);
+  };
   return (
     <View style={styles.bottomSheetContainer}>
       <TimePicker />
@@ -29,7 +33,7 @@ const AlarmBottomSheetModal = ({navigation}) => {
         </TouchableOpacity>
         <View style={styles.bottomSheetSwitchView}>
           <Text style={styles.bottomSheetText}>Snooze</Text>
-          <Switch value={isEnabled} />
+          <Switch onValueChange={toggleSwitch} value={isEnabled} />
         </View>
       </View>
     </View>
