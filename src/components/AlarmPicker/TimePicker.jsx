@@ -10,6 +10,9 @@ const TimePicker = () => {
 
   console.log('alarmTime: ', alarmTime);
 
+  //
+  //TODO: NOTE: NewAlarm logic should be abstracted from TimePicker to its own component 07172024
+  //
   //useEffect(() => {
   //  const checkAlarm = setInterval(() => {
   //    const currentTime = new Date();

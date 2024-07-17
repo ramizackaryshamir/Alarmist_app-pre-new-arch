@@ -18,8 +18,13 @@ const AlarmSettingsRepeat = () => {
   return (
     <View style={styles.alarmSettingsRepeatPageContainer}>
       <View style={styles.alarmSettingsRepeatOptionsContainer}>
-        {weekdays.map((weekday, index) => {
-          return <AlarmSettingsRepeatOption weekday={weekday} />;
+        {weekdays.map((weekday: string, index: number) => {
+          return (
+            <AlarmSettingsRepeatOption
+              key={`${weekday}${index}`}
+              weekday={weekday}
+            />
+          );
         })}
       </View>
     </View>
