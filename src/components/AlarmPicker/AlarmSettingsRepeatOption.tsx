@@ -2,29 +2,26 @@ import React, {useState} from 'react';
 import {View, Text, TouchableWithoutFeedback} from 'react-native';
 import {useStyles} from '../../hooks/useStyles';
 
-const AlarmSettingsRepeatOption = ({weekday}) => {
-  const [isChecked, setIsChecked] = useState(false);
-  const [selected, setSelected] = useState([weekday]);
-  //const [selected, setSelected] = useState({
-  //  monday: 'Monday',
-  //  tuesday: 'Tuesday',
-  //  wednesday: 'Wednesday',
-  //  thursday: 'Thursday',
-  //  friday: 'Friday',
-  //  saturday: 'Saturday',
-  //  sunday: 'Sunday',
-  //});
+type Weekday = {
+  weekday: string;
+};
 
+const AlarmSettingsRepeatOption = ({weekday}: Weekday) => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const [selected, setSelected] = useState<string>('');
+  const [selectedWeekdays, setSelectedWeekdays] = useState<Array<string>>([]);
   const styles = useStyles();
-  const selectedWeekdays = [];
+
   const handlePress = () => {
+    //Job 1: toggle
     setIsChecked((prevState) => !prevState);
+    //Job 2: set state for selectedWeekdays
     isChecked ? setSelected('') : setSelected(weekday);
-    weekday === selected ? [weekday, ...selectedWeekdays] : selectedWeekdays;
   };
 
   console.log('weekday:', weekday);
-  console.log('selected:', Array.isArray(selected));
+  console.log('selected:', selected);
   console.log('selectedWeekdays:', selectedWeekdays);
 
   return (
