@@ -6,22 +6,87 @@ type Weekday = {
   weekday: string;
 };
 
+type SelectedWeekdays = [
+  {
+    selectedWeekday: string;
+    checked: boolean;
+  },
+  {selectedWeekday: string; checked: boolean},
+  {
+    selectedWeekday: string;
+    checked: boolean;
+  },
+  {selectedWeekday: string; checked: boolean},
+  {
+    selectedWeekday: string;
+    checked: boolean;
+  },
+  {selectedWeekday: string; checked: boolean},
+  {
+    selectedWeekday: string;
+    checked: boolean;
+  },
+];
 const AlarmSettingsRepeatOption = ({weekday}: Weekday) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-  const [selectedWeekday, setSelectedWeekday] = useState<Weekday>({
-    weekday: '',
-  });
-  const [selectedWeekdays, setSelectedWeekdays] = useState<Array<Weekday>>([]);
-
   const styles = useStyles();
+
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const [selectedWeekdays, setSelectedWeekdays] = useState<SelectedWeekdays>([
+    {
+      selectedWeekday: 'Monday',
+      checked: false,
+    },
+    {selectedWeekday: 'Tuesday', checked: false},
+    {
+      selectedWeekday: 'Wednesday',
+      checked: false,
+    },
+    {selectedWeekday: 'Thursday', checked: false},
+    {
+      selectedWeekday: 'Firday',
+      checked: false,
+    },
+    {selectedWeekday: 'Saturday', checked: false},
+    {
+      selectedWeekday: 'Sunday',
+      checked: false,
+    },
+  ]);
 
   const handlePress = () => {
     //Job 1: toggle
     setIsChecked((prevState) => !prevState);
     //Job 2: set state for selectedWeekday
-    isChecked
-      ? setSelectedWeekday({weekday: ''})
-      : setSelectedWeekday({weekday: weekday});
+
+    selectedWeekdays.filter((selected) => weekday === selected.selectedWeekday);
+
+    selectedWeekdays.map((selected) => {
+      console.log(
+        '\x1b[43m',
+        'selected.selectedWeekday',
+        selected.selectedWeekday,
+      );
+      console.log('\x1b[43m', 'weekday', weekday);
+    });
+
+    selectedWeekdays.filter((selected) => {
+      console.log(
+        '\x1b[44m',
+        'weekday === selected.selectedWeekday',
+        weekday === selected.selectedWeekday,
+      );
+    });
+
+    //isChecked
+    //  ? setSelectedWeekday({weekday: ''})
+    //  : setSelectedWeekday({weekday: weekday});
+    console.log(
+      '\x1b[41m',
+
+      'isChecked inside of handler:',
+      isChecked,
+    );
     console.log(
       '\x1b[41m',
 
@@ -34,17 +99,12 @@ const AlarmSettingsRepeatOption = ({weekday}: Weekday) => {
       'weekday inside of handler:',
       weekday,
     );
+
     console.log(
       '\x1b[41m',
 
-      'isChecked inside of handler:',
-      isChecked,
-    );
-    console.log(
-      '\x1b[41m',
-
-      'selectedWeekday inside of handler:',
-      selectedWeekday,
+      'Array.isArray() selectedWeekdays inside of handler:',
+      Array.isArray(selectedWeekdays),
     );
     console.log(
       '\x1b[41m',
@@ -53,14 +113,14 @@ const AlarmSettingsRepeatOption = ({weekday}: Weekday) => {
       selectedWeekdays,
     );
   };
-
+  console.log('\x1b[42m', 'isChecked outside of handler:', isChecked);
   console.log('\x1b[42m', 'typeof weekday outside of handler:', typeof weekday);
   console.log('\x1b[42m', 'weekday outside of handler:', weekday);
-  console.log('\x1b[42m', 'isChecked outside of handler:', isChecked);
   console.log(
     '\x1b[42m',
-    'selectedWeekday outside of handler:',
-    selectedWeekday,
+
+    'Array.isArray() selectedWeekdays outside of handler:',
+    Array.isArray(selectedWeekdays),
   );
   console.log(
     '\x1b[42m',
