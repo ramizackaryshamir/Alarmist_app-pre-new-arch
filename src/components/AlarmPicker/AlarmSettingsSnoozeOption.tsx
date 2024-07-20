@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Switch} from 'react-native';
+import {Text, Switch} from 'react-native';
 import {useStyles} from '../../hooks/useStyles';
 
 const AlarmSettingsSnoozeOption = () => {
@@ -17,4 +17,4 @@ const AlarmSettingsSnoozeOption = () => {
   );
 };
 
-export default AlarmSettingsSnoozeOption;
+//export default AlarmSettingsSnoozeOption;

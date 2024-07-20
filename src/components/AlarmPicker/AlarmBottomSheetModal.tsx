@@ -1,10 +1,28 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity, TextInput, Text, Switch} from 'react-native';
 import TimePicker from './TimePicker';
-import AlarmSettingsSnoozeOption from './AlarmSettingsSnoozeOption';
 import {useStyles} from '../../hooks/useStyles';
-const AlarmBottomSheetModal = ({navigation}) => {
+
+interface Navigation {
+  navigation: {
+    navigate: string;
+    push: (arg0: string) => void;
+  };
+}
+const AlarmBottomSheetModal = ({navigation}: Navigation) => {
   const styles = useStyles();
+  const [alarmSettings, setAlarmSettings] = useState<any>({
+    input: '',
+    isEnabled: false,
+  });
+
+  const [isEnabled, setIsEnabled] = useState<boolean>(false);
+
+  const toggleSwitch = () => {
+    setIsEnabled((prevState: boolean) => !prevState);
+  };
+
+  console.log('input', alarmSettings.input);
 
   return (
     <View style={styles.bottomSheetContainer}>
@@ -12,14 +30,19 @@ const AlarmBottomSheetModal = ({navigation}) => {
       <View style={styles.bottomSheetSettings}>
         <TouchableOpacity
           style={styles.bottomSheetButton}
-          name="Repeat"
           onPress={() => {
             navigation.push('Repeat');
           }}
         >
           <Text style={styles.bottomSheetText}>Repeat</Text>
         </TouchableOpacity>
-        <TextInput style={styles.bottomSheetInput} />
+        <TextInput
+          style={styles.bottomSheetInput}
+          placeholder="Alarm"
+          onChangeText={(value) => setAlarmSettings({input: value})}
+          value={alarmSettings.input}
+        />
+
         <TouchableOpacity
           style={styles.bottomSheetButton}
           onPress={() => {
@@ -29,7 +52,8 @@ const AlarmBottomSheetModal = ({navigation}) => {
           <Text style={styles.bottomSheetText}>Sound</Text>
         </TouchableOpacity>
         <View style={styles.bottomSheetSwitchView}>
-          <AlarmSettingsSnoozeOption />
+          <Text style={styles.bottomSheetText}>Snooze</Text>
+          <Switch onValueChange={toggleSwitch} value={isEnabled} />
         </View>
       </View>
     </View>
