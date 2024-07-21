@@ -27,11 +27,7 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
             <View style={styles.alarmSettingsRepeatOption}>
               <TouchableOpacity
                 key={`${option.value}`}
-                style={
-                  isChecked
-                    ? [styles.checkboxContainer, styles.activeCheckbox]
-                    : styles.checkboxContainer
-                }
+                style={styles.checkboxContainer}
                 onPress={() => {
                   console.log('option.value onPress', option.value);
                   if (isChecked) {
@@ -44,12 +40,15 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                     );
                     return onChange(updatedCheckedValues);
                   }
+
                   updatedCheckedValues.push(option.value);
                   onChange(updatedCheckedValues);
                 }}
               >
                 <Text>{option.label}</Text>
-                <CheckIcon />
+                <CheckIcon
+                  styles={isChecked ? styles.checkIcon : styles.activeCheckIcon}
+                />
               </TouchableOpacity>
             </View>
           );

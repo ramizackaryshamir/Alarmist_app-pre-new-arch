@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
-import {useStyles} from '../../hooks/useStyles';
+import React from 'react';
+import {Text} from 'react-native';
 
-const CheckIcon = () => {
-  const styles = useStyles();
-  return <Text style={(styles.bottomSheetText, {fontSize: 30})}>✔️</Text>;
+const CheckIcon = ({styles}: any) => {
+  return <Text style={styles}>✔️</Text>;
 };
 export default CheckIcon;

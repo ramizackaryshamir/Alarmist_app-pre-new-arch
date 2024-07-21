@@ -17,4 +17,4 @@ const AlarmSettingsSnoozeOption = () => {
   );
 };
 
-//export default AlarmSettingsSnoozeOption;
+export default AlarmSettingsSnoozeOption;

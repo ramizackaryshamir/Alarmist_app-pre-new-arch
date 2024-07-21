@@ -161,7 +161,7 @@ export const useStyles = () => {
       backgroundColor: 'green',
     },
     alarmSettingsRepeatOptionsContainer: {
-      width: '100%',
+      width: width - 30,
       marginTop: 50,
       borderColor: 'black',
       borderWidth: 5,
@@ -172,6 +172,7 @@ export const useStyles = () => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      width: '100%',
       height: 40,
       paddingRight: 10,
       paddingLeft: 10,
@@ -200,8 +201,13 @@ export const useStyles = () => {
       width: '100%',
       height: '100%',
     },
-    activeCheckbox: {
-      backgroundColor: '#06b6d4' + '13',
+    checkIcon: {
+      color: 'black',
+      fontSize: 20,
+    },
+    activeCheckIcon: {
+      color: 'transparent',
+      fontSize: 20,
     },
     alarmPickerButton: {
       position: 'relative',
