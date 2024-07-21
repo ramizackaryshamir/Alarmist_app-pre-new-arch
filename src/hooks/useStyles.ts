@@ -193,7 +193,16 @@ export const useStyles = () => {
       borderRadius: 5,
       backgroundColor: 'white',
     },
-
+    checkboxContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      height: '100%',
+    },
+    activeCheckbox: {
+      backgroundColor: '#06b6d4' + '13',
+    },
     alarmPickerButton: {
       position: 'relative',
       bottom: 320,

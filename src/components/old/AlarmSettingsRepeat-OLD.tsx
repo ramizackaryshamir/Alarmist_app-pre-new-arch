@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import AlarmSettingsRepeatOption from './AlarmSettingsRepeatOption';
+import AlarmSettingsRepeatOption from './AlarmSettingsRepeatOption-OLD';
 import {useStyles} from '../../hooks/useStyles';
 
 const AlarmSettingsRepeat = () => {

@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import AlarmBottomSheetModal from './src/components/AlarmPicker/AlarmBottomSheetModal';
-import AlarmSettingsRepeat from './src/components/AlarmPicker/AlarmSettingsRepeat';
+import AlarmSettingsRepeatOptionScreen from './src/components/AlarmPicker/AlarmSettingsRepeatOptionScreen';
 import AlarmSettingsSound from './src/components/AlarmPicker/AlarmSettingsSound';
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
@@ -46,7 +46,7 @@ const App = () => {
         />
         <Stack.Screen
           name="Repeat"
-          component={AlarmSettingsRepeat}
+          component={AlarmSettingsRepeatOptionScreen}
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
             //headerTintColor: '#F2D935',
