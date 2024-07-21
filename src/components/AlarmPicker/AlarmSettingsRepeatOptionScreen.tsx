@@ -5,7 +5,7 @@ import AlarmSettingsRepeatOptions from './AlarmSettingsRepeatOptions';
 const AlarmSettingsRepeatOptionScreen = () => {
   const styles = useStyles();
   return (
-    <View style={styles.alarmSettingsRepeatPageContainer}>
+    <View style={styles.alarmSettingsRepeatOptionsPageContainer}>
       <AlarmSettingsRepeatOptions />
     </View>
   );
