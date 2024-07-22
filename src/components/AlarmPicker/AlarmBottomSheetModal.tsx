@@ -17,6 +17,7 @@ interface Route {
 const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   const styles = useStyles();
   const [alarmSettings, setAlarmSettings] = useState<any>({
+    alarmTime: '',
     alarmRepeat: [],
     alarmName: '',
     alarmSound: '',
@@ -32,26 +33,24 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   console.log('alarmName', alarmSettings.alarmName);
 
   useEffect(() => {
-    if (route.params?.alarmRepeat) {
-      //[] placeholder for variable selectedDays
+    //Params 1/2:
+    //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
+    //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
+    if (route.params?.alarmSettings.alarmRepeat) {
       setAlarmSettings({alarmRepeat: []});
     }
-    if (route.params?.alarmName) {
-      setAlarmSettings({alarmName: ''});
-    }
-    if (route.params?.alarmSound) {
-      //[] placeholder for variabl eselectedDays
+    if (route.params?.alarmSettings.alarmSound) {
       setAlarmSettings({alarmSound: ''});
     }
-    if (route.params?.isSnoozed) {
-      //[] placeholder for variabl eselectedDays
-      setAlarmSettings({isSnoozed: true});
-    }
+
+    //sets alarmName to alarmSettings
+    setAlarmSettings({alarmName: ''});
+
+    //sets isSnoozed to alarmSettings
+    setAlarmSettings({isSnoozed: true});
   }, [
-    route.params?.alarmRepeat,
-    route.params?.alarmName,
-    route.params?.alarmSound,
-    route.params?.isSnoozed,
+    route.params?.alarmSettings.alarmRepeat,
+    route.params?.alarmSettings.alarmSound,
   ]);
 
   return (
@@ -86,12 +85,14 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
           <Switch onValueChange={toggleSwitch} value={isEnabled} />
         </View>
       </View>
+      {/*Params 2/2: Screen passes params data back to Home Screen*/}
       <TouchableOpacity
         style={{width: 50, height: 50, backgroundColor: 'blue'}}
         onPress={() => {
+          console.log('alarmSettings:', alarmSettings);
           navigation.navigate({
             name: 'Home',
-            params: {alarmRepeat: alarmSettings.alarmRepeat},
+            params: {alarmSettings: alarmSettings},
           });
         }}
       />
