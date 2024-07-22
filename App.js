@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import AlarmBottomSheetModal from './src/components/AlarmPicker/AlarmBottomSheetModal';
-import AlarmSettingsRepeatOptionScreen from './src/components/AlarmPicker/AlarmSettingsRepeatOptionScreen';
+import AlarmSettingsRepeatOptionScreen from './src/components/AlarmPicker/AlarmSettingsRepeatOptionsScreen/AlarmSettingsRepeatOptionScreen';
 import AlarmSettingsSound from './src/components/AlarmPicker/AlarmSettingsSound';
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
