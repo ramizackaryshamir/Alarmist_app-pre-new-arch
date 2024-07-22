@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useStyles} from '../../hooks/useStyles';
-import CheckIcon from '../AlarmPicker/CheckIcon';
+import CheckIcon from './CheckIcon';
 
 type Option = {
   label: string;
@@ -21,7 +21,6 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
     <>
       <View style={styles.alarmSettingsRepeatOptionsContainer}>
         {options.map((option: Option) => {
-          console.log('option', option);
           let isChecked = updatedCheckedValues.includes(option.value);
           return (
             <View style={styles.alarmSettingsRepeatOption}>
@@ -29,12 +28,13 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                 key={`${option.value}`}
                 style={styles.checkboxContainer}
                 onPress={() => {
-                  console.log('option.value onPress', option.value);
+                  console.log('\x1b[41m', 'option.value', option.value);
                   if (isChecked) {
                     updatedCheckedValues = updatedCheckedValues.filter(
                       (checkedValue) => checkedValue !== option.value,
                     );
                     console.log(
+                      '\x1b[43m',
                       'if isChecked updatedCheckedValues',
                       updatedCheckedValues,
                     );

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Checkbox from '../Inputs/Checkbox';
+import Checkbox from '../../Inputs/Checkbox';
 
 const AlarmSettingsRepeatOptions = () => {
   //state to monitor the values that have been checked
