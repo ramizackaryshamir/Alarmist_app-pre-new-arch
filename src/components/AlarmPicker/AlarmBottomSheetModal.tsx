@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, TextInput, Text, Switch} from 'react-native';
+import {View, TouchableOpacity, TextInput, Text} from 'react-native';
 import TimePicker from './TimePicker';
 import {useStyles} from '../../hooks/useStyles';
+import AlarmSettingsSnoozeOption from './AlarmSettingsSnoozeOption';
 
 interface Navigation {
   navigation: {
@@ -23,14 +24,6 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
     alarmSound: '',
     isSnoozed: false,
   });
-
-  const [isEnabled, setIsEnabled] = useState<boolean>(false);
-
-  const toggleSwitch = () => {
-    setIsEnabled((prevState: boolean) => !prevState);
-  };
-
-  console.log('alarmName', alarmSettings.alarmName);
 
   useEffect(() => {
     //Params 1/2:
@@ -80,10 +73,9 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
         >
           <Text style={styles.bottomSheetText}>Sound</Text>
         </TouchableOpacity>
-        <View style={styles.bottomSheetSwitchView}>
-          <Text style={styles.bottomSheetText}>Snooze</Text>
-          <Switch onValueChange={toggleSwitch} value={isEnabled} />
-        </View>
+        <AlarmSettingsSnoozeOption
+          option={{label: 'Snooze', value: alarmSettings.isSnoozed}}
+        />
       </View>
       {/*Params 2/2: Screen passes params data back to Home Screen*/}
       <TouchableOpacity
