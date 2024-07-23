@@ -17,13 +17,20 @@ interface Route {
 
 const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   const styles = useStyles();
+  const [isEnabled, setIsEnabled] = useState<boolean>(false);
+
   const [alarmSettings, setAlarmSettings] = useState<any>({
     alarmTime: '',
     alarmRepeat: [],
     alarmName: '',
     alarmSound: '',
-    isSnoozed: false,
+    isSnoozed: isEnabled,
   });
+
+  const toggleSwitch = () => {
+    setIsEnabled((prevState: boolean) => !prevState);
+    console.log('isEnabkled', isEnabled);
+  };
 
   useEffect(() => {
     //Params 1/2:
@@ -46,12 +53,12 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
         isSnoozed: alarmSettings.isSnoozed,
       });
     }
-
+    //default action
     setAlarmSettings({
       alarmRepeat: alarmSettings.alarmRepeat,
       alarmName: alarmSettings.alarmName,
       alarmSound: alarmSettings.alarmSound,
-      isSnoozed: alarmSettings.isSnoozed,
+      isSnoozed: isEnabled,
     });
   }, [route.params?.alarmRepeat, route.params?.alarmSound]);
 
@@ -83,7 +90,8 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
           <Text style={styles.bottomSheetText}>Sound</Text>
         </TouchableOpacity>
         <AlarmSettingsSnoozeOption
-          option={{label: 'Snooze', value: alarmSettings.isSnoozed}}
+          option={{label: 'Snooze', value: isEnabled}}
+          onToggle={toggleSwitch}
         />
       </View>
       {/*Params 2/2: Screen passes params data back to Home Screen*/}
