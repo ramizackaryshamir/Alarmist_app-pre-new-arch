@@ -20,8 +20,9 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
 
   const [alarmTime, setAlarmTime] = useState<string>('');
   const [alarmRepeat, setAlarmRepeat] = useState<Array<string>>([]);
-  const [alarmName, setAlarmName] = useState<string>('');
   const [alarmSound, setAlarmSound] = useState<string>('');
+
+  const [alarmName, setAlarmName] = useState<string>('');
   const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
 
   const toggleSwitch = () => {
@@ -32,7 +33,6 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   useEffect(() => {
     //Params 1/2:
     //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
-
     if (route.params?.alarmRepeat) {
       setAlarmRepeat([]);
     }
