@@ -28,23 +28,32 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   useEffect(() => {
     //Params 1/2:
     //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
+
+    if (route.params?.alarmRepeat) {
+      setAlarmSettings({
+        alarmRepeat: alarmSettings.alarmRepeat,
+        alarmName: alarmSettings.alarmName,
+        alarmSound: alarmSettings.alarmSound,
+        isSnoozed: alarmSettings.isSnoozed,
+      });
+    }
     //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
-    if (route.params?.alarmSettings.alarmRepeat) {
-      setAlarmSettings({alarmRepeat: []});
-    }
-    if (route.params?.alarmSettings.alarmSound) {
-      setAlarmSettings({alarmSound: ''});
+    if (route.params?.alarmSound) {
+      setAlarmSettings({
+        alarmRepeat: alarmSettings.alarmRepeat,
+        alarmName: alarmSettings.alarmName,
+        alarmSound: alarmSettings.alarmSound,
+        isSnoozed: alarmSettings.isSnoozed,
+      });
     }
 
-    //sets alarmName to alarmSettings
-    setAlarmSettings({alarmName: ''});
-
-    //sets isSnoozed to alarmSettings
-    setAlarmSettings({isSnoozed: true});
-  }, [
-    route.params?.alarmSettings.alarmRepeat,
-    route.params?.alarmSettings.alarmSound,
-  ]);
+    setAlarmSettings({
+      alarmRepeat: alarmSettings.alarmRepeat,
+      alarmName: alarmSettings.alarmName,
+      alarmSound: alarmSettings.alarmSound,
+      isSnoozed: alarmSettings.isSnoozed,
+    });
+  }, [route.params?.alarmRepeat, route.params?.alarmSound]);
 
   return (
     <View style={styles.bottomSheetContainer}>
