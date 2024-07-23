@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableWithoutFeedback} from 'react-native';
-import {useStyles} from '../../hooks/useStyles';
+import {useStyles} from '../../../hooks/useStyles';
 
 const AlarmSettingsSoundOption = ({ringtone}) => {
   const [isVisible, setIsVisible] = useState(false);

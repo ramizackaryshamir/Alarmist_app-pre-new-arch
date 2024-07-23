@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useStyles} from '../../hooks/useStyles';
-import CheckIcon from './CheckIcon';
 
 type Option = {
   label: string;
@@ -46,9 +45,11 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                 }}
               >
                 <Text>{option.label}</Text>
-                <CheckIcon
-                  styles={isChecked ? styles.checkIcon : styles.activeCheckIcon}
-                />
+                <Text
+                  style={isChecked ? styles.checkIcon : styles.activeCheckIcon}
+                >
+                  ✔️
+                </Text>
               </TouchableOpacity>
             </View>
           );

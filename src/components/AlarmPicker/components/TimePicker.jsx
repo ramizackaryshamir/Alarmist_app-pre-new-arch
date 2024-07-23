@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {TouchableOpacity, Alert} from 'react-native';
 import DatePicker from 'react-native-date-picker';
-import {useStyles} from '../../hooks/useStyles';
+import {useStyles} from '../../../hooks/useStyles';
 
 const TimePicker = () => {
   const [isOpen, setIsOpen] = useState(true);

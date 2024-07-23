@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, TextInput, Text} from 'react-native';
-import TimePicker from '../TimePicker';
+import TimePicker from '../components/TimePicker';
+import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from '../../../hooks/useStyles';
-import AlarmSettingsSnoozeOption from '../AlarmSettingsSnoozeOption';
-
 interface Navigation {
   navigation: {
     navigate: any;
