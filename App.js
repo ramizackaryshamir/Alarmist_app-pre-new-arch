@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
-import AlarmBottomSheetModal from './src/components/AlarmPicker/AlarmBottomSheetModal';
-import AlarmSettingsRepeatOptionScreen from './src/components/AlarmPicker/AlarmSettingsRepeatOptionsScreen/AlarmSettingsRepeatOptionScreen';
-import AlarmSettingsSound from './src/components/AlarmPicker/AlarmSettingsSound';
+import AlarmSettingsScreen from './src/components/AlarmPicker/screens/AlarmSettingsScreen';
+import AlarmSettingsRepeatOptionScreen from './src/components/AlarmPicker/screens/AlarmSettingsRepeatOptionScreen';
+import AlarmSettingsSoundOptionsScreen from './src/components/AlarmPicker/screens/AlarmSettingsSoundOptionsScreen';
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
 import Menu from './src/components/Menu';
@@ -25,8 +25,8 @@ const App = () => {
           }}
         />
         <Stack.Screen
-          name="Alarm Bottom Sheet Modal"
-          component={AlarmBottomSheetModal}
+          name="Alarm Settings Screen"
+          component={AlarmSettingsScreen}
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
             //headerTintColor: '#F2D935',
@@ -55,7 +55,7 @@ const App = () => {
         />
         <Stack.Screen
           name="Sound"
-          component={AlarmSettingsSound}
+          component={AlarmSettingsSoundOptionsScreen}
           options={{
             headerStyle: {backgroundColor: '#F2D935'},
             //headerTintColor: '#F2D935',

@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
-import AlarmSettingsSoundOption from './AlarmSettingsSoundOption';
-import {useStyles} from '../../hooks/useStyles';
+import AlarmSettingsSoundOption from '../AlarmSettingsSoundOption';
+import {useStyles} from '../../../hooks/useStyles';
 import {PianoLoopsRT} from 'piano-loops_ringtone.wav';
 import {SoundWaveRT} from 'sound-wave-ringtone.wav';
-const AlarmSettingsSound = () => {
+const AlarmSettingsSoundOptionsScreen = () => {
   const styles = useStyles();
   const DATA = [
     {
@@ -63,4 +63,4 @@ const AlarmSettingsSound = () => {
   );
 };
 
-export default AlarmSettingsSound;
+export default AlarmSettingsSoundOptionsScreen;

@@ -12,7 +12,7 @@ const HomeScreen = ({navigation}) => {
           style={styles.homeScreenAddAlramButton}
           name="New Alarm"
           onPress={() => {
-            navigation.navigate('Alarm Bottom Sheet Modal');
+            navigation.navigate('Alarm Settings Screen');
           }}
         />
       </View>

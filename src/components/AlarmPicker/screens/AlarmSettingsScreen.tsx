@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, TextInput, Text} from 'react-native';
-import TimePicker from './TimePicker';
-import {useStyles} from '../../hooks/useStyles';
-import AlarmSettingsSnoozeOption from './AlarmSettingsSnoozeOption';
+import TimePicker from '../TimePicker';
+import {useStyles} from '../../../hooks/useStyles';
+import AlarmSettingsSnoozeOption from '../AlarmSettingsSnoozeOption';
 
 interface Navigation {
   navigation: {
@@ -15,7 +15,7 @@ interface Route {
   params: any;
 }
 
-const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
+const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
   const styles = useStyles();
 
   const [alarmTime, setAlarmTime] = useState<string>('');
@@ -34,11 +34,11 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
     //Params 1/2:
     //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
     if (route.params?.alarmRepeat) {
-      setAlarmRepeat([]);
+      setAlarmRepeat(alarmRepeat);
     }
     //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
     if (route.params?.alarmSound) {
-      setAlarmSound('');
+      setAlarmSound(alarmSound);
     }
   }, [route.params?.alarmRepeat, route.params?.alarmSound]);
 
@@ -100,4 +100,4 @@ const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   );
 };
 
-export default AlarmBottomSheetModal;
+export default AlarmSettingsScreen;

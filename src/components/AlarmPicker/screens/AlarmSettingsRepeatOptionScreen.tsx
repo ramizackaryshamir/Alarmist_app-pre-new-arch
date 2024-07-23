@@ -3,7 +3,7 @@ import {View, TouchableOpacity} from 'react-native';
 import {useStyles} from '../../../hooks/useStyles';
 import Checkbox from '../../Inputs/Checkbox';
 
-const AlarmSettingsRepeatOptionScreen = ({navigation}) => {
+const AlarmSettingsRepeatOptionScreen = ({navigation, route}) => {
   const [selectedDays, setSelectedDays] = useState<[]>([]);
   console.log('selectedDays', selectedDays);
   const styles = useStyles();
@@ -26,9 +26,9 @@ const AlarmSettingsRepeatOptionScreen = ({navigation}) => {
         style={{width: 20, height: 20, backgroundColor: 'blue'}}
         onPress={() => {
           navigation.navigate({
-            name: 'Alarm Bottom Sheet Modal',
+            name: 'Alarm Settings Screen',
             params: {
-              selectedDays: selectedDays,
+              alarmRepeat: selectedDays,
             },
           });
         }}
