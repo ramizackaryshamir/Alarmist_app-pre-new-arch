@@ -1,28 +1,50 @@
-import React, {useState} from 'react';
-import {View, TouchableOpacity, TextInput, Text, Switch} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, TouchableOpacity, TextInput, Text} from 'react-native';
 import TimePicker from './TimePicker';
 import {useStyles} from '../../hooks/useStyles';
+import AlarmSettingsSnoozeOption from './AlarmSettingsSnoozeOption';
 
 interface Navigation {
   navigation: {
-    navigate: string;
+    navigate: (arg0: {name: string; params: any}) => void;
     push: (arg0: string) => void;
   };
 }
-const AlarmBottomSheetModal = ({navigation}: Navigation) => {
+interface Route {
+  route: string;
+  params: any;
+}
+
+const AlarmBottomSheetModal = ({navigation}: Navigation, route: Route) => {
   const styles = useStyles();
   const [alarmSettings, setAlarmSettings] = useState<any>({
-    input: '',
-    isEnabled: false,
+    alarmTime: '',
+    alarmRepeat: [],
+    alarmName: '',
+    alarmSound: '',
+    isSnoozed: false,
   });
 
-  const [isEnabled, setIsEnabled] = useState<boolean>(false);
+  useEffect(() => {
+    //Params 1/2:
+    //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
+    //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
+    if (route.params?.alarmSettings.alarmRepeat) {
+      setAlarmSettings({alarmRepeat: []});
+    }
+    if (route.params?.alarmSettings.alarmSound) {
+      setAlarmSettings({alarmSound: ''});
+    }
 
-  const toggleSwitch = () => {
-    setIsEnabled((prevState: boolean) => !prevState);
-  };
+    //sets alarmName to alarmSettings
+    setAlarmSettings({alarmName: ''});
 
-  console.log('input', alarmSettings.input);
+    //sets isSnoozed to alarmSettings
+    setAlarmSettings({isSnoozed: true});
+  }, [
+    route.params?.alarmSettings.alarmRepeat,
+    route.params?.alarmSettings.alarmSound,
+  ]);
 
   return (
     <View style={styles.bottomSheetContainer}>
@@ -39,8 +61,8 @@ const AlarmBottomSheetModal = ({navigation}: Navigation) => {
         <TextInput
           style={styles.bottomSheetInput}
           placeholder="Alarm"
-          onChangeText={(value) => setAlarmSettings({input: value})}
-          value={alarmSettings.input}
+          onChangeText={(value) => setAlarmSettings({alarmName: value})}
+          value={alarmSettings.alarmName}
         />
 
         <TouchableOpacity
@@ -51,11 +73,21 @@ const AlarmBottomSheetModal = ({navigation}: Navigation) => {
         >
           <Text style={styles.bottomSheetText}>Sound</Text>
         </TouchableOpacity>
-        <View style={styles.bottomSheetSwitchView}>
-          <Text style={styles.bottomSheetText}>Snooze</Text>
-          <Switch onValueChange={toggleSwitch} value={isEnabled} />
-        </View>
+        <AlarmSettingsSnoozeOption
+          option={{label: 'Snooze', value: alarmSettings.isSnoozed}}
+        />
       </View>
+      {/*Params 2/2: Screen passes params data back to Home Screen*/}
+      <TouchableOpacity
+        style={{width: 50, height: 50, backgroundColor: 'blue'}}
+        onPress={() => {
+          console.log('alarmSettings:', alarmSettings);
+          navigation.navigate({
+            name: 'Home',
+            params: {alarmSettings: alarmSettings},
+          });
+        }}
+      />
     </View>
   );
 };

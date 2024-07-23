@@ -8,7 +8,7 @@ import AlarmSettingsSound from './src/components/AlarmPicker/AlarmSettingsSound'
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
 import Menu from './src/components/Menu';
-import {TouchableOpacity, Button, Text} from 'react-native';
+import {TouchableOpacity, Text} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
