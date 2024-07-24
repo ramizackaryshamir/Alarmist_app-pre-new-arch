@@ -16,17 +16,20 @@ interface Route {
 const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
   const styles = useStyles();
 
-  const [alarmTime, setAlarmTime] = useState<string>('');
-  const [alarmSound, setAlarmSound] = useState<string>('');
-
+  const [alarmTime, setAlarmTime] = useState<any>(new Date());
   const [alarmRepeat, setAlarmRepeat] = useState<Array<string>>([]);
   const [alarmName, setAlarmName] = useState<string>('');
   const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
 
+  const [alarmSound, setAlarmSound] = useState<string>('');
+
   const toggleSwitch = () => {
     setIsSnoozed((prevState: boolean) => !prevState);
   };
-
+  console.log(new Date());
+  console.group('\x1b[44m');
+  console.log('alarmTime: ', alarmTime, typeof alarmTime);
+  console.groupEnd();
   useEffect(() => {
     //Params 1a/2:
     //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
@@ -45,9 +48,13 @@ const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
     alarmSound,
   ]);
 
+  const handleAlarmTimeChange = (value: any) => {
+    setAlarmTime(value);
+  };
+
   return (
     <View style={styles.bottomSheetContainer}>
-      <TimePicker />
+      <TimePicker alarmTime={alarmTime} onChange={handleAlarmTimeChange} />
       <View style={styles.bottomSheetSettings}>
         <TouchableOpacity
           style={styles.bottomSheetButton}
@@ -98,7 +105,7 @@ const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
           navigation.navigate({
             name: 'Home',
             params: {
-              alarmTime: alarmTime,
+              alarmTime: alarmTime.toString(),
               alarmRepeat: alarmRepeat,
               alarmName: alarmName,
               alarmSound: alarmSound,
