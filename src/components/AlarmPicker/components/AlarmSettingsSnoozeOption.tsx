@@ -13,7 +13,7 @@ interface SnoozeOptionsProps {
 
 const AlarmSettingsSnoozeOption = ({option, onToggle}: SnoozeOptionsProps) => {
   const styles = useStyles();
-  console.log('option.value', option.value);
+  console.log('\x1b[100m', 'option.value', option.value);
   return (
     <>
       <View style={styles.bottomSheetSwitchView}>

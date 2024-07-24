@@ -4,12 +4,13 @@ import DatePicker from 'react-native-date-picker';
 import {useStyles} from '../../../hooks/useStyles';
 
 const TimePicker = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  //const [isOpen, setIsOpen] = useState(true);
   const [alarmTime, setAlarmTime] = useState(new Date());
   const styles = useStyles();
 
-  console.log('\x1b[44m', 'alarmTime: ', alarmTime);
-
+  console.group('\x1b[44m');
+  console.log('alarmTime: ', alarmTime);
+  console.groupEnd();
   //
   //TODO: NOTE: NewAlarm logic should be abstracted from TimePicker to its own component 07172024
   //
@@ -30,18 +31,18 @@ const TimePicker = () => {
   return (
     <>
       <TouchableOpacity
+        style={{width: 30, height: 20, backgroundColor: 'white'}}
         title="Open"
-        onPress={() => setIsOpen(true)}
-        style={styles.alarmPickerButton}
+        onPress={() => setAlarmTime(alarmTime)}
+        //style={styles.alarmPickerButton}
       />
       <DatePicker
-        open={isOpen}
+        //open={isOpen}
         date={alarmTime}
-        onConfirm={(value) => {
-          setIsOpen(false);
+        onDateChange={(value) => {
+          //setIsOpen(false);
           setAlarmTime(value);
         }}
-        onCancel={() => setIsOpen(false)}
         title="Alarm"
       />
     </>
