@@ -27,7 +27,8 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                 key={`${option.value}`}
                 style={styles.checkboxContainer}
                 onPress={() => {
-                  console.log('\x1b[41m', 'option.value', option.value);
+                  console.group('\x1b[41m');
+                  console.log('option.value', option.value);
                   if (isChecked) {
                     updatedCheckedValues = updatedCheckedValues.filter(
                       (checkedValue) => checkedValue !== option.value,
@@ -37,6 +38,7 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                       'if isChecked updatedCheckedValues',
                       updatedCheckedValues,
                     );
+                    console.groupEnd();
                     return onChange(updatedCheckedValues);
                   }
 

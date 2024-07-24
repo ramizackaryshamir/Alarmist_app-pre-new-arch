@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {TouchableOpacity, Alert} from 'react-native';
 import DatePicker from 'react-native-date-picker';
 import {useStyles} from '../../../hooks/useStyles';
@@ -8,7 +8,7 @@ const TimePicker = () => {
   const [alarmTime, setAlarmTime] = useState(new Date());
   const styles = useStyles();
 
-  console.log('alarmTime: ', alarmTime);
+  console.log('\x1b[44m', 'alarmTime: ', alarmTime);
 
   //
   //TODO: NOTE: NewAlarm logic should be abstracted from TimePicker to its own component 07172024

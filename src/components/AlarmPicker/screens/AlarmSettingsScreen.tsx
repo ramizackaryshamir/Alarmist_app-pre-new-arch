@@ -88,11 +88,13 @@ const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
       <TouchableOpacity
         style={{width: 50, height: 50, backgroundColor: 'blue'}}
         onPress={() => {
+          console.group('\x1b[42m');
           console.log('alarmTime:', alarmTime);
           console.log('alarmRepeat:', alarmRepeat);
           console.log('alarmName:', alarmName);
           console.log('alarmSound:', alarmSound);
           console.log('isSnoozed:', isSnoozed);
+          console.groupEnd();
           navigation.navigate({
             name: 'Home',
             params: {
