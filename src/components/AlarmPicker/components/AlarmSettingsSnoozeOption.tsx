@@ -13,8 +13,10 @@ interface SnoozeOptionsProps {
 
 const AlarmSettingsSnoozeOption = ({option, onToggle}: SnoozeOptionsProps) => {
   const styles = useStyles();
-
-  console.log('\x1b[100m', 'option.value', option.value);
+  console.group('\x1b[100m');
+  console.log('Snooze Option');
+  console.log('option.value', option.value);
+  console.groupEnd();
 
   return (
     <>

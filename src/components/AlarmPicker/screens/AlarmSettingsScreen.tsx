@@ -27,7 +27,8 @@ const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
     setIsSnoozed((prevState: boolean) => !prevState);
   };
   console.log(new Date());
-  console.group('\x1b[44m');
+  console.group('\x1b[41m');
+  console.log('Alarm Settings Screen');
   console.log('alarmTime: ', alarmTime, typeof alarmTime);
   console.groupEnd();
   useEffect(() => {
@@ -93,9 +94,10 @@ const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
       </View>
       {/*Params 2/2: Screen passes params data back to Home Screen*/}
       <TouchableOpacity
-        style={{width: 50, height: 50, backgroundColor: 'blue'}}
+        style={{width: 50, height: 50, backgroundColor: '#E4EBE6'}}
         onPress={() => {
-          console.group('\x1b[42m');
+          console.group('\x1b[41m');
+          console.log('Alarm Settings Screen');
           console.log('alarmTime:', alarmTime);
           console.log('alarmRepeat:', alarmRepeat);
           console.log('alarmName:', alarmName);

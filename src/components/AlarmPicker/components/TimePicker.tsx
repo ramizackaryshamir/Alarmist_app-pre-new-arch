@@ -8,6 +8,7 @@ type TimePickerProps = {
 
 const TimePicker = ({alarmTime, onChange}: TimePickerProps) => {
   console.group('\x1b[44m');
+  console.log('Time Picker');
   console.log('alarmTime: ', alarmTime, typeof alarmTime);
   console.groupEnd();
   //
@@ -30,7 +31,12 @@ const TimePicker = ({alarmTime, onChange}: TimePickerProps) => {
 
   return (
     <>
-      <DatePicker date={alarmTime} onDateChange={onChange} title="Alarm" />
+      <DatePicker
+        style={{backgroundColor: 'blue'}}
+        date={alarmTime}
+        onDateChange={onChange}
+        title="Alarm"
+      />
     </>
   );
 };

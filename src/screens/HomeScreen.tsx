@@ -14,22 +14,38 @@ interface Route {
   params: any;
 }
 const HomeScreen = ({navigation}: Navigation) => {
+  //
   const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
   const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
   const [newAlarmName, setNewAlarmName] = useState<string>('');
   const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
-
   const [newAlarmSound, setNewAarmSound] = useState<string>('');
+  //
+
+  const [newAlarm, setNewAlarm] = useState({
+    newAlarmTime: new Date(),
+    newAlarmRepeat: [],
+    newAlarmName: '',
+    isSnoozed: false,
+    newAlarmSound: '',
+  });
 
   const styles = useStyles();
 
-  console.group('\x1b[42m');
+  console.group('\x1b[46m');
+  console.log('Home Screen');
   console.log('newAlarmTime:', newAlarmTime);
   console.log('newAlarmRepeat:', newAlarmRepeat);
   console.log('newAlarmName:', newAlarmName);
   console.log('newAlarmSound:', newAlarmSound);
   console.log('isSnoozed:', isSnoozed);
   console.groupEnd();
+
+  console.group('\x1b[46m');
+  console.log('Home Screen');
+  console.log('newAlarm', newAlarm);
+  console.groupEnd();
+
   return (
     <>
       <View style={styles.homeScreenContainer}>

@@ -23,7 +23,7 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}) => {
         onChange={setSelectedDays}
       />
       <TouchableOpacity
-        style={{width: 20, height: 20, backgroundColor: 'blue'}}
+        style={{width: 20, height: 20, backgroundColor: '#E4EBE6'}}
         onPress={() => {
           route.params.onGoBack(
             //instead of passing back selectedDays, the data is serialized to be able to use state persistence and for screen components to have the right cointract for implementing deep linking.

@@ -27,7 +27,8 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                 key={`${option.value}`}
                 style={styles.checkboxContainer}
                 onPress={() => {
-                  console.group('\x1b[41m');
+                  console.group('\x1b[42m');
+                  console.log('Alarm Settings Repeat Options Screen');
                   console.log('option.value', option.value);
                   if (isChecked) {
                     updatedCheckedValues = updatedCheckedValues.filter(

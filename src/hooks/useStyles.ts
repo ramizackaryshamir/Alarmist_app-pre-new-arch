@@ -12,14 +12,14 @@ export const useStyles = () => {
       alignItems: 'center',
       width: width,
       height: height,
-      backgroundColor: '#F2D935',
+      backgroundColor: '#00FFFF',
     },
     homeScreenAddAlramButton: {
       bottom: 300,
       left: 130,
       width: 30,
       height: 30,
-      backgroundColor: 'red',
+      backgroundColor: '#E4EBE6',
     },
     digitalClockScreenContainer: {
       flex: 1,
@@ -184,7 +184,7 @@ export const useStyles = () => {
       width: width,
       height: height,
       paddingTop: 20,
-      backgroundColor: 'green',
+      backgroundColor: '#FF00FF',
     },
     alarmSettingsSoundFlatListContainer: {
       width: width - 20,
