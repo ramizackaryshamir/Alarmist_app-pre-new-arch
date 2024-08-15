@@ -13,7 +13,7 @@ interface Route {
   route: string;
   params: any;
 }
-const HomeScreen = ({navigation}: Navigation) => {
+const HomeScreen = ({navigation}: Navigation, route) => {
   //
   const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
   const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
@@ -21,16 +21,6 @@ const HomeScreen = ({navigation}: Navigation) => {
   const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
   const [newAlarmSound, setNewAarmSound] = useState<string>('');
   //
-
-  const [newAlarm, setNewAlarm] = useState({
-    newAlarmTime: new Date(),
-    newAlarmRepeat: [],
-    newAlarmName: '',
-    isSnoozed: false,
-    newAlarmSound: '',
-  });
-
-  const styles = useStyles();
 
   console.group('\x1b[46m');
   console.log('Home Screen');
@@ -41,18 +31,49 @@ const HomeScreen = ({navigation}: Navigation) => {
   console.log('isSnoozed:', isSnoozed);
   console.groupEnd();
 
-  console.group('\x1b[46m');
-  console.log('Home Screen');
-  console.log('newAlarm', newAlarm);
-  console.groupEnd();
+  //const [newAlarm, setNewAlarm] = useState({
+  //  newAlarmTime: new Date(),
+  //  newAlarmRepeat: [],
+  //  newAlarmName: '',
+  //  isSnoozed: false,
+  //  newAlarmSound: '',
+  //});
 
+  //console.group('\x1b[46m');
+  //console.log('Home Screen');
+  //console.log('newAlarm', newAlarm);
+  //console.groupEnd();
+
+  const styles = useStyles();
+
+  useEffect(() => {
+    if (route.params?.newAlarm) {
+      setNewAlarmTime(newAlarmTime);
+      setNewAlarmName(newAlarmName);
+      setNewAlarmRepeat(newAlarmRepeat);
+      setIsSnoozed(isSnoozed);
+    }
+  }, [
+    route.params?.newAlarm,
+    newAlarmTime,
+    newAlarmName,
+    isSnoozed,
+    newAlarmRepeat,
+  ]);
   return (
     <>
       <View style={styles.homeScreenContainer}>
         <TouchableOpacity
           style={styles.homeScreenAddAlramButton}
           onPress={() => {
-            navigation.navigate('Alarm Settings Screen');
+            navigation.navigate('Alarm Settings Screen', {
+              onGoBack: (data: any) => {
+                setNewAlarmTime(data.newAlarmTime);
+                setNewAlarmName(data.newAlarmName);
+                setNewAlarmRepeat(data.newAlarmRepeat);
+                setIsSnoozed(data.isSnoozed);
+              },
+            });
           }}
         />
       </View>

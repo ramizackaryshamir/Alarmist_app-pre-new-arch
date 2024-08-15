@@ -14,17 +14,21 @@ interface CheckboxProps {
 }
 const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
   const styles = useStyles();
+
   let updatedCheckedValues: Array<string> = [...checkedValues];
   console.log('checkedValues', checkedValues);
+
   return (
     <>
       <View style={styles.alarmSettingsRepeatOptionsContainer}>
         {options.map((option: Option) => {
           let isChecked = updatedCheckedValues.includes(option.value);
           return (
-            <View style={styles.alarmSettingsRepeatOption}>
+            <View
+              key={`${option.value}`}
+              style={styles.alarmSettingsRepeatOption}
+            >
               <TouchableOpacity
-                key={`${option.value}`}
                 style={styles.checkboxContainer}
                 onPress={() => {
                   console.group('\x1b[42m');

@@ -3,17 +3,8 @@ import {View, TouchableOpacity, TextInput, Text} from 'react-native';
 import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from '../../../hooks/useStyles';
-interface Navigation {
-  navigation: {
-    navigate: any;
-  };
-}
-interface Route {
-  route: string;
-  params: any;
-}
 
-const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
+const AlarmSettingsScreen = ({navigation, route}: any) => {
   const styles = useStyles();
 
   const [alarmTime, setAlarmTime] = useState<any>(new Date());
@@ -104,16 +95,25 @@ const AlarmSettingsScreen = ({navigation}: Navigation, route: Route) => {
           console.log('alarmSound:', alarmSound);
           console.log('isSnoozed:', isSnoozed);
           console.groupEnd();
-          navigation.navigate({
-            name: 'Home',
-            params: {
-              alarmTime: alarmTime.toString(),
-              alarmRepeat: alarmRepeat,
-              alarmName: alarmName,
-              alarmSound: alarmSound,
-              isSnoozed: isSnoozed,
-            },
+
+          route.params.onGoBack({
+            alarmTime: alarmTime,
+            alarmRepeat: alarmRepeat,
+            alarmName: alarmName,
+            alarmSound: alarmSound,
+            isSnoozed: isSnoozed,
           });
+          navigation.goBack();
+          //navigation.navigate({
+          //  name: 'Home',
+          //  params: {
+          //    alarmTime: alarmTime.toString(),
+          //    alarmRepeat: alarmRepeat,
+          //    alarmName: alarmName,
+          //    alarmSound: alarmSound,
+          //    isSnoozed: isSnoozed,
+          //  },
+          //});
         }}
       />
     </View>
