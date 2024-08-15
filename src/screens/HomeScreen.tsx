@@ -47,15 +47,19 @@ const HomeScreen = ({navigation}: Navigation, route) => {
   const styles = useStyles();
 
   useEffect(() => {
-    if (route.params?.newAlarm) {
-      setNewAlarmTime(newAlarmTime);
+    if (route.params?.newAlarmName) {
       setNewAlarmName(newAlarmName);
+    }
+    if (route.params?.newAlarmRepeat) {
       setNewAlarmRepeat(newAlarmRepeat);
+    }
+    if (route.params?.isSnoozed) {
       setIsSnoozed(isSnoozed);
     }
   }, [
-    route.params?.newAlarm,
-    newAlarmTime,
+    route.params?.newAlarmName,
+    route.params?.newAlarmRepeat,
+    route.params?.isSnoozed,
     newAlarmName,
     isSnoozed,
     newAlarmRepeat,
@@ -63,6 +67,7 @@ const HomeScreen = ({navigation}: Navigation, route) => {
   return (
     <>
       <View style={styles.homeScreenContainer}>
+        {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
           style={styles.homeScreenAddAlramButton}
           onPress={() => {
@@ -71,7 +76,7 @@ const HomeScreen = ({navigation}: Navigation, route) => {
                 setNewAlarmTime(data.newAlarmTime);
                 setNewAlarmName(data.newAlarmName);
                 setNewAlarmRepeat(data.newAlarmRepeat);
-                setIsSnoozed(data.isSnoozed);
+                //setIsSnoozed(data.isSnoozed);
               },
             });
           }}

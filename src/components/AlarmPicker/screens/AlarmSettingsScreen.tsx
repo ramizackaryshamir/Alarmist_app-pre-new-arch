@@ -84,6 +84,8 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         />
       </View>
       {/*Params 2/2: Screen passes params data back to Home Screen*/}
+
+      {/*TODO This Button Goes Back*/}
       <TouchableOpacity
         style={{width: 50, height: 50, backgroundColor: '#E4EBE6'}}
         onPress={() => {
@@ -97,13 +99,14 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           console.groupEnd();
 
           route.params.onGoBack({
-            alarmTime: alarmTime,
+            alarmTime: alarmTime.toString(),
             alarmRepeat: alarmRepeat,
             alarmName: alarmName,
             alarmSound: alarmSound,
             isSnoozed: isSnoozed,
           });
           navigation.goBack();
+
           //navigation.navigate({
           //  name: 'Home',
           //  params: {
