@@ -14,7 +14,7 @@ export const useStyles = () => {
       height: height,
       backgroundColor: '#00FFFF',
     },
-    homeScreenAddAlramButton: {
+    homeScreenAddAlarmButton: {
       bottom: 300,
       left: 130,
       width: 30,
