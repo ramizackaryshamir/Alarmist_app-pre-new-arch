@@ -6,24 +6,34 @@ import {useStyles} from '../hooks/useStyles';
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
 
-  const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
-  const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
-  const [newAlarmName, setNewAlarmName] = useState<string>('');
-  const [newAlarmSound, setNewAlarmSound] = useState<string>('');
-  const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
+  //const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
+  //const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
+  //const [newAlarmName, setNewAlarmName] = useState<string>('');
+  //const [newAlarmSound, setNewAlarmSound] = useState<string>('');
+  //const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
+
+  const [newAlarm, setNewAlarm] = useState({
+    time: '',
+    repeat: [],
+    name: '',
+    sound: [],
+    isSnoozed: false,
+  });
 
   console.group('\x1b[46m');
   console.log('Home Screen');
-  console.log('newAlarmTime:', newAlarmTime);
-  console.log('newAlarmRepeat:', newAlarmRepeat);
-  console.log('newAlarmName:', newAlarmName);
-  console.log('newAlarmSound:', newAlarmSound);
-  console.log('isSnoozed:', isSnoozed);
+  console.log('newAlarm.time:', newAlarm.time);
+  console.log('newAlarm.repeat:', newAlarm.repeat);
+  console.log('newAlarm.name:', newAlarm.name);
+  console.log('newAlarm.sound:', newAlarm.sound);
+  console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
   console.groupEnd();
 
   return (
     <>
       <View style={styles.homeScreenContainer}>
+        {/*//*/}
+        {/*//*/}
         {/*//*/}
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
@@ -31,15 +41,19 @@ const HomeScreen = ({navigation, route}) => {
           onPress={() => {
             navigation.navigate('Alarm Settings Screen', {
               onGoBack: (data: any) => {
-                setNewAlarmTime(data.alarmTime);
-                setNewAlarmRepeat(data.alarmRepeat);
-                setNewAlarmName(data.alarmName);
-                setNewAlarmSound(data.alarmSound);
-                setIsSnoozed(data.isSnoozed);
+                setNewAlarm({
+                  time: data.alarmTime,
+                  repeat: data.alarmRepeat,
+                  name: data.alarmName,
+                  sound: data.alarmSounf,
+                  isSnoozed: data.isSnoozed,
+                });
               },
             });
           }}
         />
+        {/*//*/}
+        {/*//*/}
         {/*//*/}
       </View>
       <Menu navigation={navigation} />
