@@ -113,9 +113,9 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           console.log('isSnoozed:', isSnoozed);
           console.groupEnd();
           route.params.onGoBack({
-            alarmTime: alarmTime.toString(),
+            alarmTime: JSON.stringify(alarmTime.toString()),
             alarmRepeat: alarmRepeat,
-            alarmName: alarmName,
+            alarmName: JSON.stringify(alarmName),
             alarmSound: alarmSound,
             isSnoozed: isSnoozed,
           });

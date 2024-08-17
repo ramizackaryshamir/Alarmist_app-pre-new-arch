@@ -3,21 +3,29 @@ import {View, TouchableOpacity} from 'react-native';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 
+interface NewAlarm {
+  time: string;
+  repeat: Array<string>;
+  name: string;
+  sound: Array<string>;
+  isSnoozed: boolean;
+}
+
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
 
-  //const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
-  //const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
-  //const [newAlarmName, setNewAlarmName] = useState<string>('');
-  //const [newAlarmSound, setNewAlarmSound] = useState<string>('');
-  //const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
-
-  const [newAlarm, setNewAlarm] = useState({
+  const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     time: '',
     repeat: [],
     name: '',
     sound: [],
     isSnoozed: false,
+  });
+
+  const [alarms, setAlarms] = useState([]);
+
+  useEffect(() => {
+    console.log(route);
   });
 
   console.group('\x1b[46m');
