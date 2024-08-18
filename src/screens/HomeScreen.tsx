@@ -22,11 +22,12 @@ const HomeScreen = ({navigation, route}) => {
     isSnoozed: false,
   });
 
-  const [alarms, setAlarms] = useState([]);
+  const [alarms, setAlarms] = useState<any>([]);
 
   useEffect(() => {
-    console.log(route);
-  });
+    setAlarms([newAlarm, ...alarms]);
+    console.log('alarms', alarms);
+  }, [newAlarm]);
 
   console.group('\x1b[46m');
   console.log('Home Screen');
