@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity, Text} from 'react-native';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 
@@ -61,6 +61,13 @@ const HomeScreen = ({navigation, route}) => {
             });
           }}
         />
+        {alarms.map((alarm) => {
+          return (
+            <View>
+              <Text>{alarm.time}</Text>
+            </View>
+          );
+        })}
         {/*//*/}
         {/*//*/}
         {/*//*/}
