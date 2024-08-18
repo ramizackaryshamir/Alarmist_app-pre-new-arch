@@ -26,9 +26,9 @@ const HomeScreen = ({navigation, route}) => {
 
   useEffect(() => {
     setAlarms([newAlarm, ...alarms]);
-    console.log('alarms', alarms);
   }, [newAlarm]);
 
+  console.log('alarms', alarms);
   console.group('\x1b[46m');
   console.log('Home Screen');
   console.log('newAlarm.time:', newAlarm.time);
@@ -54,7 +54,7 @@ const HomeScreen = ({navigation, route}) => {
                   time: data.alarmTime,
                   repeat: data.alarmRepeat,
                   name: data.alarmName,
-                  sound: data.alarmSounf,
+                  sound: data.alarmSound,
                   isSnoozed: data.isSnoozed,
                 });
               },

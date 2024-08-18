@@ -28,11 +28,22 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     if (route.params?.alarmSound) {
       setAlarmSound(alarmSound);
     }
+    console.group('\x1b[41m');
+    console.log('Alarm Settings Screen');
+    console.log('alarmTime:', alarmTime);
+    console.log('alarmRepeat:', alarmRepeat);
+    console.log('alarmName:', alarmName);
+    console.log('alarmSound:', alarmSound);
+    console.log('isSnoozed:', isSnoozed);
+    console.groupEnd();
   }, [
     route.params?.alarmRepeat,
     route.params?.alarmSound,
     alarmRepeat,
     alarmSound,
+    isSnoozed,
+    alarmName,
+    alarmTime,
   ]);
 
   const handleAlarmTimeChange = (value: any) => {

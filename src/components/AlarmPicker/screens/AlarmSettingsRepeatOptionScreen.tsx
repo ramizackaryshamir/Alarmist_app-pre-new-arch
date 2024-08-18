@@ -27,7 +27,7 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}) => {
         onPress={() => {
           route.params.onGoBack(
             //instead of passing back selectedDays, the data is serialized to be able to use state persistence and for screen components to have the right cointract for implementing deep linking.
-            {selectedDays: selectedDays},
+            JSON.stringify(selectedDays),
           );
           navigation.goBack();
         }}
