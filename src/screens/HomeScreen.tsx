@@ -15,9 +15,9 @@ const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
 
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
-    time: '',
+    time: new Date().toString(),
     repeat: [],
-    name: '',
+    name: 'Alarm',
     sound: [],
     isSnoozed: false,
   });
@@ -26,11 +26,16 @@ const HomeScreen = ({navigation, route}) => {
 
   useEffect(() => {
     setAlarms([newAlarm, ...alarms]);
-  }, [newAlarm]);
 
-  console.log('alarms', alarms);
+    console.log('route', route);
+  }, [newAlarm, route]);
+
+  console.group('\x1b[40m');
+  console.log('route', route);
+  console.groupEnd();
   console.group('\x1b[46m');
   console.log('Home Screen');
+  console.log('alarms', alarms);
   console.log('newAlarm.time:', newAlarm.time);
   console.log('newAlarm.repeat:', newAlarm.repeat);
   console.log('newAlarm.name:', newAlarm.name);

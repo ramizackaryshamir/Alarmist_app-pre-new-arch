@@ -123,16 +123,16 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           console.log('alarmSound:', alarmSound);
           console.log('isSnoozed:', isSnoozed);
           console.groupEnd();
-          //navigation.navigate({
-          //  name: 'Home',
-          //  params: {
-          //    alarmTime: alarmTime.toString(),
-          //    alarmRepeat: alarmRepeat,
-          //    alarmName: alarmName,
-          //    alarmSound: alarmSound,
-          //    isSnoozed: isSnoozed,
-          //  },
-          //});
+          navigation.navigate({
+            name: 'Home',
+            params: {
+              alarmTime: alarmTime.toString(),
+              alarmRepeat: alarmRepeat,
+              alarmName: alarmName,
+              alarmSound: alarmSound,
+              isSnoozed: isSnoozed,
+            },
+          });
           route.params.onGoBack({
             alarmTime: alarmTime.toString(),
             alarmRepeat: alarmRepeat,
@@ -140,7 +140,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
             alarmSound: alarmSound,
             isSnoozed: isSnoozed,
           });
-          navigation.goBack();
+          //navigation.goBack();
         }}
       />
       {/*//*/}
