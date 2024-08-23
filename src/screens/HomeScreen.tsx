@@ -76,9 +76,10 @@ const HomeScreen = ({navigation, route}) => {
         {/*//*/}
       </View>
       <View style={styles.alarmsContainer}>
-        {alarms.map((alarm) => {
+        {alarms.map((alarm, index) => {
           return (
             <Alarm
+              key={`${alarm.time}${index}`}
               alarmName={alarm.name}
               alarmTime={alarm.time}
               alarmRepeat={alarm.repeat}

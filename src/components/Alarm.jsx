@@ -7,9 +7,13 @@ const Alarm = ({alarmTime, alarmName, alarmRepeat}) => {
 
   return (
     <View style={styles.alarmContainer}>
-      <Text>{alarmTime}</Text>
-      <Text>{alarmName}</Text>
-      <Text>{alarmRepeat}</Text>
+      <View style={styles.alarmContainerTop}>
+        <Text style={styles.alarmTextTop}>{alarmTime}</Text>
+      </View>
+      <View style={styles.alarmContainerBottom}>
+        <Text>{alarmName}</Text>
+        <Text>{alarmRepeat}</Text>
+      </View>
     </View>
   );
 };

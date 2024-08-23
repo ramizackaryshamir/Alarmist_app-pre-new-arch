@@ -30,14 +30,31 @@ export const useStyles = () => {
       backgroundColor: 'yellow',
     },
     alarmContainer: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
       justifyContent: 'flex-start',
+      columnGap: 10,
       //alignItems: 'center',
       width: width - 30,
       borderColor: 'black',
       borderWidth: 3,
       backgroundColor: 'purple',
+    },
+    alarmContainerTop: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      flexWrap: 'nowrap',
+      //alignItems: 'center',
+    },
+    alarmTextTop: {
+      color: 'white',
+      fontSize: 20,
+    },
+    alarmContainerBottom: {
+      flexDirection: 'row',
+      //justifyContent: 'space-between',
+      columnGap: 5,
+      //alignItems: 'center',
     },
     digitalClockScreenContainer: {
       flex: 1,
