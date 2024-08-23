@@ -65,6 +65,8 @@ const HomeScreen = ({navigation, route}) => {
           return (
             <View>
               <Text>{alarm.time}</Text>
+              <Text>{alarm.name}</Text>
+              <Text>{alarm.repeat}</Text>
             </View>
           );
         })}
