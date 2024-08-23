@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, FlatList} from 'react-native';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
-
+import Alarm from '../components/Alarm';
 interface NewAlarm {
   time: string;
   repeat: Array<string>;
@@ -38,6 +38,7 @@ const HomeScreen = ({navigation, route}) => {
   console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
   console.groupEnd();
 
+  //const getItemCount = (_data: unknown) => 50;
   return (
     <>
       <View style={styles.homeScreenContainer}>
@@ -45,6 +46,7 @@ const HomeScreen = ({navigation, route}) => {
         {/*//*/}
         {/*//*/}
         {/*TODO This Button Goes Forward*/}
+
         <TouchableOpacity
           style={styles.homeScreenAddAlarmButton}
           onPress={() => {
@@ -60,20 +62,37 @@ const HomeScreen = ({navigation, route}) => {
               },
             });
           }}
-        />
-        {alarms.map((alarm) => {
-          return (
-            <View>
-              <Text>{alarm.time}</Text>
-              <Text>{alarm.name}</Text>
-              <Text>{alarm.repeat}</Text>
-            </View>
-          );
-        })}
+        >
+          <Text>+</Text>
+        </TouchableOpacity>
+
         {/*//*/}
         {/*//*/}
         {/*//*/}
       </View>
+      <View style={styles.alarmsContainer}>
+        {alarms.map((alarm) => {
+          return (
+            <Alarm
+              alarmName={alarm.name}
+              alarmTime={alarm.time}
+              alarmRepeat={alarm.repeat}
+            />
+          );
+        })}
+      </View>
+      {/*<View style={styles.alarmsContainer}>
+        <FlatList
+          data={alarms}
+          renderItem={(alarm) => (
+            <Alarm
+              alarmName={alarm.name}
+              alarmTime={{alarmTime: alarm.time}}
+              alarmRepeat={{alarmRepeat: alarm.repeat}}
+            />
+          )}
+        />
+      </View>*/}
       <Menu navigation={navigation} />
     </>
   );

@@ -16,11 +16,28 @@ export const useStyles = () => {
     },
     homeScreenAddAlarmButton: {
       position: 'absolute',
-      bottom: 700,
+      bottom: 500,
       left: 130,
       width: 30,
       height: 30,
       backgroundColor: '#E4EBE6',
+    },
+    alarmsContainer: {
+      flexDirection: 'column',
+      //justifyContent: 'center',
+      alignItems: 'center',
+
+      backgroundColor: 'yellow',
+    },
+    alarmContainer: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'flex-start',
+      //alignItems: 'center',
+      width: width - 30,
+      borderColor: 'black',
+      borderWidth: 3,
+      backgroundColor: 'purple',
     },
     digitalClockScreenContainer: {
       flex: 1,
