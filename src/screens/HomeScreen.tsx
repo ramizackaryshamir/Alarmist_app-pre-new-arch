@@ -1,15 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text, FlatList, Button} from 'react-native';
 import Menu from '../components/Menu';
-import {useStyles} from '../hooks/useStyles';
 import Alarm from '../components/Alarm';
-interface NewAlarm {
-  time: string;
-  repeat: Array<string>;
-  name: string;
-  sound: Array<string>;
-  isSnoozed: boolean;
-}
+import {useStyles} from '../hooks/useStyles';
+import {NewAlarm} from './types';
 
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
@@ -42,7 +36,7 @@ const HomeScreen = ({navigation, route}) => {
     setAlarms([newAlarm, ...alarms]);
 
     console.log('route', route);
-  }, [newAlarm, route]);
+  }, [newAlarm, route, alarms]);
 
   console.group('\x1b[40m');
   console.log('route', route);
