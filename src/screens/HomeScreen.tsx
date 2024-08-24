@@ -36,7 +36,7 @@ const HomeScreen = ({navigation, route}) => {
     setAlarms([newAlarm, ...alarms]);
 
     console.log('route', route);
-  }, [newAlarm, route, alarms]);
+  }, [newAlarm, route]);
 
   console.group('\x1b[40m');
   console.log('route', route);

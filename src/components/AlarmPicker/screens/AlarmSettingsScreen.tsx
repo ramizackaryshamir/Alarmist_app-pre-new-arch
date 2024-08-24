@@ -19,9 +19,17 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const handleAlarmTimeChange = (value: any) => {
     setAlarmTime(value);
   };
+  const navigateToRepeatOptionsScreen = () => {
+    navigation.navigate('Repeat', {
+      onGoBack: (data: Array<string>) => {
+        console.log(data);
+        setAlarmRepeat(data);
+      },
+    });
+  };
 
   useEffect(() => {
-    const handleGoBack = () => {
+    const handleSaveAndGoBackToHomeScreen = () => {
       route.params.onGoBack({
         alarmTime: alarmTime.toString(),
         alarmRepeat,
@@ -32,7 +40,9 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       navigation.goBack();
     };
     navigation.setOptions({
-      headerRight: () => <Button title="Save" onPress={handleGoBack} />,
+      headerRight: () => (
+        <Button title="Save" onPress={handleSaveAndGoBackToHomeScreen} />
+      ),
     });
   }, [
     navigation,
@@ -55,6 +65,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     if (route.params?.alarmSound) {
       setAlarmSound(alarmSound);
     }
+
     console.group('\x1b[41m');
     console.log('Alarm Settings Screen');
     console.log('alarmTime:', alarmTime);
@@ -80,13 +91,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
           style={styles.bottomSheetButton}
-          onPress={() => {
-            navigation.navigate('Repeat', {
-              onGoBack: (data: Array<string>) => {
-                setAlarmRepeat(data);
-              },
-            });
-          }}
+          onPress={navigateToRepeatOptionsScreen}
         >
           <Text style={styles.bottomSheetText}>Repeat</Text>
         </TouchableOpacity>

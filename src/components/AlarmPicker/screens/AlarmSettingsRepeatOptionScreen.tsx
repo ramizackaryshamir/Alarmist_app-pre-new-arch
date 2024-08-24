@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Button} from 'react-native';
 import Checkbox from '../../Inputs/Checkbox';
 import {useStyles} from '../../../hooks/useStyles';
 
@@ -7,6 +7,19 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}) => {
   const [selectedDays, setSelectedDays] = useState<[]>([]);
   console.log('selectedDays', selectedDays);
   const styles = useStyles();
+
+  useEffect(() => {
+    const handleGoBackToAlarmSettingsScreen = () => {
+      route.params.onGoBack(selectedDays);
+      navigation.goBack();
+    };
+    navigation.setOptions({
+      headerLeft: () => (
+        <Button title="Back" onPress={handleGoBackToAlarmSettingsScreen} />
+      ),
+    });
+  }, [navigation, route.params, selectedDays]);
+
   return (
     <View style={styles.alarmSettingsRepeatOptionsPageContainer}>
       <Checkbox
@@ -21,16 +34,6 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}) => {
         ]}
         checkedValues={selectedDays}
         onChange={setSelectedDays}
-      />
-      <TouchableOpacity
-        style={{width: 20, height: 20, backgroundColor: '#E4EBE6'}}
-        onPress={() => {
-          route.params.onGoBack(
-            //instead of passing back selectedDays, the data is serialized to be able to use state persistence and for screen components to have the right cointract for implementing deep linking.
-            JSON.stringify(selectedDays),
-          );
-          navigation.goBack();
-        }}
       />
     </View>
   );

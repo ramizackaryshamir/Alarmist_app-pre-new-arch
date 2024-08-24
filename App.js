@@ -38,11 +38,12 @@ const App = () => {
         <Stack.Screen
           name="Repeat"
           component={AlarmSettingsRepeatOptionScreen}
-          options={{
-            headerStyle: {backgroundColor: '#F2D935'},
+          options={(navigation, route) => ({
+            headerStyle: {backgroundColor: 'green'},
             //headerTintColor: '#F2D935',
             headerShown: true,
-          }}
+            headerLeft: () => <Button title="Back" />,
+          })}
         />
         <Stack.Screen
           name="Sound"
