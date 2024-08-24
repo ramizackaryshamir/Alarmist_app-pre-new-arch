@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, TextInput, Text} from 'react-native';
+import {View, TouchableOpacity, TextInput, Text, Button} from 'react-native';
 import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from '../../../hooks/useStyles';
@@ -16,6 +16,22 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const toggleSwitch = () => {
     setIsSnoozed((prevState: boolean) => !prevState);
   };
+
+  useEffect(() => {
+    const handleGoBack = () => {
+      route.params.onGoBack({
+        //alarmTime,
+        alarmRepeat,
+        alarmName,
+        alarmSound,
+        isSnoozed,
+      });
+      navigation.goBack();
+    };
+    navigation.setOptions({
+      headerRight: () => <Button title="Save" onPress={handleGoBack} />,
+    });
+  }, [navigation, alarmRepeat, alarmName, alarmSound, isSnoozed, route.params]);
 
   useEffect(() => {
     //Params 1a/2:

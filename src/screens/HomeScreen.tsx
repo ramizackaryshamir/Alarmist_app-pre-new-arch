@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text, FlatList} from 'react-native';
+import {View, TouchableOpacity, Text, FlatList, Button} from 'react-native';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 import Alarm from '../components/Alarm';
@@ -24,6 +24,20 @@ const HomeScreen = ({navigation, route}) => {
 
   const [alarms, setAlarms] = useState<any>([]);
 
+  const navigateToAlarmSettingsScreen = () => {
+    navigation.navigate('Alarm Settings Screen', {
+      onGoBack: (data) => {
+        setNewAlarm({
+          time: data.alarmTime,
+          repeat: data.alarmRepeat,
+          name: data.alarmName,
+          sound: data.alarmSound,
+          isSnoozed: data.isSnoozed,
+        });
+      },
+    });
+  };
+
   useEffect(() => {
     setAlarms([newAlarm, ...alarms]);
 
@@ -43,37 +57,17 @@ const HomeScreen = ({navigation, route}) => {
   console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
   console.groupEnd();
 
-  //const getItemCount = (_data: unknown) => 50;
   return (
     <>
       <View style={styles.homeScreenContainer}>
         {/*//*/}
-        {/*//*/}
-        {/*//*/}
         {/*TODO This Button Goes Forward*/}
-
         <TouchableOpacity
           style={styles.homeScreenAddAlarmButton}
-          onPress={() => {
-            navigation.navigate('Alarm Settings Screen', {
-              onGoBack: (data: any) => {
-                setNewAlarm({
-                  time: data.alarmTime,
-                  repeat: data.alarmRepeat,
-                  name: data.alarmName,
-                  sound: data.alarmSound,
-                  isSnoozed: data.isSnoozed,
-                });
-              },
-            });
-          }}
+          onPress={navigateToAlarmSettingsScreen}
         >
           <Text>+</Text>
         </TouchableOpacity>
-
-        {/*//*/}
-        {/*//*/}
-        {/*//*/}
       </View>
       <View style={styles.alarmsContainer}>
         {alarms.map((alarm, index) => {
@@ -87,18 +81,6 @@ const HomeScreen = ({navigation, route}) => {
           );
         })}
       </View>
-      {/*<View style={styles.alarmsContainer}>
-        <FlatList
-          data={alarms}
-          renderItem={(alarm) => (
-            <Alarm
-              alarmName={alarm.name}
-              alarmTime={{alarmTime: alarm.time}}
-              alarmRepeat={{alarmRepeat: alarm.repeat}}
-            />
-          )}
-        />
-      </View>*/}
       <Menu navigation={navigation} />
     </>
   );

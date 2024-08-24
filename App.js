@@ -8,7 +8,7 @@ import AlarmSettingsSoundOptionsScreen from './src/components/AlarmPicker/screen
 import DigitalClockScreen from './src/screens/DigitalClockScreen';
 import ScreenClockScreen from './src/screens/ScreenClockScreen';
 import Menu from './src/components/Menu';
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity, Text, Button} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -19,30 +19,21 @@ const App = () => {
           name="Home"
           component={HomeScreen}
           options={{
-            headerStyle: {backgroundColor: '#F2D935'},
-            headerTintColor: '#F2D935',
-            headerShown: false,
+            headerStyle: {backgroundColor: '#00FFFF'},
+            headerTintColor: '#00FFFF',
+            headerShown: true,
           }}
         />
         <Stack.Screen
           name="Alarm Settings Screen"
           component={AlarmSettingsScreen}
-          options={{
-            headerStyle: {backgroundColor: '#F2D935'},
+          options={(navigation, route) => ({
+            headerStyle: {backgroundColor: 'red'},
             //headerTintColor: '#F2D935',
             headerBackTitle: 'Cancel',
             headerShown: true,
-            headerRight: () => (
-              <TouchableOpacity
-                style={{
-                  width: 70,
-                  height: 70,
-                }}
-              >
-                <Text>Save</Text>
-              </TouchableOpacity>
-            ),
-          }}
+            headerRight: () => <Button title="Save" />,
+          })}
         />
         <Stack.Screen
           name="Repeat"
