@@ -16,11 +16,14 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const toggleSwitch = () => {
     setIsSnoozed((prevState: boolean) => !prevState);
   };
+  const handleAlarmTimeChange = (value: any) => {
+    setAlarmTime(value);
+  };
 
   useEffect(() => {
     const handleGoBack = () => {
       route.params.onGoBack({
-        //alarmTime,
+        alarmTime: alarmTime.toString(),
         alarmRepeat,
         alarmName,
         alarmSound,
@@ -31,7 +34,15 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     navigation.setOptions({
       headerRight: () => <Button title="Save" onPress={handleGoBack} />,
     });
-  }, [navigation, alarmRepeat, alarmName, alarmSound, isSnoozed, route.params]);
+  }, [
+    navigation,
+    alarmTime,
+    alarmRepeat,
+    alarmName,
+    alarmSound,
+    isSnoozed,
+    route.params,
+  ]);
 
   useEffect(() => {
     //Params 1a/2:
@@ -62,17 +73,10 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     alarmTime,
   ]);
 
-  const handleAlarmTimeChange = (value: any) => {
-    setAlarmTime(value);
-  };
-
   return (
     <View style={styles.bottomSheetContainer}>
       <TimePicker alarmTime={alarmTime} onChange={handleAlarmTimeChange} />
       <View style={styles.bottomSheetSettings}>
-        {/*//*/}
-        {/*//*/}
-        {/*//*/}
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
           style={styles.bottomSheetButton}
@@ -86,20 +90,12 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         >
           <Text style={styles.bottomSheetText}>Repeat</Text>
         </TouchableOpacity>
-        {/*//*/}
-        {/*//*/}
-        {/*//*/}
-
         <TextInput
           style={styles.bottomSheetInput}
           placeholder="Alarm"
           onChangeText={(value) => setAlarmName(value)}
           value={alarmName}
         />
-
-        {/*//*/}
-        {/*//*/}
-        {/*//*/}
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
           style={styles.bottomSheetButton}
@@ -113,63 +109,13 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         >
           <Text style={styles.bottomSheetText}>Sound</Text>
         </TouchableOpacity>
-        {/*//*/}
-        {/*//*/}
-        {/*//*/}
-
         <AlarmSettingsSnoozeOption
           option={{label: 'Snooze', value: isSnoozed}}
           onToggle={toggleSwitch}
         />
       </View>
-      {/*Params 2/2: Screen passes params data back to Home Screen*/}
-
-      {/*//*/}
-      {/*//*/}
-      {/*//*/}
-      {/*TODO This Button Goes Back*/}
-      <TouchableOpacity
-        style={{width: 50, height: 50, backgroundColor: '#E4EBE6'}}
-        onPress={() => {
-          console.group('\x1b[41m');
-          console.log('Alarm Settings Screen');
-          console.log('alarmTime:', alarmTime);
-          console.log('alarmRepeat:', alarmRepeat);
-          console.log('alarmName:', alarmName);
-          console.log('alarmSound:', alarmSound);
-          console.log('isSnoozed:', isSnoozed);
-          console.groupEnd();
-          navigation.navigate({
-            name: 'Home',
-            params: {
-              alarmTime: alarmTime.toString(),
-              alarmRepeat: alarmRepeat,
-              alarmName: alarmName,
-              alarmSound: alarmSound,
-              isSnoozed: isSnoozed,
-            },
-          });
-          route.params.onGoBack({
-            alarmTime: alarmTime.toString(),
-            alarmRepeat: alarmRepeat,
-            alarmName: alarmName,
-            alarmSound: alarmSound,
-            isSnoozed: isSnoozed,
-          });
-          //navigation.goBack();
-        }}
-      />
-      {/*//*/}
-      {/*//*/}
-      {/*//*/}
     </View>
   );
 };
 
 export default AlarmSettingsScreen;
-
-//console.log(new Date());
-//console.group('\x1b[41m');
-//console.log('Alarm Settings Screen');
-//console.log('alarmTime: ', alarmTime, typeof alarmTime);
-//console.groupEnd();
