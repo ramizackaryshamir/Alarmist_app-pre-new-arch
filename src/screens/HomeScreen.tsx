@@ -1,5 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text, FlatList, Button} from 'react-native';
+import React, {useState, useEffect, useId} from 'react';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  ScrollView,
+  FlatList,
+  Button,
+} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
@@ -8,12 +15,14 @@ import {NewAlarm} from './types';
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
 
+  const alarmId = useId();
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     time: new Date().toString(),
     repeat: [],
     name: 'Alarm',
     sound: [],
     isSnoozed: false,
+    id: alarmId,
   });
 
   const [alarms, setAlarms] = useState<any>([]);
@@ -63,7 +72,7 @@ const HomeScreen = ({navigation, route}) => {
           <Text>+</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.alarmsContainer}>
+      {/*<View style={styles.alarmsContainer}>
         {alarms.map((alarm, index) => {
           return (
             <Alarm
@@ -74,6 +83,19 @@ const HomeScreen = ({navigation, route}) => {
             />
           );
         })}
+      </View>*/}
+      <View>
+        <FlatList
+          data={alarms}
+          renderItem={({item}) => (
+            <Alarm
+              alarmName={item.name}
+              alarmTime={item.time}
+              alarmRepeat={item.repeat}
+            />
+          )}
+          keyExtractor={(item) => item.id}
+        />
       </View>
       <Menu navigation={navigation} />
     </>

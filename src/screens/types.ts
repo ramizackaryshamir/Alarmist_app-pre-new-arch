@@ -4,4 +4,5 @@ export interface NewAlarm {
   name: string;
   sound: Array<string>;
   isSnoozed: boolean;
+  id: string;
 }
