@@ -23,6 +23,7 @@ const App = () => {
               headerStyle: {backgroundColor: '#00FFFF'},
               headerTintColor: '#00FFFF',
               headerShown: true,
+              headerRight: () => <Button title="+" />,
             }}
           />
           <Stack.Screen

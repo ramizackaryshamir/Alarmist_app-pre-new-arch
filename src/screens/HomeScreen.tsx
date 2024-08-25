@@ -1,12 +1,5 @@
-import React, {useState, useEffect, useId} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  ScrollView,
-  FlatList,
-  Button,
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, FlatList, Button} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
@@ -15,14 +8,13 @@ import {NewAlarm} from './types';
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
 
-  const alarmId = useId();
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     time: new Date().toString(),
     repeat: [],
     name: 'Alarm',
     sound: [],
     isSnoozed: false,
-    id: alarmId,
+    id: '',
   });
 
   const [alarms, setAlarms] = useState<any>([]);
@@ -40,6 +32,14 @@ const HomeScreen = ({navigation, route}) => {
       },
     });
   };
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button title="+" onPress={navigateToAlarmSettingsScreen} />
+      ),
+    });
+  }, [navigation]);
 
   useEffect(() => {
     setAlarms([newAlarm, ...alarms]);
@@ -65,14 +65,8 @@ const HomeScreen = ({navigation, route}) => {
       <View style={styles.homeScreenContainer}>
         {/*//*/}
         {/*TODO This Button Goes Forward*/}
-        <TouchableOpacity
-          style={styles.homeScreenAddAlarmButton}
-          onPress={navigateToAlarmSettingsScreen}
-        >
-          <Text>+</Text>
-        </TouchableOpacity>
-      </View>
-      {/*<View style={styles.alarmsContainer}>
+
+        {/*<View style={styles.alarmsContainer}>
         {alarms.map((alarm, index) => {
           return (
             <Alarm
@@ -84,7 +78,7 @@ const HomeScreen = ({navigation, route}) => {
           );
         })}
       </View>*/}
-      <View>
+
         <FlatList
           data={alarms}
           renderItem={({item}) => (
@@ -94,7 +88,7 @@ const HomeScreen = ({navigation, route}) => {
               alarmRepeat={item.repeat}
             />
           )}
-          keyExtractor={(item) => item.id}
+          //keyExtractor={(item) => item.id}
         />
       </View>
       <Menu navigation={navigation} />

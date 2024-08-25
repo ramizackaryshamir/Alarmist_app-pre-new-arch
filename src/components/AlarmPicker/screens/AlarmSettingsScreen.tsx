@@ -5,6 +5,7 @@ import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from '../../../hooks/useStyles';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
+  //This component sets the state for the alarm
   const styles = useStyles();
 
   const [alarmTime, setAlarmTime] = useState<any>(new Date());

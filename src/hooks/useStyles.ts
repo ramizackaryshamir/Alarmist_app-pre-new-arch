@@ -15,18 +15,15 @@ export const useStyles = () => {
       backgroundColor: '#00FFFF',
     },
     homeScreenAddAlarmButton: {
-      position: 'absolute',
       bottom: 300,
-      left: 130,
       width: 30,
       height: 30,
       backgroundColor: '#E4EBE6',
     },
     alarmsContainer: {
-      //flexDirection: 'column',
+      //height: width < 500 ? '35%' : '65%',
       justifyContent: 'center',
       alignItems: 'center',
-
       backgroundColor: 'yellow',
     },
     alarmContainer: {
