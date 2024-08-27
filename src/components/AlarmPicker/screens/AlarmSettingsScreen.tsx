@@ -17,9 +17,11 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const toggleSwitch = () => {
     setIsSnoozed((prevState: boolean) => !prevState);
   };
+
   const handleAlarmTimeChange = (value: any) => {
     setAlarmTime(value);
   };
+
   const navigateToRepeatOptionsScreen = () => {
     navigation.navigate('Repeat', {
       onGoBack: (data: Array<string>) => {
@@ -67,14 +69,14 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       setAlarmSound(alarmSound);
     }
 
-    console.group('\x1b[41m');
-    console.log('Alarm Settings Screen');
-    console.log('alarmTime:', alarmTime);
-    console.log('alarmRepeat:', alarmRepeat);
-    console.log('alarmName:', alarmName);
-    console.log('alarmSound:', alarmSound);
-    console.log('isSnoozed:', isSnoozed);
-    console.groupEnd();
+    //console.group('\x1b[41m');
+    //console.log('Alarm Settings Screen');
+    //console.log('alarmTime:', alarmTime);
+    //console.log('alarmRepeat:', alarmRepeat);
+    //console.log('alarmName:', alarmName);
+    //console.log('alarmSound:', alarmSound);
+    //console.log('isSnoozed:', isSnoozed);
+    //console.groupEnd();
   }, [
     route.params?.alarmRepeat,
     route.params?.alarmSound,

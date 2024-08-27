@@ -7,10 +7,10 @@ type TimePickerProps = {
 };
 
 const TimePicker = ({alarmTime, onChange}: TimePickerProps) => {
-  console.group('\x1b[44m');
-  console.log('Time Picker');
-  console.log('alarmTime: ', alarmTime, typeof alarmTime);
-  console.groupEnd();
+  //console.group('\x1b[44m');
+  //console.log('Time Picker');
+  //console.log('alarmTime: ', alarmTime, typeof alarmTime);
+  //console.groupEnd();
   //
   //TODO: NOTE: NewAlarm logic should be abstracted from TimePicker to its own component 07172024
   //TODO NOTE: Most likely to Home Screen component 07242024

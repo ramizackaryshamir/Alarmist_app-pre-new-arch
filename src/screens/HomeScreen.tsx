@@ -9,21 +9,27 @@ const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
 
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
-    time: new Date().toString(),
+    weekday: '',
+    date: '',
+    time: '',
     repeat: [],
     name: 'Alarm',
     sound: [],
     isSnoozed: false,
     id: '',
   });
-
+  console.log('weekday', newAlarm.weekday);
+  console.log('date', newAlarm.date);
+  console.log('time', newAlarm.time);
   const [alarms, setAlarms] = useState<any>([]);
 
   const navigateToAlarmSettingsScreen = () => {
     navigation.navigate('Alarm Settings Screen', {
       onGoBack: (data) => {
         setNewAlarm({
-          time: data.alarmTime,
+          weekday: data.alarmTime.slice(0, 3),
+          date: data.alarmTime.slice(4, 15),
+          time: data.alarmTime.slice(16),
           repeat: data.alarmRepeat,
           name: data.alarmName,
           sound: data.alarmSound,
@@ -83,8 +89,9 @@ const HomeScreen = ({navigation, route}) => {
           data={alarms}
           renderItem={({item}) => (
             <Alarm
-              alarmName={item.name}
+              alarmDate={item.date}
               alarmTime={item.time}
+              alarmName={item.name}
               alarmRepeat={item.repeat}
             />
           )}
