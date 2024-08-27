@@ -4,6 +4,7 @@ import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
 import {NewAlarm} from './types';
+import DigitalAlarm from '../components/DigitalAlarm';
 
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
@@ -72,19 +73,18 @@ const HomeScreen = ({navigation, route}) => {
         {/*//*/}
         {/*TODO This Button Goes Forward*/}
 
-        {/*<View style={styles.alarmsContainer}>
-        {alarms.map((alarm, index) => {
-          return (
-            <Alarm
-              key={`${alarm.time}${index}`}
-              alarmName={alarm.name}
-              alarmTime={alarm.time}
-              alarmRepeat={alarm.repeat}
+        {/*<FlatList
+          data={alarms}
+          renderItem={({item}) => (
+            <DigitalAlarm
+              weekday={item.weekday}
+              date={item.date}
+              time={item.time}
+              //alarmName={item.name}
+              //alarmRepeat={item.repeat}
             />
-          );
-        })}
-      </View>*/}
-
+          )}
+        />*/}
         <FlatList
           data={alarms}
           renderItem={({item}) => (
@@ -95,7 +95,6 @@ const HomeScreen = ({navigation, route}) => {
               alarmRepeat={item.repeat}
             />
           )}
-          //keyExtractor={(item) => item.id}
         />
       </View>
       <Menu navigation={navigation} />

@@ -53,6 +53,27 @@ export const useStyles = () => {
       columnGap: 5,
       //alignItems: 'center',
     },
+    digitalAlarmContainer: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: width > 500 ? '45%' : '70%',
+      height: height > 600 ? '45%' : '30%',
+      borderWidth: 8,
+      borderColor: '#0A3A40',
+      borderRadius: 15,
+      backgroundColor: '#223240',
+    },
+    digitalAlarmRight: {
+      flexDirection: 'row',
+      //justifyContent: 'space-between',
+    },
+    digitalAlarmText: {
+      //justifyContent: 'center',
+      //alignItems: 'center',
+      fontSize: 20,
+      color: 'white',
+    },
     digitalClockScreenContainer: {
       flex: 1,
       display: 'flex',
