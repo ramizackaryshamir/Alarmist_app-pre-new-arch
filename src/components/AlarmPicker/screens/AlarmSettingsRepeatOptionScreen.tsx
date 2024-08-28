@@ -24,13 +24,13 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}) => {
     <View style={styles.alarmSettingsRepeatOptionsPageContainer}>
       <Checkbox
         options={[
-          {label: 'Every Monday', value: 'Monday'},
-          {label: 'Every Tuesday', value: 'Tuesday'},
-          {label: 'Every Wednesday', value: 'Wednesday'},
-          {label: 'Every Thursday', value: 'Thursday'},
-          {label: 'Every Friday', value: 'Friday'},
-          {label: 'Every Saturday', value: 'Saturday'},
-          {label: 'Every Sunday', value: 'Sunday'},
+          {label: 'Every Monday', value: 'Mon '},
+          {label: 'Every Tuesday', value: 'Tue '},
+          {label: 'Every Wednesday', value: 'Wed '},
+          {label: 'Every Thursday', value: 'Thu '},
+          {label: 'Every Friday', value: 'Fri '},
+          {label: 'Every Saturday', value: 'Sat '},
+          {label: 'Every Sunday', value: 'Sun '},
         ]}
         checkedValues={selectedDays}
         onChange={setSelectedDays}
