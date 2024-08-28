@@ -4,7 +4,6 @@ import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
 import {NewAlarm} from './types';
-import DigitalAlarm from '../components/DigitalAlarm';
 
 const HomeScreen = ({navigation, route}) => {
   const styles = useStyles();
@@ -33,13 +32,13 @@ const HomeScreen = ({navigation, route}) => {
     navigation.navigate('Alarm Settings Screen', {
       onGoBack: (data) => {
         setNewAlarm({
-          weekday: data.alarmTime.slice(0, 3),
-          date: data.alarmTime.slice(4, 15),
-          time: data.alarmTime.slice(16, 21),
-          repeat: data.alarmRepeat,
-          name: data.alarmName ? data.alarmName : 'Alarm',
-          sound: data.alarmSound,
-          isSnoozed: data.isSnoozed,
+          weekday: data.newAlarmTime.slice(0, 3),
+          date: data.newAlarmTime.slice(4, 15),
+          time: data.newAlarmTime.slice(16, 21),
+          repeat: data.newAlarmRepeat,
+          name: data.newAlarmName ? data.newAlarmName : 'Alarm',
+          sound: data.newAlarmSound,
+          isSnoozed: data.isNewAlarmSnoozed,
         });
       },
     });

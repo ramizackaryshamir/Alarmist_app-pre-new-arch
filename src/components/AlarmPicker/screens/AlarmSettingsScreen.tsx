@@ -8,25 +8,25 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm
   const styles = useStyles();
 
-  const [alarmTime, setAlarmTime] = useState<any>(new Date());
-  const [alarmRepeat, setAlarmRepeat] = useState<Array<string>>([]);
-  const [alarmName, setAlarmName] = useState<string>('');
-  const [alarmSound, setAlarmSound] = useState<string>('');
-  const [isSnoozed, setIsSnoozed] = useState<boolean>(false);
+  const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
+  const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
+  const [newAlarmName, setNewAlarmName] = useState<string>('');
+  const [newAlarmSound, setNewAlarmSound] = useState<string>('');
+  const [isNewAlarmSnoozed, setIsNewAlarmSnoozed] = useState<boolean>(false);
 
   const toggleSwitch = () => {
-    setIsSnoozed((prevState: boolean) => !prevState);
+    setIsNewAlarmSnoozed((prevState: boolean) => !prevState);
   };
 
   const handleAlarmTimeChange = (value: any) => {
-    setAlarmTime(value);
+    setNewAlarmTime(value);
   };
 
   const navigateToRepeatOptionsScreen = () => {
     navigation.navigate('Repeat', {
       onGoBack: (data: Array<string>) => {
         console.log(data);
-        setAlarmRepeat(data);
+        setNewAlarmRepeat(data);
       },
     });
   };
@@ -34,11 +34,11 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   useEffect(() => {
     const handleSaveAndGoBackToHomeScreen = () => {
       route.params.onGoBack({
-        alarmTime: alarmTime.toString(),
-        alarmRepeat,
-        alarmName,
-        alarmSound,
-        isSnoozed,
+        newAlarmTime: newAlarmTime.toString(),
+        newAlarmRepeat,
+        newAlarmName,
+        newAlarmSound,
+        isNewAlarmSnoozed,
       });
       navigation.goBack();
     };
@@ -49,47 +49,50 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     });
   }, [
     navigation,
-    alarmTime,
-    alarmRepeat,
-    alarmName,
-    alarmSound,
-    isSnoozed,
+    newAlarmTime,
+    newAlarmRepeat,
+    newAlarmName,
+    newAlarmSound,
+    isNewAlarmSnoozed,
     route.params,
   ]);
 
   useEffect(() => {
     //Params 1a/2:
     //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
-    if (route.params?.alarmRepeat) {
-      setAlarmRepeat(alarmRepeat);
+    if (route.params?.newAlarmRepeat) {
+      setNewAlarmRepeat(newAlarmRepeat);
     }
     //Params 1b/2:
     //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
-    if (route.params?.alarmSound) {
-      setAlarmSound(alarmSound);
+    if (route.params?.newAlarmSound) {
+      setNewAlarmSound(newAlarmSound);
     }
 
     //console.group('\x1b[41m');
     //console.log('Alarm Settings Screen');
-    //console.log('alarmTime:', alarmTime);
-    //console.log('alarmRepeat:', alarmRepeat);
-    //console.log('alarmName:', alarmName);
-    //console.log('alarmSound:', alarmSound);
-    //console.log('isSnoozed:', isSnoozed);
+    //console.log('newAlarmTime:', newAlarmTime);
+    //console.log('newAlarmRepeat:', newAlarmRepeat);
+    //console.log('newAlarmName:', newAlarmName);
+    //console.log('newAlarmSound:', newAlarmSound);
+    //console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
     //console.groupEnd();
   }, [
-    route.params?.alarmRepeat,
-    route.params?.alarmSound,
-    alarmRepeat,
-    alarmSound,
-    isSnoozed,
-    alarmName,
-    alarmTime,
+    route.params?.newAlarmRepeat,
+    route.params?.newAlarmSound,
+    newAlarmRepeat,
+    newAlarmSound,
+    isNewAlarmSnoozed,
+    newAlarmName,
+    newAlarmTime,
   ]);
 
   return (
     <View style={styles.bottomSheetContainer}>
-      <TimePicker alarmTime={alarmTime} onChange={handleAlarmTimeChange} />
+      <TimePicker
+        newAlarmTime={newAlarmTime}
+        onChange={handleAlarmTimeChange}
+      />
       <View style={styles.bottomSheetSettings}>
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
@@ -101,8 +104,8 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         <TextInput
           style={styles.bottomSheetInput}
           placeholder="Alarm"
-          onChangeText={(value) => setAlarmName(value)}
-          value={alarmName}
+          onChangeText={(value) => setNewAlarmName(value)}
+          value={newAlarmName}
         />
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
@@ -110,7 +113,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           onPress={() => {
             navigation.navigate('Sound', {
               onGoBack: (data: string) => {
-                setAlarmSound(data);
+                setNewAlarmSound(data);
               },
             });
           }}
@@ -118,7 +121,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           <Text style={styles.bottomSheetText}>Sound</Text>
         </TouchableOpacity>
         <AlarmSettingsSnoozeOption
-          option={{label: 'Snooze', value: isSnoozed}}
+          option={{label: 'Snooze', value: isNewAlarmSnoozed}}
           onToggle={toggleSwitch}
         />
       </View>
