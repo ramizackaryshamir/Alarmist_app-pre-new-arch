@@ -14,15 +14,21 @@ const HomeScreen = ({navigation, route}) => {
     date: '',
     time: '',
     repeat: [],
-    name: 'Alarm',
+    name: '',
     sound: [],
     isSnoozed: false,
+    isActive: true,
     id: '',
   });
   console.log('weekday', newAlarm.weekday);
   console.log('date', newAlarm.date);
   console.log('time', newAlarm.time);
   const [alarms, setAlarms] = useState<any>([]);
+  const [isActive, setIsActive] = useState<boolean>(true);
+
+  const handleToggleAlarm = () => {
+    setIsActive((prevState: boolean) => !prevState);
+  };
 
   const navigateToAlarmSettingsScreen = () => {
     navigation.navigate('Alarm Settings Screen', {
@@ -30,11 +36,12 @@ const HomeScreen = ({navigation, route}) => {
         setNewAlarm({
           weekday: data.alarmTime.slice(0, 3),
           date: data.alarmTime.slice(4, 15),
-          time: data.alarmTime.slice(16),
+          time: data.alarmTime.slice(16, 21),
           repeat: data.alarmRepeat,
-          name: data.alarmName,
+          name: data.alarmName ? data.alarmName : 'Alarm',
           sound: data.alarmSound,
           isSnoozed: data.isSnoozed,
+          isActive: data.isActive,
         });
       },
     });
@@ -72,27 +79,18 @@ const HomeScreen = ({navigation, route}) => {
       <View style={styles.homeScreenContainer}>
         {/*//*/}
         {/*TODO This Button Goes Forward*/}
-
-        {/*<FlatList
-          data={alarms}
-          renderItem={({item}) => (
-            <DigitalAlarm
-              weekday={item.weekday}
-              date={item.date}
-              time={item.time}
-              //alarmName={item.name}
-              //alarmRepeat={item.repeat}
-            />
-          )}
-        />*/}
         <FlatList
+          contentContainerStyle={styles.alarmsContainer}
           data={alarms}
           renderItem={({item}) => (
             <Alarm
+              alarmWeekday={item.weekday}
               alarmDate={item.date}
               alarmTime={item.time}
               alarmName={item.name}
               alarmRepeat={item.repeat}
+              isActive={isActive}
+              toggleAlarm={handleToggleAlarm}
             />
           )}
         />
