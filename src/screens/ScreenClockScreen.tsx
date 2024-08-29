@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, useWindowDimensions} from 'react-native';
+import {View} from 'react-native';
 import ScreenClock from '../components/ScreenClock';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 
-const ScreenClockScreen = ({navigation}) => {
+const ScreenClockScreen = ({navigation}: any) => {
   const styles = useStyles();
 
   return (

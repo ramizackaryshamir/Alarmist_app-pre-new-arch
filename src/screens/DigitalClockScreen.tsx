@@ -2,11 +2,11 @@ import React from 'react';
 import {View} from 'react-native';
 import DigitalClock from '../components/DigitalClock';
 import Modal from '../components/Modal/Modal';
-import ColorOptionsMenu from '../components//Modal/ColorOptionsMenu/ColorOptionsMenu';
+import ColorOptionsMenu from '../components/Modal/ColorOptionsMenu/ColorOptionsMenu';
 import Menu from '../components/Menu';
 import {useStyles} from '../hooks/useStyles';
 
-const DigitalClockScreen = ({navigation}) => {
+const DigitalClockScreen = ({navigation}: any) => {
   const styles = useStyles();
 
   return (
