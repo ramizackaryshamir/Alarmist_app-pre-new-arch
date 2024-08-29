@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, Switch} from 'react-native';
 import {useStyles} from '../hooks/useStyles';
 import {AlarmProps} from './types';
@@ -9,12 +9,10 @@ const Alarm = ({
   alarmTime,
   alarmRepeat,
   alarmName,
-  alarmSound,
-  alarmIsSnoozed,
-  isActive,
+  option,
   onToggleAlarm,
 }: AlarmProps) => {
-  //This component displays how the alarm will render to the UI
+  //This component DISPLAYS how the alarm will render to the UI. Sound and isSNoozed props aren't needed 08/29/2024
   const styles = useStyles();
 
   return (
@@ -34,7 +32,7 @@ const Alarm = ({
         <Switch
           style={{transform: [{scaleX: 0.6}, {scaleY: 0.6}]}}
           onValueChange={onToggleAlarm}
-          value={isActive}
+          value={option.value}
         />
       </View>
     </View>
