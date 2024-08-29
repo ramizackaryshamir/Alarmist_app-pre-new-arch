@@ -23,9 +23,8 @@ export const useStyles = () => {
     alarmsContainer: {
       //height: width < 500 ? '35%' : '65%',
       justifyContent: 'center',
-      rowGap: 10,
+      rowGap: 5,
       width: width - 30,
-      backgroundColor: 'pink',
     },
     alarmContainer: {
       flexDirection: 'row',
@@ -35,10 +34,10 @@ export const useStyles = () => {
       borderColor: 'black',
       borderWidth: 3,
       borderRadius: 5,
+      backgroundColor: 'pink',
     },
     alarmContainerLeft: {
-      paddingTop: 3,
-      paddingBottom: 3,
+      width: '50%',
     },
     alarmContainerLeftTop: {
       flexDirection: 'row',
@@ -46,8 +45,6 @@ export const useStyles = () => {
       columnGap: 5,
       paddingBottom: 3,
       paddingLeft: 10,
-      width: width / 2.2,
-      //backgroundColor: 'green',
     },
     alarmTextLeftTop: {
       color: 'white',
@@ -58,8 +55,6 @@ export const useStyles = () => {
       justifyContent: 'flex-start',
       paddingLeft: 10,
       columnGap: 5,
-      width: width / 2.2,
-      //backgroundColor: 'blue',
     },
     alarmTextLeftBottom: {
       color: 'white',
@@ -165,11 +160,20 @@ export const useStyles = () => {
       marginLeft: 10,
     },
     toggleModalButton: {
-      position: 'relative',
+      justifyContent: 'center',
+      alignItems: 'center',
       top: 20,
-      width: 20,
-      height: 20,
-      backgroundColor: 'green',
+      width: 40,
+      height: 30,
+      borderRadius: 5,
+      backgroundColor: '#1AAB8A',
+      padding: 2,
+      cursor: 'pointer',
+    },
+    toggleModalButtonText: {
+      color: '#fff',
+      fontSize: 10,
+      fontVariant: ['small-caps'],
     },
     bottomSheetContainer: {
       alignItems: 'center',

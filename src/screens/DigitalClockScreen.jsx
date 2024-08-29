@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, useWindowDimensions} from 'react-native';
+import {View} from 'react-native';
 import DigitalClock from '../components/DigitalClock';
 import Modal from '../components/Modal/Modal';
 import ColorOptionsMenu from '../components//Modal/ColorOptionsMenu/ColorOptionsMenu';
@@ -8,7 +8,7 @@ import {useStyles} from '../hooks/useStyles';
 
 const DigitalClockScreen = ({navigation}) => {
   const styles = useStyles();
-  const {height, width} = useWindowDimensions();
+
   return (
     <>
       <View style={styles.digitalClockScreenContainer}>

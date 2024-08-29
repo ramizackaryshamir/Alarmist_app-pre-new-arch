@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View, Text} from 'react-native';
 import {useStyles} from '../../hooks/useStyles';
 const Modal = ({children}) => {
   const styles = useStyles();
@@ -14,7 +14,9 @@ const Modal = ({children}) => {
           </TouchableOpacity>
         </View>
       )}
-      <TouchableOpacity style={styles.toggleModalButton} onPress={showModal} />
+      <TouchableOpacity style={styles.toggleModalButton} onPress={showModal}>
+        <Text style={styles.toggleModalButtonText}>Color</Text>
+      </TouchableOpacity>
     </>
   );
 };
