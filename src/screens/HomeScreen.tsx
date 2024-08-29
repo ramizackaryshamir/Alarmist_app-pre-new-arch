@@ -17,6 +17,7 @@ const HomeScreen = ({navigation, route}: any) => {
     sound: [],
     isSnoozed: false,
     id: '',
+    //this state needs to be fixed 08/29/2024
     isActive: isAlarmActive,
   });
 
@@ -72,6 +73,7 @@ const HomeScreen = ({navigation, route}: any) => {
   console.log('newAlarm.sound:', newAlarm.sound);
   console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
   console.log('newAlarm.id:', newAlarm.id);
+  //this state needs to be fixed 08/29/2024
   console.log('newAlarm.isActuve:', newAlarm.isActive);
   console.groupEnd();
 
@@ -91,6 +93,7 @@ const HomeScreen = ({navigation, route}: any) => {
               alarmRepeat={item.repeat}
               alarmName={item.name}
               alarmSound={item.sound}
+              //this state needs to be fixed 08/29/2024
               option={{value: isAlarmActive}}
               onToggleAlarm={handleToggleAlarm}
             />

@@ -6,7 +6,7 @@ import {useStyles} from '../hooks/useStyles';
 
 const ScreenClockScreen = ({navigation}) => {
   const styles = useStyles();
-  const {height, width} = useWindowDimensions();
+
   return (
     <>
       <View style={styles.screenClockScreenContainer}>
