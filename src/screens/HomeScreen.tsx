@@ -53,8 +53,9 @@ const HomeScreen = ({navigation, route}) => {
   }, [navigation]);
 
   useEffect(() => {
-    setAlarms([newAlarm, ...alarms]);
-
+    if (newAlarm.time !== '') {
+      setAlarms([newAlarm, ...alarms]);
+    }
     console.log('route', route);
   }, [newAlarm, route]);
 
