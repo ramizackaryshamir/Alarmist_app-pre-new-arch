@@ -21,10 +21,9 @@ export const useStyles = () => {
       backgroundColor: '#E4EBE6',
     },
     alarmsContainer: {
-      //height: width < 500 ? '35%' : '65%',
       justifyContent: 'center',
       rowGap: 5,
-      width: width - 30,
+      width: width < 500 ? width - 30 : width - 180,
     },
     alarmContainer: {
       flexDirection: 'row',

@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {View, FlatList, Button} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
 import {NewAlarm} from './types';
 
-const HomeScreen = ({navigation, route}) => {
+const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
 
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
@@ -17,9 +17,7 @@ const HomeScreen = ({navigation, route}) => {
     sound: [],
     isSnoozed: false,
   });
-  console.log('weekday', newAlarm.weekday);
-  console.log('date', newAlarm.date);
-  console.log('time', newAlarm.time);
+
   const [alarms, setAlarms] = useState<any>([]);
 
   const [isActive, setIsActive] = useState<boolean>(true);
@@ -28,9 +26,9 @@ const HomeScreen = ({navigation, route}) => {
     setIsActive((prevState: boolean) => !prevState);
   };
 
-  const navigateToAlarmSettingsScreen = () => {
+  const navigateToAlarmSettingsScreen = useCallback(() => {
     navigation.navigate('Alarm Settings Screen', {
-      onGoBack: (data) => {
+      onGoBack: (data: any) => {
         setNewAlarm({
           weekday: data.newAlarmTime.slice(0, 3),
           date: data.newAlarmTime.slice(4, 15),
@@ -42,7 +40,7 @@ const HomeScreen = ({navigation, route}) => {
         });
       },
     });
-  };
+  }, [navigation]);
 
   useEffect(() => {
     navigation.setOptions({
@@ -50,7 +48,7 @@ const HomeScreen = ({navigation, route}) => {
         <Button title="+" onPress={navigateToAlarmSettingsScreen} />
       ),
     });
-  }, [navigation]);
+  }, [navigation, navigateToAlarmSettingsScreen]);
 
   useEffect(() => {
     if (newAlarm.time !== '') {
