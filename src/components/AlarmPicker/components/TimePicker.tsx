@@ -31,12 +31,7 @@ const TimePicker = ({newAlarmTime, onChange}: TimePickerProps) => {
 
   return (
     <>
-      <DatePicker
-        //style={{backgroundColor: 'blue'}}
-        date={newAlarmTime}
-        onDateChange={onChange}
-        title="Alarm"
-      />
+      <DatePicker date={newAlarmTime} onDateChange={onChange} title="Alarm" />
     </>
   );
 };

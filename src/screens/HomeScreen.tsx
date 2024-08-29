@@ -16,6 +16,7 @@ const HomeScreen = ({navigation, route}: any) => {
     name: '',
     sound: [],
     isSnoozed: false,
+    id: '',
   });
 
   const [alarms, setAlarms] = useState<any>([]);
@@ -37,6 +38,7 @@ const HomeScreen = ({navigation, route}: any) => {
           name: data.newAlarmName ? data.newAlarmName : 'Alarm',
           sound: data.newAlarmSound,
           isSnoozed: data.isNewAlarmSnoozed,
+          id: data.newAlarmId,
         });
       },
     });
@@ -68,6 +70,7 @@ const HomeScreen = ({navigation, route}: any) => {
   console.log('newAlarm.name:', newAlarm.name);
   console.log('newAlarm.sound:', newAlarm.sound);
   console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
+  console.log('newAlarm.id:', newAlarm.id);
   console.groupEnd();
 
   return (
@@ -90,6 +93,7 @@ const HomeScreen = ({navigation, route}: any) => {
               onToggleAlarm={handleToggleAlarm}
             />
           )}
+          keyExtractor={(item) => item.id}
         />
       </View>
       <Menu navigation={navigation} />

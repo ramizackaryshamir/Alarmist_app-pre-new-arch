@@ -39,6 +39,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         newAlarmName,
         newAlarmSound,
         isNewAlarmSnoozed,
+        newAlarmId: Math.random().toString(),
       });
       navigation.goBack();
     };
@@ -69,14 +70,14 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       setNewAlarmSound(newAlarmSound);
     }
 
-    //console.group('\x1b[41m');
-    //console.log('Alarm Settings Screen');
-    //console.log('newAlarmTime:', newAlarmTime);
-    //console.log('newAlarmRepeat:', newAlarmRepeat);
-    //console.log('newAlarmName:', newAlarmName);
-    //console.log('newAlarmSound:', newAlarmSound);
-    //console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
-    //console.groupEnd();
+    console.group('\x1b[41m');
+    console.log('Alarm Settings Screen');
+    console.log('newAlarmTime:', newAlarmTime);
+    console.log('newAlarmRepeat:', newAlarmRepeat);
+    console.log('newAlarmName:', newAlarmName);
+    console.log('newAlarmSound:', newAlarmSound);
+    console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
+    console.groupEnd();
   }, [
     route.params?.newAlarmRepeat,
     route.params?.newAlarmSound,
