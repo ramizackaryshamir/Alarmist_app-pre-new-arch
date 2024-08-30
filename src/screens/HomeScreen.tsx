@@ -87,6 +87,7 @@ const HomeScreen = ({navigation, route}: any) => {
           data={alarms}
           renderItem={({item}) => (
             <Alarm
+              key={item.id}
               alarmWeekday={item.weekday}
               alarmDate={item.date}
               alarmTime={item.time}
