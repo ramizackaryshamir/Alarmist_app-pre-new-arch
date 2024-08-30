@@ -43,6 +43,10 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       });
       navigation.goBack();
     };
+    console.group('\x1b[41m');
+    console.log('Alarm Settings Screen');
+    console.log('route in AlarmSettingsScreen', route);
+    console.groupEnd();
     navigation.setOptions({
       headerRight: () => (
         <Button title="Save" onPress={handleSaveAndGoBackToHomeScreen} />
