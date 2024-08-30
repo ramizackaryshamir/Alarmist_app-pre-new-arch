@@ -15,7 +15,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Group>
+        <Stack.Group
+        //screenOptions={{presentation: 'modal'}}
+        >
           <Stack.Screen
             name="Home"
             component={HomeScreen}
@@ -26,33 +28,6 @@ const App = () => {
               headerRight: () => <Button title="+" />,
             }}
           />
-          <Stack.Screen
-            name="Digital Clock"
-            component={DigitalClockScreen}
-            options={{
-              headerStyle: {
-                backgroundColor: '#F2D935',
-              },
-              headerTintColor: '#F2D935',
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="Screen Clock"
-            component={ScreenClockScreen}
-            options={{
-              headerStyle: {
-                backgroundColor: '#F2D935',
-              },
-              headerTintColor: '#F2D935',
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen name="Menu" component={Menu} />
-        </Stack.Group>
-        <Stack.Group
-        //screenOptions={{presentation: 'modal'}}
-        >
           <Stack.Screen
             name="Alarm Settings Screen"
             component={AlarmSettingsScreen}
@@ -84,6 +59,31 @@ const App = () => {
               //headerTintColor: '#F2D935',
             }}
           />
+        </Stack.Group>
+        <Stack.Group>
+          <Stack.Screen
+            name="Digital Clock"
+            component={DigitalClockScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: '#F2D935',
+              },
+              headerTintColor: '#F2D935',
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Screen Clock"
+            component={ScreenClockScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: '#F2D935',
+              },
+              headerTintColor: '#F2D935',
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen name="Menu" component={Menu} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
