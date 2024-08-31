@@ -14,7 +14,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const [newAlarmSound, setNewAlarmSound] = useState<string>('');
   const [isNewAlarmSnoozed, setIsNewAlarmSnoozed] = useState<boolean>(false);
 
-  const toggleSwitch = () => {
+  const handleToggleSwitch = () => {
     setIsNewAlarmSnoozed((prevState: boolean) => !prevState);
   };
 
@@ -45,7 +45,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     };
     console.group('\x1b[41m');
     console.log('Alarm Settings Screen');
-    console.log('route in AlarmSettingsScreen', route);
+    console.log('route in AlarmSettingsScreen', route.params);
     console.groupEnd();
     navigation.setOptions({
       headerRight: () => (
@@ -127,7 +127,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         </TouchableOpacity>
         <AlarmSettingsSnoozeOption
           option={{label: 'Snooze', value: isNewAlarmSnoozed}}
-          onToggle={toggleSwitch}
+          onToggle={handleToggleSwitch}
         />
       </View>
     </View>

@@ -7,7 +7,6 @@ import {NewAlarm} from './types';
 
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
-  const [isAlarmActive, setIsAlarmActive] = useState<boolean>(true);
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     weekday: '',
     date: '',
@@ -18,13 +17,13 @@ const HomeScreen = ({navigation, route}: any) => {
     isSnoozed: false,
     id: '',
     //this state needs to be fixed 08/29/2024
-    isActive: isAlarmActive,
+    isActive: true,
   });
 
-  const [alarms, setAlarms] = useState<any>([]);
+  const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
 
   const handleToggleAlarm = () => {
-    setIsAlarmActive((prevState: boolean) => !prevState);
+    (prevState: boolean) => setNewAlarm({...newAlarm, isActive: !prevState});
   };
 
   const navigateToAlarmSettingsScreen = useCallback(() => {
@@ -40,11 +39,11 @@ const HomeScreen = ({navigation, route}: any) => {
           isSnoozed: data.isNewAlarmSnoozed,
           id: data.newAlarmId,
           //this state needs to be fixed 08/29/2024
-          isActive: isAlarmActive,
+          isActive: newAlarm.isActive,
         });
       },
     });
-  }, [navigation, isAlarmActive]);
+  }, [navigation]);
 
   useEffect(() => {
     navigation.setOptions({
@@ -95,7 +94,7 @@ const HomeScreen = ({navigation, route}: any) => {
               alarmName={item.name}
               alarmSound={item.sound}
               //this state needs to be fixed 08/29/2024
-              option={{value: isAlarmActive}}
+              option={{value: item.isActive}}
               onToggleAlarm={handleToggleAlarm}
             />
           )}
