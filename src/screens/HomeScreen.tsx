@@ -17,13 +17,19 @@ const HomeScreen = ({navigation, route}: any) => {
     isSnoozed: false,
     id: '',
     //this state needs to be fixed 08/29/2024
-    isActive: true,
+    isActive: false,
   });
-
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
 
+  //const handleToggleAlarm = () => {
+  //  (prevState: boolean) => setNewAlarm({...newAlarm, isActive: !prevState});
+  //};
+
   const handleToggleAlarm = () => {
-    (prevState: boolean) => setNewAlarm({...newAlarm, isActive: !prevState});
+    setNewAlarm(({isActive}) => ({
+      ...newAlarm,
+      isActive: !isActive,
+    }));
   };
 
   const navigateToAlarmSettingsScreen = useCallback(() => {
@@ -41,6 +47,7 @@ const HomeScreen = ({navigation, route}: any) => {
           //this state needs to be fixed 08/29/2024
           isActive: newAlarm.isActive,
         });
+        console.log('newAlarm.isActive,:,', newAlarm.isActive);
       },
     });
   }, [navigation]);
