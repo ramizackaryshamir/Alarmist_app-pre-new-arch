@@ -14,7 +14,10 @@ const Alarm = ({
 }: AlarmProps) => {
   //This component DISPLAYS how the alarm will render to the UI. Sound and isSNoozed props aren't needed 08/29/2024
   const styles = useStyles();
-
+  console.group('\x1b[32m');
+  console.log('Alarm Option');
+  console.log('option.value', option.value);
+  console.groupEnd();
   return (
     <View style={styles.alarmContainer}>
       <View style={styles.alarmContainerLeft}>

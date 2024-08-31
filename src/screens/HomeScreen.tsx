@@ -13,7 +13,7 @@ const HomeScreen = ({navigation, route}: any) => {
     time: '',
     repeat: [],
     name: '',
-    sound: [],
+    sound: '',
     isSnoozed: false,
     id: '',
     //this state needs to be fixed 08/29/2024
