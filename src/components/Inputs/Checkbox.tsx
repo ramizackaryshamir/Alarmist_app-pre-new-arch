@@ -16,7 +16,7 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
   const styles = useStyles();
 
   let updatedCheckedValues: Array<string> = [...checkedValues];
-  console.log('checkedValues', checkedValues);
+  //console.log('checkedValues', checkedValues);
 
   return (
     <>
@@ -31,19 +31,19 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
               <TouchableOpacity
                 style={styles.checkboxContainer}
                 onPress={() => {
-                  console.group('\x1b[42m');
-                  console.log('Alarm Settings Repeat Options Screen');
-                  console.log('option.value', option.value);
+                  //console.group('\x1b[42m');
+                  //console.log('Alarm Settings Repeat Options Screen');
+                  //console.log('option.value', option.value);
                   if (isChecked) {
                     updatedCheckedValues = updatedCheckedValues.filter(
                       (checkedValue) => checkedValue !== option.value,
                     );
-                    console.log(
-                      '\x1b[43m',
-                      'if isChecked updatedCheckedValues',
-                      updatedCheckedValues,
-                    );
-                    console.groupEnd();
+                    //console.log(
+                    //  '\x1b[43m',
+                    //  'if isChecked updatedCheckedValues',
+                    //  updatedCheckedValues,
+                    //);
+                    //console.groupEnd();
                     return onChange(updatedCheckedValues);
                   }
 

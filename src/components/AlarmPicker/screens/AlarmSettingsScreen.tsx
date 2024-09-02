@@ -62,35 +62,37 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     route.params,
   ]);
 
-  useEffect(() => {
-    //Params 1a/2:
-    //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
-    if (route.params?.newAlarmRepeat) {
-      setNewAlarmRepeat(newAlarmRepeat);
-    }
-    //Params 1b/2:
-    //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
-    if (route.params?.newAlarmSound) {
-      setNewAlarmSound(newAlarmSound);
-    }
+  //useEffect(() => {
+  //  //Params 1a/2:
+  //  //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
 
-    console.group('\x1b[41m');
-    console.log('Alarm Settings Screen');
-    console.log('newAlarmTime:', newAlarmTime);
-    console.log('newAlarmRepeat:', newAlarmRepeat);
-    console.log('newAlarmName:', newAlarmName);
-    console.log('newAlarmSound:', newAlarmSound);
-    console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
-    console.groupEnd();
-  }, [
-    route.params?.newAlarmRepeat,
-    route.params?.newAlarmSound,
-    newAlarmRepeat,
-    newAlarmSound,
-    isNewAlarmSnoozed,
-    newAlarmName,
-    newAlarmTime,
-  ]);
+  //  if (route.params?.newAlarmRepeat) {
+  //    console.log('route.params', route.params);
+  //    setNewAlarmRepeat(newAlarmRepeat);
+  //  }
+  //  //Params 1b/2:
+  //  //Screen receives params data from AlarmSettingsSoundOptionsScreen and sets data to alarmSettinngs
+  //  if (route.params?.newAlarmSound) {
+  //    setNewAlarmSound(newAlarmSound);
+  //  }
+
+  //  console.group('\x1b[41m');
+  //  console.log('Alarm Settings Screen');
+  //  console.log('newAlarmTime:', newAlarmTime);
+  //  console.log('newAlarmRepeat:', newAlarmRepeat);
+  //  console.log('newAlarmName:', newAlarmName);
+  //  console.log('newAlarmSound:', newAlarmSound);
+  //  console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
+  //  console.groupEnd();
+  //}, [
+  //  route.params?.newAlarmRepeat,
+  //  route.params?.newAlarmSound,
+  //  newAlarmRepeat,
+  //  newAlarmSound,
+  //  isNewAlarmSnoozed,
+  //  newAlarmName,
+  //  newAlarmTime,
+  //]);
 
   return (
     <View style={styles.bottomSheetContainer}>
