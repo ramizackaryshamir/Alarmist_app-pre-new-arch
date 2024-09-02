@@ -12,6 +12,11 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}: any) => {
     const handleGoBackToAlarmSettingsScreen = () => {
       route.params.onGoBack(selectedDays);
       navigation.goBack();
+      navigation.navigate({
+        name: 'Alarm Settings Screen',
+        params: {selectedDays: selectedDays},
+        merge: true,
+      });
     };
     navigation.setOptions({
       headerLeft: () => (
