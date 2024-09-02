@@ -50,7 +50,7 @@ const HomeScreen = ({navigation, route}: any) => {
         console.log('newAlarm.isActive,:,', newAlarm.isActive);
       },
     });
-  }, [navigation]);
+  }, [navigation, newAlarm.isActive]);
 
   useEffect(() => {
     navigation.setOptions({
@@ -61,14 +61,13 @@ const HomeScreen = ({navigation, route}: any) => {
   }, [navigation, navigateToAlarmSettingsScreen]);
 
   useEffect(() => {
-    if (newAlarm.time !== '') {
+    if (route.params?.newAlarmName) {
       setAlarms([newAlarm, ...alarms]);
     }
-    console.log('route', route);
   }, [newAlarm, route]);
 
   console.group('\x1b[40m');
-  console.log('route', route);
+  console.log('Home route', route);
   console.groupEnd();
   console.group('\x1b[46m');
   console.log('Home Screen');
