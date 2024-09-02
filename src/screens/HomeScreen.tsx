@@ -61,20 +61,22 @@ const HomeScreen = ({navigation, route}: any) => {
   }, [navigation, navigateToAlarmSettingsScreen]);
 
   useEffect(() => {
-    //if (route.params?.newAlarmName) {
-    //  setAlarms([newAlarm, ...alarms]);
-    //}
-    if (route.params?.newAlarmTime) {
-      setAlarms([newAlarm, ...alarms]);
+    if (
+      route.params?.newAlarmTime &&
+      alarms.filter((alarm) => alarm.id !== newAlarm.id)
+    ) {
+      alarms.push(newAlarm);
+      setAlarms(alarms);
     }
-  }, [route.params?.newAlarmTime, newAlarm]);
+  }, [route.params?.newAlarmTime, newAlarm, alarms]);
 
   console.group('\x1b[40m');
-  console.log('Home route', route);
+  //console.log('Home route', route);
+
   console.groupEnd();
   console.group('\x1b[46m');
   console.log('Home Screen');
-  //console.log('alarms', alarms);
+  console.log('alarms', alarms);
   console.log('newAlarm.time:', newAlarm.time);
   console.log('newAlarm.repeat:', newAlarm.repeat);
   console.log('newAlarm.name:', newAlarm.name);
@@ -82,7 +84,7 @@ const HomeScreen = ({navigation, route}: any) => {
   console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
   console.log('newAlarm.id:', newAlarm.id);
   //this state needs to be fixed 08/29/2024
-  console.log('newAlarm.isActuve:', newAlarm.isActive);
+  console.log('newAlarm.isActve:', newAlarm.isActive);
   console.groupEnd();
 
   return (
@@ -92,6 +94,8 @@ const HomeScreen = ({navigation, route}: any) => {
         {/*TODO This Button Goes Forward*/}
         <FlatList
           contentContainerStyle={styles.alarmsContainer}
+          //data renders alarms each time because javascript equates by reference and each alarms obj is a new obj even if none of the data has changed
+          //data={alarms.length !== 0 ? alarms : arr}
           data={alarms}
           renderItem={({item}) => (
             <Alarm
