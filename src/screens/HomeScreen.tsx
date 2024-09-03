@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, Button} from 'react-native';
+import {View, FlatList, ScrollView, Button} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
@@ -62,7 +62,7 @@ const HomeScreen = ({navigation, route}: any) => {
 
   useEffect(() => {
     if (route.params?.newAlarmTime) {
-      alarms.filter((alarm) => alarm.id !== newAlarm.id);
+      //alarms.filter((alarm) => alarm.id !== newAlarm.id);
       alarms.push(newAlarm);
       setAlarms(alarms);
     }
@@ -85,37 +85,32 @@ const HomeScreen = ({navigation, route}: any) => {
   console.log('newAlarm.isActve:', newAlarm.isActive);
   console.groupEnd();
 
-  const arr = [
-    {1: 1, 3: 1},
-    {2: 2, 3: 2, 4: 2},
-  ];
   return (
     <>
-      <View style={styles.homeScreenContainer}>
+      <ScrollView contentContainerStyle={styles.homeScreenContainer}>
         {/*//*/}
         {/*TODO This Button Goes Forward*/}
-        <FlatList
-          contentContainerStyle={styles.alarmsContainer}
-          //data renders alarms each time because javascript equates by reference and each alarms obj is a new obj even if none of the data has changed
-          //data={alarms.length !== 0 ? alarms : arr}
-          data={alarms}
-          renderItem={({item}) => (
-            <Alarm
-              key={item.id}
-              alarmWeekday={item.weekday}
-              alarmDate={item.date}
-              alarmTime={item.time}
-              alarmRepeat={item.repeat}
-              alarmName={item.name}
-              alarmSound={item.sound}
-              //this state needs to be fixed 08/29/2024
-              option={{value: item.isActive}}
-              onToggleAlarm={handleToggleAlarm}
-            />
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </View>
+        {newAlarm
+          ? alarms
+              .filter((alarm) => alarm.id !== newAlarm.id)
+              .map((item) => {
+                return (
+                  <Alarm
+                    key={item.id}
+                    alarmWeekday={item.weekday}
+                    alarmDate={item.date}
+                    alarmTime={item.time}
+                    alarmRepeat={item.repeat}
+                    alarmName={item.name}
+                    alarmSound={item.sound}
+                    //this state needs to be fixed 08/29/2024
+                    option={{value: item.isActive}}
+                    onToggleAlarm={handleToggleAlarm}
+                  />
+                );
+              })
+          : null}
+      </ScrollView>
       <Menu navigation={navigation} />
     </>
   );
