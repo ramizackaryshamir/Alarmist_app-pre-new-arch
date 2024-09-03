@@ -61,10 +61,8 @@ const HomeScreen = ({navigation, route}: any) => {
   }, [navigation, navigateToAlarmSettingsScreen]);
 
   useEffect(() => {
-    if (
-      route.params?.newAlarmTime &&
-      alarms.filter((alarm) => alarm.id !== newAlarm.id)
-    ) {
+    if (route.params?.newAlarmTime) {
+      alarms.filter((alarm) => alarm.id !== newAlarm.id);
       alarms.push(newAlarm);
       setAlarms(alarms);
     }
