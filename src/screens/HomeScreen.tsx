@@ -4,9 +4,11 @@ import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from '../hooks/useStyles';
 import {NewAlarm} from './types';
+import {useBoolean} from '../hooks/useBoolean';
 
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
+  const {toogle} = useBoolean();
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     weekday: '',
     date: '',
@@ -88,28 +90,28 @@ const HomeScreen = ({navigation, route}: any) => {
   return (
     <>
       <ScrollView contentContainerStyle={styles.homeScreenContainer}>
-        {/*//*/}
-        {/*TODO This Button Goes Forward*/}
-        {newAlarm
-          ? alarms
-              .filter((alarm) => alarm.id !== newAlarm.id)
-              .map((item) => {
-                return (
-                  <Alarm
-                    key={item.id}
-                    alarmWeekday={item.weekday}
-                    alarmDate={item.date}
-                    alarmTime={item.time}
-                    alarmRepeat={item.repeat}
-                    alarmName={item.name}
-                    alarmSound={item.sound}
-                    //this state needs to be fixed 08/29/2024
-                    option={{value: item.isActive}}
-                    onToggleAlarm={handleToggleAlarm}
-                  />
-                );
-              })
-          : null}
+        {
+          //newAlarm ?
+          alarms
+            //.filter((alarm) => alarm.id !== newAlarm.id)
+            .map((item) => {
+              return (
+                <Alarm
+                  key={item.id}
+                  alarmWeekday={item.weekday}
+                  alarmDate={item.date}
+                  alarmTime={item.time}
+                  alarmRepeat={item.repeat}
+                  alarmName={item.name}
+                  alarmSound={item.sound}
+                  //this state needs to be fixed 08/29/2024
+                  option={{value: item.isActive}}
+                  onToggleAlarm={handleToggleAlarm}
+                />
+              );
+            })
+          //: null
+        }
       </ScrollView>
       <Menu navigation={navigation} />
     </>
