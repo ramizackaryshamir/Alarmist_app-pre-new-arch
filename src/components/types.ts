@@ -4,7 +4,7 @@ export interface AlarmProps {
   alarmTime: string;
   alarmRepeat: Array<string>;
   alarmName: string;
-  alarmSound: string;
+  alarmSound?: string;
   option: {value: boolean};
   onToggleAlarm: any;
 }
