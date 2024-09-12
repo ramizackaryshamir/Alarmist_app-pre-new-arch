@@ -89,30 +89,31 @@ const HomeScreen = ({navigation, route}: any) => {
 
   return (
     <>
-      <ScrollView contentContainerStyle={styles.homeScreenContainer}>
-        {
-          //newAlarm ?
-          alarms
-            //.filter((alarm) => alarm.id !== newAlarm.id)
-            .map((item) => {
-              return (
-                <Alarm
-                  key={item.id}
-                  alarmWeekday={item.weekday}
-                  alarmDate={item.date}
-                  alarmTime={item.time}
-                  alarmRepeat={item.repeat}
-                  alarmName={item.name}
-                  alarmSound={item.sound}
-                  //this state needs to be fixed 08/29/2024
-                  option={{value: item.isActive}}
-                  onToggleAlarm={handleToggleAlarm}
-                />
-              );
-            })
-          //: null
-        }
-      </ScrollView>
+      <View style={styles.homeScreenContainer}>
+        {/*//*/}
+        {/*TODO This Button Goes Forward*/}
+        <FlatList
+          contentContainerStyle={styles.alarmsContainer}
+          //data renders alarms each time because javascript equates by reference and each alarms obj is a new obj even if none of the data has changed
+          //data={alarms.length !== 0 ? alarms : arr}
+          data={alarms}
+          renderItem={({item}) => (
+            <Alarm
+              key={item.id}
+              alarmWeekday={item.weekday}
+              alarmDate={item.date}
+              alarmTime={item.time}
+              alarmRepeat={item.repeat}
+              alarmName={item.name}
+              alarmSound={item.sound}
+              //this state needs to be fixed 08/29/2024
+              option={{value: item.isActive}}
+              onToggleAlarm={handleToggleAlarm}
+            />
+          )}
+          keyExtractor={(item) => item.id}
+        />
+      </View>
       <Menu navigation={navigation} />
     </>
   );
