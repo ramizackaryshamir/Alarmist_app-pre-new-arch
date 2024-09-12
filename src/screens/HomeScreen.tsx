@@ -2,13 +2,13 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {View, FlatList, ScrollView, Button} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
-import {useStyles} from '../hooks/useStyles';
+import {useStyles} from './hooks/useStyles';
 import {NewAlarm} from './types';
-import {useBoolean} from '../hooks/useBoolean';
+import {useBoolean} from './hooks/useBoolean';
 
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
-  const {toogle} = useBoolean();
+  const {toggle} = useBoolean();
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     weekday: '',
     date: '',
@@ -49,10 +49,13 @@ const HomeScreen = ({navigation, route}: any) => {
           //this state needs to be fixed 08/29/2024
           isActive: newAlarm.isActive,
         });
+
+        //alarms.filter((alarm) => alarm.id !== newAlarm.id);
+        setAlarms([...alarms, newAlarm]);
         console.log('newAlarm.isActive,:,', newAlarm.isActive);
       },
     });
-  }, [navigation, newAlarm.isActive]);
+  }, [navigation, newAlarm.isActive, route.params?.newAlarmTime, alarms]);
 
   useEffect(() => {
     navigation.setOptions({
@@ -62,18 +65,10 @@ const HomeScreen = ({navigation, route}: any) => {
     });
   }, [navigation, navigateToAlarmSettingsScreen]);
 
-  useEffect(() => {
-    if (route.params?.newAlarmTime) {
-      //alarms.filter((alarm) => alarm.id !== newAlarm.id);
-      alarms.push(newAlarm);
-      setAlarms(alarms);
-    }
-  }, [route.params?.newAlarmTime, newAlarm, alarms]);
-
-  console.group('\x1b[40m');
+  //console.group('\x1b[40m');
   //console.log('Home route', route);
+  //console.groupEnd();
 
-  console.groupEnd();
   console.group('\x1b[46m');
   console.log('Home Screen');
   console.log('alarms', alarms);

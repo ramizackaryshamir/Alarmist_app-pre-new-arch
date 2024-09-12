@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, Button} from 'react-native';
 import Checkbox from '../../Inputs/Checkbox';
-import {useStyles} from '../../../hooks/useStyles';
+import {useStyles} from './useStyles';
 
 const AlarmSettingsRepeatOptionScreen = ({navigation, route}: any) => {
   const [selectedDays, setSelectedDays] = useState<[]>([]);

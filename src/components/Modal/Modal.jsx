@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, View, Text} from 'react-native';
-import {useStyles} from '../../hooks/useStyles';
+import {useStyles} from './useStyles';
 const Modal = ({children}) => {
   const styles = useStyles();
   const [modal, showModal] = useState(false);

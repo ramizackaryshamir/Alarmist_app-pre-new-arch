@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableWithoutFeedback} from 'react-native';
-import {useStyles} from '../../../hooks/useStyles';
+import {useStyles} from './useStyles';
 
 const AlarmSettingsSoundOption = ({ringtone}) => {
   const styles = useStyles();

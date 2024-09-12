@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import ColorOptionButton from './ColorOptionButton';
-import {useStyles} from '../../../hooks/useStyles';
+import {useStyles} from '../useStyles';
 const ColorOptionsMenu = () => {
   const [color, setColor] = useState({
     _E8E500: '#E8E500',
