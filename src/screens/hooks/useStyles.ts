@@ -19,6 +19,11 @@ export const useStyles = () => {
       height: 30,
       backgroundColor: '#E4EBE6',
     },
+    alarmsContainer: {
+      justifyContent: 'center',
+      rowGap: 5,
+      width: width < 500 ? width - 30 : width - 180,
+    },
     digitalClockScreenContainer: {
       flex: 1,
       display: 'flex',

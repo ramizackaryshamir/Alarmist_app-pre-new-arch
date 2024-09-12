@@ -45,7 +45,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       navigation.navigate({
         name: 'Home',
         params: {
-          newAlarmTime: newAlarmTime,
+          newAlarmTime: newAlarmTime.toString(),
           newAlarmRepeat: newAlarmRepeat,
           newAlarmName: newAlarmName,
           newAlarmSound: newAlarmSound,
