@@ -51,7 +51,7 @@ const HomeScreen = ({navigation, route}: any) => {
         });
 
         //alarms.filter((alarm) => alarm.id !== newAlarm.id);
-        setAlarms([...alarms, newAlarm]);
+
         console.log('newAlarm.isActive,:,', newAlarm.isActive);
       },
     });
@@ -65,6 +65,11 @@ const HomeScreen = ({navigation, route}: any) => {
     });
   }, [navigation, navigateToAlarmSettingsScreen]);
 
+  useEffect(() => {
+    if (route.params?.newAlarmTime) {
+      setAlarms((alarms) => [...alarms, newAlarm]);
+    }
+  }, [route.params?.newAlarmTime, newAlarm]);
   //console.group('\x1b[40m');
   //console.log('Home route', route);
   //console.groupEnd();
