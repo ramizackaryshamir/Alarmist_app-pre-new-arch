@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {showLocalTime} from '../lib/utils';
+import {showLocalTime} from '../../lib/utils';
 
 export const useShowTime = () => {
   const {hour, minute, second} = showLocalTime();

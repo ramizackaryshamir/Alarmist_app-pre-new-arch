@@ -4,7 +4,7 @@ import DigitalClock from '../components/DigitalClock';
 import Modal from '../components/Modal/Modal';
 import ColorOptionsMenu from '../components/Modal/ColorOptionsMenu/ColorOptionsMenu';
 import Menu from '../components/Menu';
-import {useStyles} from '../hooks/useStyles';
+import {useStyles} from './hooks/useStyles';
 
 const DigitalClockScreen = ({navigation}: any) => {
   const styles = useStyles();

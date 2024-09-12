@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {useStyles} from '../../hooks/useStyles';
+import {useStyles} from './useStyles';
 
 type Option = {
   label: string;

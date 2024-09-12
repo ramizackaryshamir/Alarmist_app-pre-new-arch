@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Switch} from 'react-native';
-import {useStyles} from '../hooks/useStyles';
+import {useStyles} from './hooks/useStyles';
 import {AlarmProps} from './types';
 
 const Alarm = ({

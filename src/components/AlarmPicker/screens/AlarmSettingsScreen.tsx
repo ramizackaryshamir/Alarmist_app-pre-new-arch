@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, TextInput, Text, Button} from 'react-native';
 import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
-import {useStyles} from '../../../hooks/useStyles';
+import {useStyles} from './useStyles';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm

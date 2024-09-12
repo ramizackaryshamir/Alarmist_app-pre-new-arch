@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
 import AlarmSettingsSoundOption from '../components/AlarmSettingsSoundOption';
-import {useStyles} from '../../../hooks/useStyles';
+import {useStyles} from './useStyles';
 import {PianoLoopsRT} from 'piano-loops_ringtone.wav';
 import {SoundWaveRT} from 'sound-wave-ringtone.wav';
 const AlarmSettingsSoundOptionsScreen = () => {

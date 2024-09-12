@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Pressable} from 'react-native';
-import {useStyles} from '../hooks/useStyles';
+import {useStyles} from './hooks/useStyles';
 //import DigitalClockSvg from '../assets/digital-clock-icon.svg';
 const Menu = ({navigation}) => {
   const styles = useStyles();
