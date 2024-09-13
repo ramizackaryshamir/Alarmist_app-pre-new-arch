@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, Switch} from 'react-native';
+import {View, Text, Switch, Button} from 'react-native';
 import {useStyles} from './hooks/useStyles';
-import {AlarmProps} from './types';
+import {AlarmProps, GRE} from './types';
 
 const Alarm = ({
   alarmWeekday,
@@ -9,8 +9,6 @@ const Alarm = ({
   alarmTime,
   alarmRepeat,
   alarmName,
-  option,
-  onToggleAlarm,
 }: AlarmProps) => {
   //This component DISPLAYS how the alarm will render to the UI. Sound and isSNoozed props aren't needed 08/29/2024
   const styles = useStyles();
@@ -32,11 +30,6 @@ const Alarm = ({
       </View>
       <View style={styles.alarmContainerRight}>
         <Text style={styles.alarmTextRight}>{alarmTime}</Text>
-        <Switch
-          style={{transform: [{scaleX: 0.6}, {scaleY: 0.6}]}}
-          onValueChange={onToggleAlarm}
-          value={option.value}
-        />
       </View>
     </View>
   );

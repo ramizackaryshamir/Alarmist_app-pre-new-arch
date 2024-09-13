@@ -22,7 +22,7 @@ export const useStyles = () => {
     alarmsContainer: {
       justifyContent: 'center',
       rowGap: 5,
-      width: width < 500 ? width - 30 : width - 180,
+      width: width < 500 ? width - 30 : width - 10,
     },
     digitalClockScreenContainer: {
       flex: 1,
