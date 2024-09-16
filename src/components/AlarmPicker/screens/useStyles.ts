@@ -16,6 +16,14 @@ export const useStyles = () => {
       borderColor: 'green',
       borderRadius: 5,
     },
+    bottomSheetRowView: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      height: 50,
+      paddingLeft: 5,
+      paddingRight: 5,
+    },
     bottomSheetButton: {
       flexDirection: 'row',
       alignItems: 'center',

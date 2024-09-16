@@ -117,20 +117,25 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       <View style={styles.bottomSheetSettings}>
         {/*TODO This Button Goes Forward*/}
         <TouchableOpacity
-          style={styles.bottomSheetButton}
+          style={styles.bottomSheetRowView}
           onPress={navigateToRepeatOptionsScreen}
         >
           <Text style={styles.bottomSheetText}>Repeat</Text>
+          <Text>{newAlarmRepeat}</Text>
         </TouchableOpacity>
-        <TextInput
-          style={styles.bottomSheetInput}
-          placeholder="Alarm"
-          onChangeText={(value) => setNewAlarmName(value)}
-          value={newAlarmName}
-        />
+        <View style={styles.bottomSheetRowView}>
+          <Text>Label</Text>
+          <TextInput
+            style={styles.bottomSheetRowView}
+            placeholder="Alarm"
+            onChangeText={(value) => setNewAlarmName(value)}
+            value={newAlarmName}
+          />
+        </View>
         {/*TODO This Button Goes Forward*/}
+
         <TouchableOpacity
-          style={styles.bottomSheetButton}
+          style={styles.bottomSheetRowView}
           onPress={() => {
             navigation.navigate('Sound', {
               onGoBack: (data: string) => {
@@ -140,6 +145,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           }}
         >
           <Text style={styles.bottomSheetText}>Sound</Text>
+          <Text>Selection</Text>
         </TouchableOpacity>
         <AlarmSettingsSnoozeOption
           option={{label: 'Snooze', value: isNewAlarmSnoozed}}

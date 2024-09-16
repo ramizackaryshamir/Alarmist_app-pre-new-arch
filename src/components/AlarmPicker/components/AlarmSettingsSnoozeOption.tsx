@@ -12,7 +12,7 @@ const AlarmSettingsSnoozeOption = ({option, onToggle}: SnoozeOptionsProps) => {
 
   return (
     <>
-      <View style={styles.bottomSheetSwitchView}>
+      <View style={styles.bottomSheetRowView}>
         <Text style={styles.bottomSheetText}>{option.label}</Text>
         <Switch onValueChange={onToggle} value={option.value} />
       </View>

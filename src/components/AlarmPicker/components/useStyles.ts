@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export const useStyles = () => {
   const styles = StyleSheet.create({
-    bottomSheetSwitchView: {
+    bottomSheetRowView: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
