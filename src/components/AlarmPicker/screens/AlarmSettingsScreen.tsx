@@ -25,7 +25,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const navigateToRepeatOptionsScreen = () => {
     navigation.navigate('Repeat', {
       onGoBack: (data: Array<string>) => {
-        console.log(data);
+        //console.log(data);
         setNewAlarmRepeat(data);
       },
     });
@@ -54,11 +54,11 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         merge: true,
       });
     };
-    console.group('\x1b[41m');
-    console.log('Alarm Settings Screen');
-    console.log('newAlarmRepeat: Alarm Settings Screen', newAlarmRepeat);
-    console.log('route in AlarmSettingsScreen', route);
-    console.groupEnd();
+    //console.group('\x1b[41m');
+    //console.log('Alarm Settings Screen');
+    //console.log('newAlarmRepeat: Alarm Settings Screen', newAlarmRepeat);
+    //console.log('route in AlarmSettingsScreen', route);
+    //console.groupEnd();
     navigation.setOptions({
       headerRight: () => (
         <Button title="Save" onPress={handleSaveAndGoBackToHomeScreen} />
@@ -80,7 +80,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     //Screen receives params data from AlarmSettingsRepeatOptionsScreen and sets data to alarmSettinngs
 
     if (route.params?.selectedDays) {
-      console.log('route.params', route.params);
+      //console.log('route.params', route.params);
       setNewAlarmRepeat(newAlarmRepeat);
     }
     //Params 1b/2:
@@ -89,13 +89,13 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       setNewAlarmSound(newAlarmSound);
     }
 
-    console.group('\x1b[41m');
-    console.log('Alarm Settings Screen');
-    console.log('newAlarmTime:', newAlarmTime);
-    console.log('newAlarmRepeat:', newAlarmRepeat);
-    console.log('newAlarmName:', newAlarmName);
-    console.log('newAlarmSound:', newAlarmSound);
-    console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
+    //console.group('\x1b[41m');
+    //console.log('Alarm Settings Screen');
+    //console.log('newAlarmTime:', newAlarmTime);
+    //console.log('newAlarmRepeat:', newAlarmRepeat);
+    //console.log('newAlarmName:', newAlarmName);
+    //console.log('newAlarmSound:', newAlarmSound);
+    //console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
     console.groupEnd();
   }, [
     route.params?.newAlarmRepeat,

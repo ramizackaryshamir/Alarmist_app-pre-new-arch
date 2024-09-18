@@ -8,7 +8,7 @@ import {NewAlarm} from './types';
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
 
-  //setNewAlarm will render CSS and/or values to UI. isActive state needs to be held in different store.
+  //setNewAlarm will render CSS and/or values to UI.
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     weekday: '',
     date: '',
@@ -20,10 +20,15 @@ const HomeScreen = ({navigation, route}: any) => {
     id: '',
   });
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
-  const [isActive, setIsActive] = useState<boolean>(true);
+  const [alarmIsEnabled, setAlarmIsEnabled] = useState<any>({});
 
-  const handleToggleAlarm = () => {
-    setIsActive((prevState: boolean) => !prevState);
+  const toggleEnable = (id) => {
+    console.log('id: ', id);
+    console.log('{[id]: !alarmIsEnabled[id]}: ', {[id]: !alarmIsEnabled[id]});
+    setAlarmIsEnabled({
+      ...alarmIsEnabled,
+      [id]: !alarmIsEnabled[id],
+    });
   };
 
   const navigateToAlarmSettingsScreen = useCallback(() => {
@@ -55,21 +60,21 @@ const HomeScreen = ({navigation, route}: any) => {
     if (route.params?.newAlarmTime) {
       setAlarms((alarms) => [...alarms, newAlarm]);
     }
-    console.group('\x1b[40m');
-    console.log('Home route', route.params?.newAlarmTime);
-    console.groupEnd();
+    //console.group('\x1b[40m');
+    //console.log('Home route', route.params?.newAlarmTime);
+    //console.groupEnd();
   }, [route.params?.newAlarmTime, newAlarm]);
 
-  console.group('\x1b[46m');
-  console.log('Home Screen');
-  console.log('alarms', alarms);
-  console.log('newAlarm.time:', newAlarm.time);
-  console.log('newAlarm.repeat:', newAlarm.repeat);
-  console.log('newAlarm.name:', newAlarm.name);
-  console.log('newAlarm.sound:', newAlarm.sound);
-  console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
-  console.log('newAlarm.id:', newAlarm.id);
-  console.groupEnd();
+  //console.group('\x1b[46m');
+  //console.log('Home Screen');
+  //console.log('alarms', alarms);
+  //console.log('newAlarm.time:', newAlarm.time);
+  //console.log('newAlarm.repeat:', newAlarm.repeat);
+  //console.log('newAlarm.name:', newAlarm.name);
+  //console.log('newAlarm.sound:', newAlarm.sound);
+  //console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
+  //console.log('newAlarm.id:', newAlarm.id);
+  //console.groupEnd();
 
   const handleDelete: any = (id: string) => {
     const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
@@ -82,12 +87,10 @@ const HomeScreen = ({navigation, route}: any) => {
         {/*TODO This Button Goes Forward*/}
         <FlatList
           contentContainerStyle={styles.alarmsContainer}
-          //data renders alarms each time because javascript equates by reference and each alarms obj is a new obj even if none of the data has changed
-          //data={alarms.length !== 0 ? alarms : arr}
+          //data renders alarms each time because javascript equates by reference and each alarms array obj is a new obj even if none of the data has changed
           data={alarms}
           renderItem={({item}) => (
             <>
-              {/*<View style={{flexDirection: 'row'}}>*/}
               <Alarm
                 key={item.id}
                 id={item.id}
@@ -97,21 +100,12 @@ const HomeScreen = ({navigation, route}: any) => {
                 alarmRepeat={item.repeat}
                 alarmName={item.name}
                 alarmSound={item.sound}
-                //this state needs to be fixed 08/29/2024
-                //option={{value: item.isActive}}
-                //onToggleAlarm={handleToggleAlarm}
+                onToggle={() => toggleEnable(item.id)}
+                alarmIsEnabled={alarmIsEnabled[item.id]}
               />
               <View style={{flexDirection: 'row'}}>
-                <Switch
-                  key={item.id}
-                  id={item.id}
-                  style={{transform: [{scaleX: 0.6}, {scaleY: 0.6}]}}
-                  onValueChange={handleToggleAlarm}
-                  value={isActive}
-                />
                 <Button title="Delete" onPress={() => handleDelete(item.id)} />
               </View>
-              {/*</View>*/}
             </>
           )}
           keyExtractor={(item) => item.id}

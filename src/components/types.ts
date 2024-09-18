@@ -6,4 +6,6 @@ export interface AlarmProps {
   alarmRepeat: Array<string>;
   alarmName: string;
   alarmSound?: string;
+  onToggle: () => void;
+  alarmIsEnabled: boolean;
 }
