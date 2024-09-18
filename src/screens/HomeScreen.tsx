@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, Switch, Button} from 'react-native';
+import {View, FlatList, Button, Alert} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './hooks/useStyles';
@@ -31,6 +31,7 @@ const HomeScreen = ({navigation, route}: any) => {
     });
   };
 
+  console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
   const navigateToAlarmSettingsScreen = useCallback(() => {
     navigation.navigate('Alarm Settings Screen', {
       onGoBack: (data: any) => {
@@ -64,6 +65,21 @@ const HomeScreen = ({navigation, route}: any) => {
     //console.log('Home route', route.params?.newAlarmTime);
     //console.groupEnd();
   }, [route.params?.newAlarmTime, newAlarm]);
+
+  useEffect(() => {
+    const checkAlarm = setInterval(() => {
+      const currentTime = new Date();
+      if (
+        alarmIsEnabled[newAlarm.id] === true &&
+        currentTime.getHours().toString() === newAlarm.time.slice(0, 2) &&
+        currentTime.getMinutes().toString() === newAlarm.time.slice(3, 5)
+      ) {
+        Alert.alert('Alarm');
+        clearInterval(checkAlarm);
+      }
+    }, 1000);
+    return () => clearInterval(checkAlarm);
+  }, [alarmIsEnabled]);
 
   //console.group('\x1b[46m');
   //console.log('Home Screen');
