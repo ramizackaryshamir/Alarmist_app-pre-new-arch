@@ -22,7 +22,7 @@ const HomeScreen = ({navigation, route}: any) => {
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
   const [alarmIsEnabled, setAlarmIsEnabled] = useState<any>({});
 
-  const toggleEnable = (id) => {
+  const toggleEnable = (id: string) => {
     console.log('id: ', id);
     console.log('{[id]: !alarmIsEnabled[id]}: ', {[id]: !alarmIsEnabled[id]});
     setAlarmIsEnabled({
@@ -34,7 +34,7 @@ const HomeScreen = ({navigation, route}: any) => {
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
   const navigateToAlarmSettingsScreen = useCallback(() => {
     navigation.navigate('Alarm Settings Screen', {
-      onGoBack: (data: any) => {
+      onGoBack: (data) => {
         setNewAlarm({
           weekday: data.newAlarmTime.slice(0, 3),
           date: data.newAlarmTime.slice(4, 15),
