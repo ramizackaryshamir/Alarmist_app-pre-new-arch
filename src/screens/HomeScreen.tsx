@@ -1,5 +1,12 @@
 import React, {useState, useEffect, useCallback, useRef} from 'react';
-import {View, FlatList, Button, Alert, PanResponder} from 'react-native';
+import {
+  View,
+  FlatList,
+  Button,
+  Alert,
+  PanResponder,
+  Animated,
+} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './hooks/useStyles';
@@ -7,16 +14,26 @@ import {NewAlarm} from './types';
 
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
+  const [position, setPosition] = useState({x: 0, y: 0});
+  const pan = useRef(new Animated.ValueXY()).current;
   const panResponder = useRef(
     PanResponder.create({
       //executed anytime a user taps on the screen onStartShouldSetPanResponder() is called
       onStartShouldSetPanResponder: () => true,
       //callback called anytime a user starts to drag their finger around the screen
       onPanResponderMove: (event, gesture) => {
-        console.log('gesture: ', gesture);
+        pan.setValue({x: gesture.dx, y: gesture.dy});
+        console.log(JSON.stringify(gesture, null, 2));
       },
       //executed anytime a user removes their finger from the screen: final callbacks like 'reset the position'
-      onPanResponderRelease: () => {},
+      onPanResponderRelease: (event, gesture) => {
+        const newPosition = {
+          x: position.x + gesture.dx,
+          y: position.y + gesture.dy,
+        };
+        setPosition(newPosition);
+        pan.setValue({x: 0, y: 0});
+      },
     }),
   ).current;
 
@@ -119,7 +136,10 @@ const HomeScreen = ({navigation, route}: any) => {
           data={alarms}
           renderItem={({item}) => (
             <>
-              <View {...panResponder.panHandlers}>
+              <Animated.View
+                {...panResponder.panHandlers}
+                style={[pan.getLayout()]}
+              >
                 <Alarm
                   key={item.id}
                   id={item.id}
@@ -132,7 +152,7 @@ const HomeScreen = ({navigation, route}: any) => {
                   onToggle={() => toggleEnable(item.id)}
                   alarmIsEnabled={alarmIsEnabled[item.id]}
                 />
-              </View>
+              </Animated.View>
               <View style={{flexDirection: 'row'}}>
                 <Button title="Delete" onPress={() => handleDelete(item.id)} />
               </View>
