@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, Button, Alert} from 'react-native';
+import React, {useState, useEffect, useCallback, useRef} from 'react';
+import {View, FlatList, Button, Alert, PanResponder} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './hooks/useStyles';
@@ -7,6 +7,18 @@ import {NewAlarm} from './types';
 
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
+  const panResponder = useRef(
+    PanResponder.create({
+      //executed anytime a user taps on the screen onStartShouldSetPanResponder() is called
+      onStartShouldSetPanResponder: () => true,
+      //callback called anytime a user starts to drag their finger around the screen
+      onPanResponderMove: (event, gesture) => {
+        console.log('gesture: ', gesture);
+      },
+      //executed anytime a user removes their finger from the screen: final callbacks like 'reset the position'
+      onPanResponderRelease: () => {},
+    }),
+  ).current;
 
   //setNewAlarm will render CSS and/or values to UI.
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
@@ -107,18 +119,20 @@ const HomeScreen = ({navigation, route}: any) => {
           data={alarms}
           renderItem={({item}) => (
             <>
-              <Alarm
-                key={item.id}
-                id={item.id}
-                alarmWeekday={item.weekday}
-                alarmDate={item.date}
-                alarmTime={item.time}
-                alarmRepeat={item.repeat}
-                alarmName={item.name}
-                alarmSound={item.sound}
-                onToggle={() => toggleEnable(item.id)}
-                alarmIsEnabled={alarmIsEnabled[item.id]}
-              />
+              <View {...panResponder.panHandlers}>
+                <Alarm
+                  key={item.id}
+                  id={item.id}
+                  alarmWeekday={item.weekday}
+                  alarmDate={item.date}
+                  alarmTime={item.time}
+                  alarmRepeat={item.repeat}
+                  alarmName={item.name}
+                  alarmSound={item.sound}
+                  onToggle={() => toggleEnable(item.id)}
+                  alarmIsEnabled={alarmIsEnabled[item.id]}
+                />
+              </View>
               <View style={{flexDirection: 'row'}}>
                 <Button title="Delete" onPress={() => handleDelete(item.id)} />
               </View>
