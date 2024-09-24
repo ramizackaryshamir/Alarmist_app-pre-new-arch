@@ -7,5 +7,6 @@ export interface AlarmProps {
   alarmName: string;
   alarmSound?: string;
   onToggle: () => void;
+  onDelete: () => void;
   alarmIsEnabled: boolean;
 }

@@ -150,13 +150,10 @@ const HomeScreen = ({navigation, route}: any) => {
                 alarmName={item.name}
                 alarmSound={item.sound}
                 onToggle={() => toggleEnable(item.id)}
+                onDelete={() => handleDelete(item.id)}
                 alarmIsEnabled={alarmIsEnabled[item.id]}
               />
               {/*</Animated.View>*/}
-
-              <View style={{flexDirection: 'row'}}>
-                <Button title="Delete" onPress={() => handleDelete(item.id)} />
-              </View>
             </>
           )}
           keyExtractor={(item) => item.id}
