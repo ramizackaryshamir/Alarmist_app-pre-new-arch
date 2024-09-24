@@ -50,9 +50,9 @@ const Alarm = ({
   ).current;
 
   return (
-    <>
+    <View style={styles.container}>
       {isShowDelete && (
-        <TouchableOpacity onPress={onDelete}>
+        <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
           <Text>Delete</Text>
         </TouchableOpacity>
       )}
@@ -74,7 +74,7 @@ const Alarm = ({
           </View>
         </View>
       </Animated.View>
-    </>
+    </View>
   );
 };
 

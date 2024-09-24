@@ -4,6 +4,9 @@ export const useStyles = () => {
   const {height, width} = useWindowDimensions();
 
   const styles = StyleSheet.create({
+    container: {
+      flexDirection: 'row',
+    },
     alarmContainer: {
       flexDirection: 'row',
       justifyContent: 'space-around',
@@ -13,6 +16,9 @@ export const useStyles = () => {
       borderWidth: 3,
       borderRadius: 5,
       backgroundColor: 'pink',
+    },
+    deleteButton: {
+      backgroundColor: 'red',
     },
     alarmContainerLeft: {
       width: '50%',
