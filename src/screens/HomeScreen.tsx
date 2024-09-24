@@ -136,23 +136,24 @@ const HomeScreen = ({navigation, route}: any) => {
           data={alarms}
           renderItem={({item}) => (
             <>
-              <Animated.View
+              {/*<Animated.View
                 {...panResponder.panHandlers}
                 style={[pan.getLayout()]}
-              >
-                <Alarm
-                  key={item.id}
-                  id={item.id}
-                  alarmWeekday={item.weekday}
-                  alarmDate={item.date}
-                  alarmTime={item.time}
-                  alarmRepeat={item.repeat}
-                  alarmName={item.name}
-                  alarmSound={item.sound}
-                  onToggle={() => toggleEnable(item.id)}
-                  alarmIsEnabled={alarmIsEnabled[item.id]}
-                />
-              </Animated.View>
+              >*/}
+              <Alarm
+                key={item.id}
+                id={item.id}
+                alarmWeekday={item.weekday}
+                alarmDate={item.date}
+                alarmTime={item.time}
+                alarmRepeat={item.repeat}
+                alarmName={item.name}
+                alarmSound={item.sound}
+                onToggle={() => toggleEnable(item.id)}
+                alarmIsEnabled={alarmIsEnabled[item.id]}
+              />
+              {/*</Animated.View>*/}
+
               <View style={{flexDirection: 'row'}}>
                 <Button title="Delete" onPress={() => handleDelete(item.id)} />
               </View>
