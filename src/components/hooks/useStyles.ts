@@ -6,6 +6,7 @@ export const useStyles = () => {
   const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
+      width: '100%',
     },
     alarmContainer: {
       flexDirection: 'row',

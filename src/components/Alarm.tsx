@@ -56,24 +56,26 @@ const Alarm = ({
           <Text>Delete</Text>
         </TouchableOpacity>
       )}
-      <Animated.View {...panResponder.panHandlers} style={[pan.getLayout()]}>
-        <View style={styles.alarmContainer}>
-          <View style={styles.alarmContainerLeft}>
-            <View style={styles.alarmContainerLeftTop}>
-              <Text style={styles.alarmTextLeftTop}>{alarmWeekday}</Text>
-              <Text style={styles.alarmTextLeftTop}>{alarmDate}</Text>
+      <TouchableOpacity onPress={() => console.log('Pressed')}>
+        <Animated.View {...panResponder.panHandlers} style={[pan.getLayout()]}>
+          <View style={styles.alarmContainer}>
+            <View style={styles.alarmContainerLeft}>
+              <View style={styles.alarmContainerLeftTop}>
+                <Text style={styles.alarmTextLeftTop}>{alarmWeekday}</Text>
+                <Text style={styles.alarmTextLeftTop}>{alarmDate}</Text>
+              </View>
+              <View style={styles.alarmContainerLeftBottom}>
+                <Text style={styles.alarmTextLeftBottom}>{alarmName}</Text>
+                <Text style={styles.alarmTextLeftBottom}>{alarmRepeat}</Text>
+              </View>
             </View>
-            <View style={styles.alarmContainerLeftBottom}>
-              <Text style={styles.alarmTextLeftBottom}>{alarmName}</Text>
-              <Text style={styles.alarmTextLeftBottom}>{alarmRepeat}</Text>
+            <View style={styles.alarmContainerRight}>
+              <Text style={styles.alarmTextRight}>{alarmTime}</Text>
+              <Switch onValueChange={onToggle} value={alarmIsEnabled} />
             </View>
           </View>
-          <View style={styles.alarmContainerRight}>
-            <Text style={styles.alarmTextRight}>{alarmTime}</Text>
-            <Switch onValueChange={onToggle} value={alarmIsEnabled} />
-          </View>
-        </View>
-      </Animated.View>
+        </Animated.View>
+      </TouchableOpacity>
     </View>
   );
 };
