@@ -1,43 +1,14 @@
-import React, {useState, useEffect, useCallback, useRef} from 'react';
-import {
-  View,
-  FlatList,
-  Button,
-  Alert,
-  PanResponder,
-  Animated,
-} from 'react-native';
+import React, {useState, useEffect, useCallback} from 'react';
+import {View, FlatList, Button, Alert} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './hooks/useStyles';
+import {useCheckAlarm} from '../components/hooks/useCheckAlarm';
 import {NewAlarm} from './types';
 
 const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
-  const [position, setPosition] = useState({x: 0, y: 0});
-  const pan = useRef(new Animated.ValueXY()).current;
-  const panResponder = useRef(
-    PanResponder.create({
-      //executed anytime a user taps on the screen onStartShouldSetPanResponder() is called
-      onStartShouldSetPanResponder: () => true,
-      //callback called anytime a user starts to drag their finger around the screen
-      onPanResponderMove: (event, gesture) => {
-        pan.setValue({x: gesture.dx, y: gesture.dy});
-        console.log(JSON.stringify(gesture, null, 2));
-      },
-      //executed anytime a user removes their finger from the screen: final callbacks like 'reset the position'
-      onPanResponderRelease: (event, gesture) => {
-        const newPosition = {
-          x: position.x + gesture.dx,
-          y: position.y + gesture.dy,
-        };
-        setPosition(newPosition);
-        pan.setValue({x: 0, y: 0});
-      },
-    }),
-  ).current;
 
-  //setNewAlarm will render CSS and/or values to UI.
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     weekday: '',
     date: '',
@@ -49,16 +20,19 @@ const HomeScreen = ({navigation, route}: any) => {
     id: '',
   });
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
-  const [alarmIsEnabled, setAlarmIsEnabled] = useState<any>({});
 
-  const toggleEnable = (id: string) => {
-    console.log('id: ', id);
-    console.log('{[id]: !alarmIsEnabled[id]}: ', {[id]: !alarmIsEnabled[id]});
-    setAlarmIsEnabled({
-      ...alarmIsEnabled,
-      [id]: !alarmIsEnabled[id],
-    });
-  };
+  const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
+
+  //const [alarmIsEnabled, setAlarmIsEnabled] = useState<any>({});
+
+  //const toggleEnable = (id: string) => {
+  //  console.log('id: ', id);
+  //  console.log('{[id]: !alarmIsEnabled[id]}: ', {[id]: !alarmIsEnabled[id]});
+  //  setAlarmIsEnabled({
+  //    ...alarmIsEnabled,
+  //    [id]: !alarmIsEnabled[id],
+  //  });
+  //};
 
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
   const navigateToAlarmSettingsScreen = useCallback(() => {
@@ -95,20 +69,20 @@ const HomeScreen = ({navigation, route}: any) => {
     //console.groupEnd();
   }, [route.params?.newAlarmTime, newAlarm]);
 
-  useEffect(() => {
-    const checkAlarm = setInterval(() => {
-      const currentTime = new Date();
-      if (
-        alarmIsEnabled[newAlarm.id] === true &&
-        currentTime.getHours().toString() === newAlarm.time.slice(0, 2) &&
-        currentTime.getMinutes().toString() === newAlarm.time.slice(3, 5)
-      ) {
-        Alert.alert('Alarm');
-        clearInterval(checkAlarm);
-      }
-    }, 1000);
-    return () => clearInterval(checkAlarm);
-  }, [alarmIsEnabled]);
+  //useEffect(() => {
+  //  const checkAlarm = setInterval(() => {
+  //    const currentTime = new Date();
+  //    if (
+  //      alarmIsEnabled[newAlarm.id] === true &&
+  //      currentTime.getHours().toString() === newAlarm.time.slice(0, 2) &&
+  //      currentTime.getMinutes().toString() === newAlarm.time.slice(3, 5)
+  //    ) {
+  //      Alert.alert('Alarm');
+  //      clearInterval(checkAlarm);
+  //    }
+  //  }, 1000);
+  //  return () => clearInterval(checkAlarm);
+  //}, [alarmIsEnabled]);
 
   //console.group('\x1b[46m');
   //console.log('Home Screen');
