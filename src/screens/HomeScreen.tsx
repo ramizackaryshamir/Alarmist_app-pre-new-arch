@@ -7,8 +7,6 @@ import {useCheckAlarm} from '../components/hooks/useCheckAlarm';
 import {NewAlarm} from './types';
 
 const HomeScreen = ({navigation, route}: any) => {
-  const styles = useStyles();
-
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
     weekday: '',
     date: '',
@@ -20,19 +18,8 @@ const HomeScreen = ({navigation, route}: any) => {
     id: '',
   });
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
-
+  const styles = useStyles();
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
-
-  //const [alarmIsEnabled, setAlarmIsEnabled] = useState<any>({});
-
-  //const toggleEnable = (id: string) => {
-  //  console.log('id: ', id);
-  //  console.log('{[id]: !alarmIsEnabled[id]}: ', {[id]: !alarmIsEnabled[id]});
-  //  setAlarmIsEnabled({
-  //    ...alarmIsEnabled,
-  //    [id]: !alarmIsEnabled[id],
-  //  });
-  //};
 
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
   const navigateToAlarmSettingsScreen = useCallback(() => {
@@ -68,21 +55,6 @@ const HomeScreen = ({navigation, route}: any) => {
     //console.log('Home route', route.params?.newAlarmTime);
     //console.groupEnd();
   }, [route.params?.newAlarmTime, newAlarm]);
-
-  //useEffect(() => {
-  //  const checkAlarm = setInterval(() => {
-  //    const currentTime = new Date();
-  //    if (
-  //      alarmIsEnabled[newAlarm.id] === true &&
-  //      currentTime.getHours().toString() === newAlarm.time.slice(0, 2) &&
-  //      currentTime.getMinutes().toString() === newAlarm.time.slice(3, 5)
-  //    ) {
-  //      Alert.alert('Alarm');
-  //      clearInterval(checkAlarm);
-  //    }
-  //  }, 1000);
-  //  return () => clearInterval(checkAlarm);
-  //}, [alarmIsEnabled]);
 
   //console.group('\x1b[46m');
   //console.log('Home Screen');

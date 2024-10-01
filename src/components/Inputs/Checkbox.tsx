@@ -51,7 +51,7 @@ const Checkbox = ({options, checkedValues, onChange}: CheckboxProps) => {
                   onChange(updatedCheckedValues);
                 }}
               >
-                <Text>{option.label}</Text>
+                <Text style={styles.bottomSheetText}>{option.label}</Text>
                 <Text
                   style={isChecked ? styles.checkIcon : styles.activeCheckIcon}
                 >

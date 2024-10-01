@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Button} from 'react-native';
+import {View, Button, TouchableOpacity, Text} from 'react-native';
 import Checkbox from '../../Inputs/Checkbox';
 import {useStyles} from './useStyles';
 
@@ -20,10 +20,14 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}: any) => {
     };
     navigation.setOptions({
       headerLeft: () => (
-        <Button title="Back" onPress={handleGoBackToAlarmSettingsScreen} />
+        <>
+          <TouchableOpacity onPress={handleGoBackToAlarmSettingsScreen}>
+            <Text style={styles.bottomSheetText}>Back</Text>
+          </TouchableOpacity>
+        </>
       ),
     });
-  }, [navigation, route.params, selectedDays]);
+  }, [navigation, route.params, selectedDays, styles.bottomSheetText]);
 
   return (
     <View style={styles.alarmSettingsRepeatOptionsPageContainer}>

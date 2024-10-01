@@ -9,7 +9,7 @@ import DigitalClockScreen from './screens/DigitalClockScreen';
 import ScreenClockScreen from './screens/ScreenClockScreen';
 import Menu from './components/Menu';
 import {Button} from 'react-native';
-
+import {Colors} from '../colors.ts';
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
@@ -31,8 +31,9 @@ const AppNavigator = () => {
             name="Alarm Settings Screen"
             component={AlarmSettingsScreen}
             options={{
-              headerStyle: {backgroundColor: 'red'},
+              headerStyle: {backgroundColor: Colors.blackPurple1},
               headerBackTitle: 'Cancel',
+              headerTintColor: Colors.white,
               headerShown: true,
               headerRight: () => <Button title="Save" />,
               //headerTintColor: '#F2D935',
@@ -43,7 +44,8 @@ const AppNavigator = () => {
             name="Repeat"
             component={AlarmSettingsRepeatOptionScreen}
             options={{
-              headerStyle: {backgroundColor: 'green'},
+              headerStyle: {backgroundColor: Colors.blackPurple1},
+              headerTintColor: Colors.white,
               headerShown: true,
               headerLeft: () => <Button title="Back" />,
               //headerTintColor: '#F2D935',

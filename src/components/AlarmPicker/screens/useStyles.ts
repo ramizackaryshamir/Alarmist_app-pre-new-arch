@@ -1,5 +1,5 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-
+import {Colors} from '../../../../colors';
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
 
@@ -8,13 +8,14 @@ export const useStyles = () => {
       alignItems: 'center',
       width: width,
       height: height,
-      backgroundColor: 'red',
+      backgroundColor: Colors.blackPurple2,
     },
     bottomSheetSettings: {
       width: width,
-      borderWidth: 5,
-      borderColor: 'green',
+      borderWidth: 1,
+      //borderColor: Colors.blackPurple1,
       borderRadius: 5,
+      backgroundColor: Colors.blackPurple3,
     },
     bottomSheetRowView: {
       flexDirection: 'row',
@@ -23,6 +24,8 @@ export const useStyles = () => {
       height: 50,
       paddingLeft: 5,
       paddingRight: 5,
+      borderBottomWidth: 1,
+      color: Colors.white,
     },
     bottomSheetButton: {
       flexDirection: 'row',
@@ -39,17 +42,19 @@ export const useStyles = () => {
       height: 50,
       paddingLeft: 5,
       paddingRight: 5,
-      color: 'white',
+      color: Colors.white,
     },
     bottomSheetText: {
-      color: 'white',
+      fontVariant: ['small-caps', 'common-ligatures'],
+      letterSpacing: 1,
+      color: Colors.white,
     },
     alarmSettingsRepeatOptionsPageContainer: {
       alignItems: 'center',
       width: width,
       height: height,
       paddingTop: 20,
-      backgroundColor: 'green',
+      backgroundColor: Colors.blackPurple2,
     },
     alarmSettingsSoundPageContainer: {
       alignItems: 'center',

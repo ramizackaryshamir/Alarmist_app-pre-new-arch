@@ -3,6 +3,7 @@ import {View, TouchableOpacity, TextInput, Text, Button} from 'react-native';
 import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from './useStyles';
+import {Colors} from '../../../../colors';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm
@@ -61,7 +62,9 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     //console.groupEnd();
     navigation.setOptions({
       headerRight: () => (
-        <Button title="Save" onPress={handleSaveAndGoBackToHomeScreen} />
+        <TouchableOpacity onPress={handleSaveAndGoBackToHomeScreen}>
+          <Text style={styles.bottomSheetText}>Save</Text>
+        </TouchableOpacity>
       ),
     });
   }, [
@@ -73,6 +76,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     isNewAlarmSnoozed,
     route.params,
     route,
+    styles.bottomSheetText,
   ]);
 
   useEffect(() => {
@@ -121,10 +125,10 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           onPress={navigateToRepeatOptionsScreen}
         >
           <Text style={styles.bottomSheetText}>Repeat</Text>
-          <Text>{newAlarmRepeat}</Text>
+          <Text style={styles.bottomSheetText}>{newAlarmRepeat}</Text>
         </TouchableOpacity>
         <View style={styles.bottomSheetRowView}>
-          <Text>Label</Text>
+          <Text style={styles.bottomSheetText}>Label</Text>
           <TextInput
             style={styles.bottomSheetRowView}
             placeholder="Alarm"
@@ -145,7 +149,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
           }}
         >
           <Text style={styles.bottomSheetText}>Sound</Text>
-          <Text>Selection</Text>
+          <Text style={styles.bottomSheetText}>Selection</Text>
         </TouchableOpacity>
         <AlarmSettingsSnoozeOption
           option={{label: 'Snooze', value: isNewAlarmSnoozed}}

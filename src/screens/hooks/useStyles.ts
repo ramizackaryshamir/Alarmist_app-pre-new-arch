@@ -1,5 +1,5 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-
+import {Colors} from '../../../colors';
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
   const styles = StyleSheet.create({

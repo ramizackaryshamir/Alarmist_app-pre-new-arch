@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from '../../../../colors';
 
 export const useStyles = () => {
   const styles = StyleSheet.create({
@@ -9,6 +10,7 @@ export const useStyles = () => {
       height: 50,
       paddingLeft: 5,
       paddingRight: 5,
+      backgroundColor: Colors.blackPurple3,
     },
     bottomSheetText: {
       color: 'white',

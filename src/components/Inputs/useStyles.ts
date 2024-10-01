@@ -1,4 +1,5 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
+import {Colors} from '../../../colors';
 
 export const useStyles = () => {
   const {width} = useWindowDimensions();
@@ -7,10 +8,11 @@ export const useStyles = () => {
     alarmSettingsRepeatOptionsContainer: {
       width: width - 30,
       marginTop: 50,
-      borderColor: 'black',
-      borderWidth: 5,
+      borderColor: Colors.blackPurple3,
+      borderTopWidth: 5,
+      borderBottomWidth: 5,
       borderRadius: 5,
-      backgroundColor: 'white',
+      backgroundColor: Colors.blackPurple1,
     },
     alarmSettingsRepeatOption: {
       flexDirection: 'row',
@@ -21,7 +23,13 @@ export const useStyles = () => {
       paddingRight: 10,
       paddingLeft: 10,
       marginBottom: 5,
-      backgroundColor: 'green',
+      borderWidth: 0,
+      backgroundColor: Colors.blackPurple3,
+    },
+    bottomSheetText: {
+      fontVariant: ['small-caps', 'common-ligatures'],
+      letterSpacing: 1,
+      color: Colors.white,
     },
     checkboxContainer: {
       flexDirection: 'row',
@@ -31,7 +39,7 @@ export const useStyles = () => {
       height: '100%',
     },
     checkIcon: {
-      color: 'black',
+      color: Colors.white,
       fontSize: 20,
     },
     activeCheckIcon: {

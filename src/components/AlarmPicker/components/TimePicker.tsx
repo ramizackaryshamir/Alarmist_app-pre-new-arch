@@ -1,6 +1,7 @@
 import React from 'react';
 import DatePicker from 'react-native-date-picker';
 import {TimePickerProps} from './types';
+import {Colors} from '../../../../colors';
 
 const TimePicker = ({newAlarmTime, onChange}: TimePickerProps) => {
   //console.group('\x1b[44m');
@@ -27,7 +28,13 @@ const TimePicker = ({newAlarmTime, onChange}: TimePickerProps) => {
 
   return (
     <>
-      <DatePicker date={newAlarmTime} onDateChange={onChange} title="Alarm" />
+      <DatePicker
+        date={newAlarmTime}
+        onDateChange={onChange}
+        title="Alarm"
+        style={{backgroundColor: Colors.blackPurple2}}
+        theme="dark"
+      />
     </>
   );
 };
