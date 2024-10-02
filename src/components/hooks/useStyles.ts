@@ -62,13 +62,13 @@ export const useStyles = () => {
       lineHeight: 50,
     },
     digitalClockContainer: {
+      top: 10,
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      width: width > 500 ? '35%' : '80%',
-      height: height > 600 ? '20%' : '50%',
-      borderWidth: 8,
-      borderColor: '#0A3A40',
+      width: width - 120,
+      height: height - 140,
+      borderWidth: 10,
       borderRadius: 15,
       backgroundColor: '#223240',
     },
@@ -78,8 +78,8 @@ export const useStyles = () => {
     digitalClockText: {
       justifyContent: 'center',
       alignItems: 'center',
-      fontSize: 80,
-      color: 'white',
+      fontSize: 200,
+      color: Colors.vibrantPink,
     },
     screenClockContainer: {
       flexDirection: width > 500 ? 'row' : 'column',
