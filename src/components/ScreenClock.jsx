@@ -8,14 +8,12 @@ const ScreenClock = () => {
   const localTime = useShowTime();
 
   return (
-    <View style={styles.screenClockScreenContainer}>
-      <View style={styles.screenClockContainer}>
-        <Text style={styles.screenClockText}>{localTime.hour}</Text>
-        <View>
-          <Text>{localTime.second}</Text>
-        </View>
-        <Text style={styles.screenClockText}>{localTime.minute}</Text>
+    <View style={styles.screenClockContainer}>
+      <Text style={styles.screenClockText}>{localTime.hour}</Text>
+      <View>
+        <Text>{localTime.second}</Text>
       </View>
+      <Text style={styles.screenClockText}>{localTime.minute}</Text>
     </View>
   );
 };

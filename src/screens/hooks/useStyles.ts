@@ -33,7 +33,7 @@ export const useStyles = () => {
       alignItems: 'center',
       width: width,
       height: height,
-      backgroundColor: '#F2D935',
+      backgroundColor: Colors.VibrantOrange,
     },
     settingsContainer: {
       flexDirection: 'row',
@@ -48,7 +48,6 @@ export const useStyles = () => {
       alignItems: 'center',
       width: width,
       height: height,
-      backgroundColor: 'blue',
     },
     headerIconText: {
       fontSize: 30,

@@ -87,11 +87,11 @@ export const useStyles = () => {
       alignItems: 'center',
       width: width,
       height: height,
-      backgroundColor: '#F2D935',
+      backgroundColor: Colors.vibrantPink,
     },
     screenClockText: {
       fontSize: 300,
-      color: 'white',
+      color: Colors.blackPurple1,
     },
     menuContainer: {
       flexDirection: 'row',

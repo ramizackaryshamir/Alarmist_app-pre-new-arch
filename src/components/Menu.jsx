@@ -19,7 +19,7 @@ const Menu = ({navigation}) => {
       </Pressable>*/}
 
       <Pressable onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.bottomSheetText}>Alarm Drawer</Text>
+        <Text style={styles.bottomSheetText}>Alarms</Text>
       </Pressable>
       <Text style={styles.bottomSheetText}>Settings</Text>
     </View>
