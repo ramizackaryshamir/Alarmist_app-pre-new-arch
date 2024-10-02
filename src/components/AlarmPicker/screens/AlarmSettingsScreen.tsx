@@ -3,7 +3,7 @@ import {View, TouchableOpacity, TextInput, Text, Button} from 'react-native';
 import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from './useStyles';
-import {Colors} from '../../../../colors';
+import {Colors} from '../../../lib/Colors';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm

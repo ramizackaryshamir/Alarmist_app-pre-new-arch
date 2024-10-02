@@ -1,3 +1,4 @@
+import {Colors} from './Colors';
 export const setHour = () => {
   const date = new Date();
   const secondRatio = date.getSeconds() / 60;
@@ -43,4 +44,16 @@ export const angleClock = (hour, minutes) => {
   const hourAngle = hour * 30 + minutes * 0.5;
   const angle = Math.abs(hourAngle - minuteAngle);
   return Math.min(angle, 360 - angle);
+};
+
+export const generateRandomColors = () => {
+  const colorsArr = [
+    Colors.VibrantOrange,
+    Colors.vibrantMustard,
+    Colors.vibrantPink,
+    Colors.vibrantDarkBlue,
+    Colors.vibrantWhite,
+  ];
+  let random = colorsArr[Math.floor(Math.random() * colorsArr.length)];
+  return colorsArr.splice(random, 1);
 };

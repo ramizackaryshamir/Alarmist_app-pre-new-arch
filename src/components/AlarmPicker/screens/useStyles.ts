@@ -1,5 +1,5 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-import {Colors} from '../../../../colors';
+import {Colors} from '../../../lib/Colors';
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
 

@@ -5,11 +5,12 @@ import HomeScreen from './screens/HomeScreen.tsx';
 import AlarmSettingsScreen from './components/AlarmPicker/screens/AlarmSettingsScreen';
 import AlarmSettingsRepeatOptionScreen from './components/AlarmPicker/screens/AlarmSettingsRepeatOptionScreen';
 import AlarmSettingsSoundOptionsScreen from './components/AlarmPicker/screens/AlarmSettingsSoundOptionsScreen';
-import DigitalClockScreen from './screens/DigitalClockScreen';
-import ScreenClockScreen from './screens/ScreenClockScreen';
+//import DigitalClockScreen from './screens/DigitalClockScreen';
+//import ScreenClockScreen from './screens/ScreenClockScreen';
+import ClockScreen from './screens/ClockScreen.tsx';
 import Menu from './components/Menu';
 import {Button} from 'react-native';
-import {Colors} from '../colors.ts';
+import {Colors} from './lib/Colors.ts';
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
@@ -63,6 +64,17 @@ const AppNavigator = () => {
         </Stack.Group>
         <Stack.Group>
           <Stack.Screen
+            name="Clock Screen"
+            component={ClockScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: Colors.blackPurple1,
+              },
+              headerTintColor: Colors.white,
+              headerShown: false,
+            }}
+          />
+          {/*<Stack.Screen
             name="Digital Clock"
             component={DigitalClockScreen}
             options={{
@@ -72,8 +84,8 @@ const AppNavigator = () => {
               headerTintColor: '#F2D935',
               headerShown: false,
             }}
-          />
-          <Stack.Screen
+          />*/}
+          {/*<Stack.Screen
             name="Screen Clock"
             component={ScreenClockScreen}
             options={{
@@ -83,7 +95,7 @@ const AppNavigator = () => {
               headerTintColor: '#F2D935',
               headerShown: false,
             }}
-          />
+          />*/}
           <Stack.Screen name="Menu" component={Menu} />
         </Stack.Group>
       </Stack.Navigator>

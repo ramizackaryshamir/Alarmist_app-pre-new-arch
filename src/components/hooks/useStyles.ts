@@ -1,8 +1,10 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-import {Colors} from '../../../colors';
+import {Colors} from '../../lib/Colors';
+import {generateRandomColors} from '../../lib/utils';
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
-
+  let randomColor = generateRandomColors().toString();
+  console.log(generateRandomColors());
   const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
@@ -16,7 +18,7 @@ export const useStyles = () => {
       borderColor: 'black',
       borderWidth: 3,
       borderRadius: 5,
-      backgroundColor: 'pink',
+      backgroundColor: randomColor,
     },
     deleteButton: {
       backgroundColor: 'red',
@@ -51,7 +53,7 @@ export const useStyles = () => {
       alignItems: 'center',
       columnGap: 5,
       width: '50%',
-      backgroundColor: 'yellow',
+      backgroundColor: randomColor,
     },
     alarmTextRight: {
       color: 'white',

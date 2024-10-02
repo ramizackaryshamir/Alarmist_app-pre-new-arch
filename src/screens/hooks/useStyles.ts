@@ -1,5 +1,5 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-import {Colors} from '../../../colors';
+import {Colors} from '../../lib/Colors';
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
   const styles = StyleSheet.create({
@@ -20,6 +20,7 @@ export const useStyles = () => {
       backgroundColor: '#E4EBE6',
     },
     alarmsContainer: {
+      top: 60,
       justifyContent: 'center',
       rowGap: 5,
       width: width < 500 ? width - 30 : width - 10,

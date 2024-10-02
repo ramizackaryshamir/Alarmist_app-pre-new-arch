@@ -12,6 +12,7 @@ import Alarm from '../components/Alarm';
 import {useStyles} from './hooks/useStyles';
 import {useCheckAlarm} from '../components/hooks/useCheckAlarm';
 import {NewAlarm} from './types';
+import {generateRandomColors} from '../lib/utils.js';
 
 const HomeScreen = ({navigation, route}: any) => {
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
