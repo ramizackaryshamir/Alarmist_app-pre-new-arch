@@ -21,8 +21,8 @@ const AppNavigator = () => {
             name="Home"
             component={HomeScreen}
             options={{
-              headerStyle: {backgroundColor: '#00FFFF'},
-              headerTintColor: '#00FFFF',
+              headerStyle: {backgroundColor: Colors.blackPurple1},
+              headerTintColor: Colors.white,
               headerShown: true,
               headerRight: () => <Button title="+" />,
             }}

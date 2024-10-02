@@ -11,7 +11,7 @@ export const useStyles = () => {
       alignItems: 'center',
       width: width,
       height: height,
-      backgroundColor: '#00FFFF',
+      backgroundColor: Colors.blackPurple2,
     },
     homeScreenAddAlarmButton: {
       bottom: 300,
@@ -48,6 +48,12 @@ export const useStyles = () => {
       width: width,
       height: height,
       backgroundColor: 'blue',
+    },
+    headerIconText: {
+      fontSize: 30,
+      fontVariant: ['small-caps', 'common-ligatures'],
+      letterSpacing: 1,
+      color: Colors.white,
     },
   });
   return styles;

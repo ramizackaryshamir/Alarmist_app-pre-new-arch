@@ -1,5 +1,12 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, Button, Alert} from 'react-native';
+import {
+  View,
+  FlatList,
+  Button,
+  Alert,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './hooks/useStyles';
@@ -42,7 +49,9 @@ const HomeScreen = ({navigation, route}: any) => {
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <Button title="+" onPress={navigateToAlarmSettingsScreen} />
+        <TouchableOpacity onPress={navigateToAlarmSettingsScreen}>
+          <Text style={styles.headerIconText}>+</Text>
+        </TouchableOpacity>
       ),
     });
   }, [navigation, navigateToAlarmSettingsScreen]);
