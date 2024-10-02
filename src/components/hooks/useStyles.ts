@@ -99,7 +99,13 @@ export const useStyles = () => {
       paddingTop: 15,
       width: width,
       height: 55,
-      backgroundColor: '#B2A137',
+      backgroundColor: Colors.blackPurple3,
+    },
+    bottomSheetText: {
+      fontVariant: ['small-caps', 'common-ligatures'],
+      letterSpacing: 1,
+      color: Colors.white,
+      fontSize: width > 500 ? 20 : 10,
     },
   });
   return styles;

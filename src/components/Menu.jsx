@@ -7,16 +7,16 @@ const Menu = ({navigation}) => {
   return (
     <View style={styles.menuContainer}>
       <Pressable onPress={() => navigation.navigate('Screen Clock')}>
-        <Text>Screen Clock</Text>
+        <Text style={styles.bottomSheetText}>Screen Clock</Text>
       </Pressable>
       <Pressable onPress={() => navigation.navigate('Digital Clock')}>
-        <Text>Digital Clock</Text>
+        <Text style={styles.bottomSheetText}>Digital Clock</Text>
         {/*<Image source={DigitalClockSvg} style={styles.menuLogoImage} />*/}
       </Pressable>
       <Pressable onPress={() => navigation.navigate('Home')}>
-        <Text>Alarm Drawer</Text>
+        <Text style={styles.bottomSheetText}>Alarm Drawer</Text>
       </Pressable>
-      <Text>Settings</Text>
+      <Text style={styles.bottomSheetText}>Settings</Text>
     </View>
   );
 };
