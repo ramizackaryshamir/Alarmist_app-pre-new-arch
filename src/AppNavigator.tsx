@@ -11,9 +11,11 @@ import ClockScreen from './screens/ClockScreen.tsx';
 import Menu from './components/Menu';
 import {Button} from 'react-native';
 import {Colors} from './lib/Colors.ts';
+import {useDarkMode} from './hooks/useDarkMode.ts';
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
+  const {theme} = useDarkMode();
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -32,9 +34,13 @@ const AppNavigator = () => {
             name="Alarm Settings Screen"
             component={AlarmSettingsScreen}
             options={{
-              headerStyle: {backgroundColor: Colors.blackPurple1},
+              headerStyle: {
+                backgroundColor:
+                  theme === 'dark' ? Colors.blackPurple1 : Colors.vibrantWhite,
+              },
               headerBackTitle: 'Cancel',
-              headerTintColor: Colors.white,
+              headerTintColor:
+                theme === 'dark' ? Colors.white : Colors.blackPurple1,
               headerShown: true,
               headerRight: () => <Button title="Save" />,
               //headerTintColor: '#F2D935',

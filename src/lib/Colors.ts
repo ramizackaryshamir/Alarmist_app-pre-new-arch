@@ -8,5 +8,7 @@ export const Colors = {
   vibrantMustard: 'rgb(242,172,60)',
   vibrantPink: 'rgb(211,55,143)',
   vibrantWhite: 'rgb(240,234,251)',
+  vibrantWhite2: 'rgb(230, 225, 241)',
+  vibrantWhite3: 'rgb(225,225,241)',
   VibrantOrange: 'rgb(210,86,75)',
 };

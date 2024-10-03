@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, useWindowDimensions} from 'react-native';
+import {View, useWindowDimensions} from 'react-native';
 import DigitalClock from '../components/DigitalClock';
 import ScreenClock from '../components/ScreenClock';
 import Menu from '../components/Menu';
@@ -8,7 +8,7 @@ import ColorOptionsMenu from '../components/Modal/ColorOptionsMenu/ColorOptionsM
 import {useStyles} from './hooks/useStyles';
 const ClockScreen = ({navigation}) => {
   const styles = useStyles();
-  const {width, height} = useWindowDimensions();
+  const {width} = useWindowDimensions();
   return (
     <>
       {width > 500 ? (

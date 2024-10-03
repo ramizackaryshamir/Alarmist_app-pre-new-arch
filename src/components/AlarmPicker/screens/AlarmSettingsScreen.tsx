@@ -4,11 +4,12 @@ import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from './useStyles';
 import {Colors} from '../../../lib/Colors';
+import {useDarkMode} from '../../../hooks/useDarkMode';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm
   const styles = useStyles();
-
+  const {theme} = useDarkMode();
   const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
   const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
   const [newAlarmName, setNewAlarmName] = useState<string>('');
@@ -130,8 +131,11 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         <View style={styles.bottomSheetRowView}>
           <Text style={styles.bottomSheetText}>Label</Text>
           <TextInput
-            style={styles.bottomSheetRowView}
+            style={theme === 'dark' ? styles.bottomSheetRowView : null}
             placeholder="Alarm"
+            placeholderTextColor={
+              theme === 'dark' ? Colors.white : Colors.blackPurple1
+            }
             onChangeText={(value) => setNewAlarmName(value)}
             value={newAlarmName}
           />
