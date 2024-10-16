@@ -67,6 +67,10 @@ def enableProguardInReleaseBuilds = false
  * give correct results when using with locales other than en-US. Note that
  * this variant is about 6MiB larger per architecture than default.
  */
+ project.ext.react = [
+    enableHermes: true
+ ]
+
 def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
