@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Switch, TouchableOpacity, Animated} from 'react-native';
 import {useStyles} from './hooks/useStyles';
 import {usePanResponder} from './hooks/usePanResponder';
-import {AlarmProps} from './types';
+import {AlarmProps} from '../types';
 
 const Alarm = ({
   alarmWeekday,

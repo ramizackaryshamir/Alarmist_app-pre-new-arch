@@ -1,6 +1,6 @@
 import React from 'react';
 import DatePicker from 'react-native-date-picker';
-import {TimePickerProps} from '../../types';
+import {TimePickerProps} from '../../../types';
 import {Colors} from '../../../lib/Colors';
 import {useDarkMode} from '../../../hooks/useDarkMode';
 
