@@ -5,7 +5,7 @@ import ScreenClock from '../components/ScreenClock';
 import Menu from '../components/Menu';
 import Modal from '../components/Modal/Modal';
 import ColorOptionsMenu from '../components/Modal/ColorOptionsMenu/ColorOptionsMenu';
-import {useStyles} from './hooks/useStyles';
+import {useStyles} from './useStyles';
 const ClockScreen = ({navigation}) => {
   const styles = useStyles();
   const {width} = useWindowDimensions();

@@ -1,8 +1,9 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-import {Colors} from '../../lib/Colors';
+import {Colors} from '../lib/Colors';
+
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
-  console.log('useStyles ran in src/screens/hooks/useStyles.ts');
+
   const styles = StyleSheet.create({
     homeScreenContainer: {
       flex: 1,

@@ -5,6 +5,7 @@ import {useDarkMode} from '../../../hooks/useDarkMode';
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
   const {theme} = useDarkMode();
+
   const styles = StyleSheet.create({
     bottomSheetContainer: {
       alignItems: 'center',

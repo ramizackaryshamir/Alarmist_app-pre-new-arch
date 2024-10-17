@@ -2,8 +2,8 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {View, FlatList, Alert, TouchableOpacity, Text} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
-import {useStyles} from './hooks/useStyles';
-import {useCheckAlarm} from '../components/hooks/useCheckAlarm';
+import {useStyles} from './useStyles.js';
+import {useCheckAlarm} from '../hooks/useCheckAlarm.js';
 import {NewAlarm} from '../types';
 import {generateRandomColors} from '../lib/utils.js';
 
@@ -85,10 +85,6 @@ const HomeScreen = ({navigation, route}: any) => {
           data={alarms}
           renderItem={({item}) => (
             <>
-              {/*<Animated.View
-                {...panResponder.panHandlers}
-                style={[pan.getLayout()]}
-              >*/}
               <Alarm
                 key={item.id}
                 id={item.id}
@@ -102,7 +98,6 @@ const HomeScreen = ({navigation, route}: any) => {
                 onDelete={() => handleDelete(item.id)}
                 alarmIsEnabled={alarmIsEnabled[item.id]}
               />
-              {/*</Animated.View>*/}
             </>
           )}
           keyExtractor={(item) => item.id}

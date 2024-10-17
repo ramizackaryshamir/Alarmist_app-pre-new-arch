@@ -4,6 +4,7 @@ import {useDarkMode} from '../../../hooks/useDarkMode';
 
 export const useStyles = () => {
   const {theme} = useDarkMode();
+
   const styles = StyleSheet.create({
     bottomSheetRowView: {
       flexDirection: 'row',
