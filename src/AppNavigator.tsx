@@ -5,8 +5,6 @@ import HomeScreen from './screens/HomeScreen.tsx';
 import AlarmSettingsScreen from './components/AlarmPicker/screens/AlarmSettingsScreen';
 import AlarmSettingsRepeatOptionScreen from './components/AlarmPicker/screens/AlarmSettingsRepeatOptionScreen';
 import AlarmSettingsSoundOptionsScreen from './components/AlarmPicker/screens/AlarmSettingsSoundOptionsScreen';
-//import DigitalClockScreen from './screens/DigitalClockScreen';
-//import ScreenClockScreen from './screens/ScreenClockScreen';
 import ClockScreen from './screens/ClockScreen.tsx';
 import Menu from './components/Menu';
 import {Button} from 'react-native';

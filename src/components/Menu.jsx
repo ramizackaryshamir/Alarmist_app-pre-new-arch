@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Pressable} from 'react-native';
-import {useStyles} from './hooks/useStyles';
+import {useStyles} from './useStyles';
 
 const Menu = ({navigation}) => {
   const styles = useStyles();

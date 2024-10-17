@@ -1,4 +1,5 @@
 import {Colors} from './Colors';
+
 export const setHour = () => {
   const date = new Date();
   const secondRatio = date.getSeconds() / 60;

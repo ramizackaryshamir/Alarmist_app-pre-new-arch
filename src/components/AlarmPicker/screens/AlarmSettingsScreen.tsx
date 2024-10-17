@@ -8,7 +8,6 @@ import {useDarkMode} from '../../../hooks/useDarkMode';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm
-
   const styles = useStyles();
   const {theme} = useDarkMode();
   const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());

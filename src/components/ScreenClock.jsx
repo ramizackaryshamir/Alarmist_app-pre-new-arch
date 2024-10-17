@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {useStyles} from './hooks/useStyles';
+import {useStyles} from './useStyles';
 import {useShowTime} from './hooks/useShowTime';
 
 const ScreenClock = () => {

@@ -1,10 +1,13 @@
 import {StyleSheet, useWindowDimensions} from 'react-native';
-import {Colors} from '../../lib/Colors';
-import {generateRandomColors} from '../../lib/utils';
+import {Colors} from '../lib/Colors';
+import {generateRandomColors} from '../lib/utils';
+
 export const useStyles = () => {
   const {height, width} = useWindowDimensions();
+
   let randomColor = generateRandomColors().toString();
   console.log(generateRandomColors());
+
   const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
