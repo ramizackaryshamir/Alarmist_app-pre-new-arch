@@ -11,5 +11,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "editor.fontSize": 18,
+  "window.zoomLevel": 2,
+  "terminal.integrated.fontSize": 14
 }

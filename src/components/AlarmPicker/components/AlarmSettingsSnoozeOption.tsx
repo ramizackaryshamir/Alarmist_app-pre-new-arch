@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Switch} from 'react-native';
 import {useStyles} from './useStyles';
-import {SnoozeOptionsProps} from './types';
+import {SnoozeOptionsProps} from '../../types';
 
 const AlarmSettingsSnoozeOption = ({option, onToggle}: SnoozeOptionsProps) => {
   const styles = useStyles();

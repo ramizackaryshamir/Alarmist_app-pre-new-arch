@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, TextInput, Text, Button} from 'react-native';
+import {View, TouchableOpacity, TextInput, Text} from 'react-native';
 import TimePicker from '../components/TimePicker';
 import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from './useStyles';
@@ -8,6 +8,7 @@ import {useDarkMode} from '../../../hooks/useDarkMode';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm
+
   const styles = useStyles();
   const {theme} = useDarkMode();
   const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
