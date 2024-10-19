@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen.tsx';
@@ -7,7 +8,6 @@ import AlarmSettingsRepeatOptionScreen from './components/AlarmPicker/screens/Al
 import AlarmSettingsSoundOptionsScreen from './components/AlarmPicker/screens/AlarmSettingsSoundOptionsScreen';
 import ClockScreen from './screens/ClockScreen.tsx';
 import Menu from './components/Menu';
-import {Button} from 'react-native';
 import {Colors} from './lib/Colors.ts';
 import {useDarkMode} from './hooks/useDarkMode.ts';
 const Stack = createNativeStackNavigator();

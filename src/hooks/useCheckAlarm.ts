@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Alert} from 'react-native';
-import {NewAlarm} from '../../screens/types';
+import {NewAlarm} from '../types';
 export const useCheckAlarm = (newAlarm: NewAlarm) => {
   const [alarmIsEnabled, setAlarmIsEnabled] = useState<any>({});
 

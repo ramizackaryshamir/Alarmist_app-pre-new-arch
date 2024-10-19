@@ -2,8 +2,8 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {View, FlatList, Alert, TouchableOpacity, Text} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
-import {useStyles} from './useStyles.js';
-import {useCheckAlarm} from '../hooks/useCheckAlarm.js';
+import {useStyles} from './useStyles.ts';
+import {useCheckAlarm} from '../hooks/useCheckAlarm.ts';
 import {NewAlarm} from '../types';
 import {generateRandomColors} from '../lib/utils.js';
 
