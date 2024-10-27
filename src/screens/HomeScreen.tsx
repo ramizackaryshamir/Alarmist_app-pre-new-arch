@@ -21,6 +21,10 @@ const HomeScreen = ({navigation, route}: any) => {
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
   const styles = useStyles();
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
+  const handleDelete: any = (id: string) => {
+    const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
+    setAlarms(updatedAlarms);
+  };
 
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
   const navigateToAlarmSettingsScreen = useCallback(() => {
@@ -70,10 +74,6 @@ const HomeScreen = ({navigation, route}: any) => {
   //console.log('newAlarm.id:', newAlarm.id);
   //console.groupEnd();
 
-  const handleDelete: any = (id: string) => {
-    const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
-    setAlarms(updatedAlarms);
-  };
   return (
     <>
       <View style={styles.homeScreenContainer}>
