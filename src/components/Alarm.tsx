@@ -16,8 +16,13 @@ const Alarm = ({
 }: AlarmProps) => {
   const styles = useStyles();
 
-  // Use `usePanResponder` without passing any props
-  const {isShowDelete, pan, panResponder, resetPosition} = usePanResponder();
+  const {
+    pan,
+    panResponder,
+    resetPosition,
+    redBackgroundOpacity,
+    deleteTextTranslateX,
+  } = usePanResponder(onDelete);
 
   // Handle delete action directly in the component
   const handleDeletePress = () => {
@@ -27,14 +32,23 @@ const Alarm = ({
 
   return (
     <View style={styles.container}>
-      {isShowDelete && (
+      <Animated.View
+        style={[styles.deleteBackground, {opacity: redBackgroundOpacity}]}
+      >
         <TouchableOpacity
-          style={styles.deleteButton}
+          style={[styles.deleteButton, {backgroundColor: 'red'}]}
           onPress={handleDeletePress}
         >
-          <Text>Delete</Text>
+          <Animated.Text
+            style={[
+              styles.deleteButtonText,
+              {transform: [{translateX: deleteTextTranslateX}]},
+            ]}
+          >
+            Delete
+          </Animated.Text>
         </TouchableOpacity>
-      )}
+      </Animated.View>
       <Animated.View
         {...panResponder.panHandlers}
         style={[pan.getLayout(), styles.alarmContainer]}

@@ -22,8 +22,10 @@ const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
   const handleDelete: any = (id: string) => {
-    const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
-    setAlarms(updatedAlarms);
+    //const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
+    setAlarms((currentAlarms) =>
+      currentAlarms.filter((alarm) => alarm.id !== id),
+    );
   };
 
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
