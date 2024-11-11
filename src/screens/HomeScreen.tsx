@@ -21,27 +21,30 @@ const HomeScreen = ({navigation, route}: any) => {
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
   const styles = useStyles();
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
-  const handleDelete: any = (id: string) => {
+  const handleDelete: any = useCallback((id: string) => {
     //const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
     setAlarms((currentAlarms) =>
       currentAlarms.filter((alarm) => alarm.id !== id),
     );
-  };
+  }, []);
 
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
+
+  const formatAlarmData = (data) => ({
+    weekday: data.newAlarmTime.slice(0, 3),
+    date: data.newAlarmTime.slice(4, 15),
+    time: data.newAlarmTime.slice(16, 21),
+    repeat: data.newAlarmRepeat,
+    name: data.newAlarmName || 'Alarm',
+    sound: data.newAlarmSound,
+    isSnoozed: data.isNewAlarmSnoozed,
+    id: data.newAlarmId,
+  });
+
   const navigateToAlarmSettingsScreen = useCallback(() => {
     navigation.navigate('Alarm Settings Screen', {
       onGoBack: (data) => {
-        setNewAlarm({
-          weekday: data.newAlarmTime.slice(0, 3),
-          date: data.newAlarmTime.slice(4, 15),
-          time: data.newAlarmTime.slice(16, 21),
-          repeat: data.newAlarmRepeat,
-          name: data.newAlarmName ? data.newAlarmName : 'Alarm',
-          sound: data.newAlarmSound,
-          isSnoozed: data.isNewAlarmSnoozed,
-          id: data.newAlarmId,
-        });
+        setNewAlarm(formatAlarmData(data));
       },
     });
   }, [navigation]);
@@ -54,7 +57,7 @@ const HomeScreen = ({navigation, route}: any) => {
         </TouchableOpacity>
       ),
     });
-  }, [navigation, navigateToAlarmSettingsScreen]);
+  }, [navigation, navigateToAlarmSettingsScreen, styles.headerIconText]);
 
   useEffect(() => {
     if (route.params?.newAlarmTime) {
@@ -76,32 +79,36 @@ const HomeScreen = ({navigation, route}: any) => {
   //console.log('newAlarm.id:', newAlarm.id);
   //console.groupEnd();
 
+  const renderItem = useCallback(
+    ({item}) => {
+      return (
+        <Alarm
+          key={item.id}
+          id={item.id}
+          alarmWeekday={item.weekday}
+          alarmDate={item.date}
+          alarmTime={item.time}
+          alarmRepeat={item.repeat}
+          alarmName={item.name}
+          alarmSound={item.sound}
+          onToggle={() => toggleEnable(item.id)}
+          onDelete={() => handleDelete(item.id)}
+          alarmIsEnabled={alarmIsEnabled[item.id]}
+        />
+      );
+    },
+    [toggleEnable, handleDelete, alarmIsEnabled],
+  );
+
   return (
     <>
       <View style={styles.homeScreenContainer}>
-        {/*//*/}
-        {/*TODO This Button Goes Forward*/}
         <FlatList
           contentContainerStyle={styles.alarmsContainer}
           //data renders alarms each time because javascript equates by reference and each alarms array obj is a new obj even if none of the data has changed
           data={alarms}
-          renderItem={({item}) => (
-            <>
-              <Alarm
-                key={item.id}
-                id={item.id}
-                alarmWeekday={item.weekday}
-                alarmDate={item.date}
-                alarmTime={item.time}
-                alarmRepeat={item.repeat}
-                alarmName={item.name}
-                alarmSound={item.sound}
-                onToggle={() => toggleEnable(item.id)}
-                onDelete={() => handleDelete(item.id)}
-                alarmIsEnabled={alarmIsEnabled[item.id]}
-              />
-            </>
-          )}
+          //useCallback memoizes renderItem so that FlatList won't rre-render each item in the list unnecessarily
+          renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
       </View>
