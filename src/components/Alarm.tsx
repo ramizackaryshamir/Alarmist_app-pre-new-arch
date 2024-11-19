@@ -42,31 +42,36 @@ const Alarm = ({
       <Animated.View
         style={[styles.deleteBackground, {opacity: redBackgroundOpacity}]}
       >
-        {/*Edit Button*/}
-        <TouchableOpacity style={[styles.editButton]} onPress={handleEditPress}>
-          <Animated.Text
-            style={[
-              styles.editButtonText,
-              {transform: [{translateX: editTextTranslateX}]},
-            ]}
+        <View style={styles.buttonsContainer}>
+          {/*Edit Button*/}
+          <TouchableOpacity
+            style={[styles.editButton]}
+            onPress={handleEditPress}
           >
-            Edit
-          </Animated.Text>
-        </TouchableOpacity>
-        {/*DeleteButton*/}
-        <TouchableOpacity
-          style={[styles.deleteButton]}
-          onPress={handleDeletePress}
-        >
-          <Animated.Text
-            style={[
-              styles.deleteButtonText,
-              {transform: [{translateX: deleteTextTranslateX}]},
-            ]}
+            <Animated.Text
+              style={[
+                styles.editButtonText,
+                {transform: [{translateX: editTextTranslateX}]},
+              ]}
+            >
+              Edit
+            </Animated.Text>
+          </TouchableOpacity>
+          {/*DeleteButton*/}
+          <TouchableOpacity
+            style={[styles.deleteButton]}
+            onPress={handleDeletePress}
           >
-            Delete
-          </Animated.Text>
-        </TouchableOpacity>
+            <Animated.Text
+              style={[
+                styles.deleteButtonText,
+                {transform: [{translateX: deleteTextTranslateX}]},
+              ]}
+            >
+              Delete
+            </Animated.Text>
+          </TouchableOpacity>
+        </View>
       </Animated.View>
       {/*Swipeable Alarm Item*/}
       <Animated.View

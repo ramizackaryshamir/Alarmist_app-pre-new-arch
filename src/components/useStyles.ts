@@ -26,41 +26,43 @@ export const useStyles = () => {
           backgroundColor: randomColor,
         },
         deleteBackground: {
+          flexDirection: 'row',
+          justifyContent: 'flex-end', // Align buttons to the right
+          alignItems: 'center',
           position: 'absolute',
           left: 0,
           right: 0,
           top: 0,
           bottom: 0,
           backgroundColor: 'red',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingHorizontal: 20, // Ensure buttons are spaced correctly
+          paddingHorizontal: 10, // Add spacing on the right side
         },
-
+        buttonsContainer: {
+          flexDirection: 'row', // Arrange buttons side by side
+        },
         editButton: {
           justifyContent: 'center',
           alignItems: 'center',
           width: 80,
           height: '100%',
-          backgroundColor: 'orange',
+          margin: 0,
           borderRadius: 5,
+          backgroundColor: 'orange',
         },
 
         editButtonText: {
           color: 'white',
           fontWeight: 'bold',
         },
-
         deleteButton: {
           justifyContent: 'center',
           alignItems: 'center',
-          width: 80,
+          width: 50,
           height: '100%',
-          backgroundColor: 'red',
+          margin: 0,
           borderRadius: 5,
+          backgroundColor: 'red',
         },
-
         deleteButtonText: {
           color: 'white',
           fontWeight: 'bold',
