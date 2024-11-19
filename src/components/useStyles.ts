@@ -26,22 +26,85 @@ export const useStyles = () => {
           backgroundColor: randomColor,
         },
         deleteBackground: {
-          ...StyleSheet.absoluteFillObject,
-        },
-        deleteButton: {
-          justifyContent: 'center',
-          alignItems: 'flex-end',
-          width: '100%',
           position: 'absolute',
-          top: 0,
+          left: 0,
           right: 0,
+          top: 0,
           bottom: 0,
+          backgroundColor: 'red',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          paddingHorizontal: 20, // Ensure buttons are spaced correctly
         },
-        deleteButtonText: {
-          paddingRight: 65,
-          color: '#ffffff',
+
+        editButton: {
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: 80,
+          height: '100%',
+          backgroundColor: 'orange',
+          borderRadius: 5,
+        },
+
+        editButtonText: {
+          color: 'white',
           fontWeight: 'bold',
         },
+
+        deleteButton: {
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: 80,
+          height: '100%',
+          backgroundColor: 'red',
+          borderRadius: 5,
+        },
+
+        deleteButtonText: {
+          color: 'white',
+          fontWeight: 'bold',
+        },
+        //deleteBackground: {
+        //  ...StyleSheet.absoluteFillObject,
+        //position: 'absolute',
+        //left: 0,
+        //right: 0,
+        //top: 0,
+        //bottom: 0,
+        //flexDirection: 'row',
+        //justifyContent: 'space-between',
+        //alignItems: 'center',
+        //},
+        //editButton: {
+        //  position: 'absolute',
+        //  right: 60,
+        //  justifyContent: 'center',
+        //  alignItems: 'center',
+        //  //width: 80,
+        //  height: '100%',
+        //  backgroundColor: 'orange',
+        //  borderRadius: 5,
+        //},
+        //editButtonText: {
+        //  color: 'white',
+        //  fontWeight: 'bold',
+        //},
+        //deleteButton: {
+        //  position: 'absolute',
+        //  right: 0,
+        //  justifyContent: 'center',
+        //  alignItems: 'center',
+        //  //width: 80,
+        //  height: '100%',
+        //  backgroundColor: 'red',
+        //  borderRadius: 5,
+        //},
+        //deleteButtonText: {
+        //  //paddingRight: 65,
+        //  color: '#ffffff',
+        //  fontWeight: 'bold',
+        //},
         alarmContainerLeft: {
           width: '50%',
         },

@@ -12,6 +12,7 @@ const Alarm = ({
   alarmName,
   onToggle,
   onDelete,
+  onEdit,
   alarmIsEnabled,
 }: AlarmProps) => {
   const styles = useStyles();
@@ -21,9 +22,14 @@ const Alarm = ({
     panResponder,
     resetPosition,
     redBackgroundOpacity,
+    editTextTranslateX,
     deleteTextTranslateX,
-  } = usePanResponder(onDelete);
+  } = usePanResponder(onDelete, onEdit);
 
+  const handleEditPress = () => {
+    onEdit();
+    resetPosition();
+  };
   // Handle delete action directly in the component
   const handleDeletePress = () => {
     onDelete();
@@ -32,11 +38,24 @@ const Alarm = ({
 
   return (
     <View style={styles.container}>
+      {/*Red background*/}
       <Animated.View
         style={[styles.deleteBackground, {opacity: redBackgroundOpacity}]}
       >
+        {/*Edit Button*/}
+        <TouchableOpacity style={[styles.editButton]} onPress={handleEditPress}>
+          <Animated.Text
+            style={[
+              styles.editButtonText,
+              {transform: [{translateX: editTextTranslateX}]},
+            ]}
+          >
+            Edit
+          </Animated.Text>
+        </TouchableOpacity>
+        {/*DeleteButton*/}
         <TouchableOpacity
-          style={[styles.deleteButton, {backgroundColor: 'red'}]}
+          style={[styles.deleteButton]}
           onPress={handleDeletePress}
         >
           <Animated.Text
@@ -49,6 +68,7 @@ const Alarm = ({
           </Animated.Text>
         </TouchableOpacity>
       </Animated.View>
+      {/*Swipeable Alarm Item*/}
       <Animated.View
         {...panResponder.panHandlers}
         style={[pan.getLayout(), styles.alarmContainer]}
