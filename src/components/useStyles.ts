@@ -26,13 +26,9 @@ export const useStyles = () => {
           backgroundColor: randomColor,
         },
         deleteBackground: {
+          ...StyleSheet.absoluteFillObject,
           flexDirection: 'row', // Arrange buttons horizontally
           padding: 0, // No padding to avoid overlaps
-          position: 'absolute',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
           alignItems: 'center', // Vertically center buttons
           backgroundColor: 'red',
         },
