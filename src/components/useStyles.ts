@@ -26,56 +26,55 @@ export const useStyles = () => {
           backgroundColor: randomColor,
         },
         deleteBackground: {
+          flexDirection: 'row', // Arrange buttons horizontally
+          padding: 0, // No padding to avoid overlaps
           position: 'absolute',
           left: 0,
           right: 0,
           top: 0,
           bottom: 0,
-          backgroundColor: 'red',
-          flexDirection: 'row', // Arrange buttons side by side
           alignItems: 'center', // Vertically center buttons
-          padding: 0,
+          backgroundColor: 'red',
         },
 
         buttonsContainer: {
-          position: 'absolute', // Ensure absolute positioning within the red background
-          right: 0, // Align the buttonsContainer to the right
+          flexDirection: 'row', // Place buttons side by side
+          justifyContent: 'space-between', // Ensure buttons are adjacent
+          alignItems: 'stretch', // Make buttons span the full height
+          position: 'absolute', // Position the buttons container absolutely
+          right: 0, // Align to the right of the screen
           top: 0,
-          bottom: 0, // Span the full height of the container
-          width: 160, // Set explicit width for two buttons (adjust as needed)
-          flexDirection: 'row',
-          justifyContent: 'space-between', // Ensure buttons abut each other
-          alignItems: 'stretch', // Make buttons span full height
+          bottom: 0, // Make it span the full height of the red background
+          width: 100, // Set exact width to fit two 80px-wide buttons (adjust if needed)
         },
 
         editButton: {
-          flex: 1, // Ensure both buttons take equal width
+          //flex: 1, // Each button takes half the container width
           justifyContent: 'center',
           alignItems: 'center',
+          width: '50%',
+          height: '100%', // Make the button span full height of the container
           backgroundColor: 'orange',
-          margin: 0, // Remove any unnecessary spacing
-          height: '100%', // Ensure button spans full height
         },
 
         editButtonText: {
+          position: 'absolute',
+          right: 20,
           color: 'white',
           fontWeight: 'bold',
-          textAlign: 'center',
         },
-
         deleteButton: {
-          flex: 1, // Ensure both buttons take equal width
+          //flex: 1, // Each button takes half the container width
           justifyContent: 'center',
           alignItems: 'center',
+          width: '50%',
+          height: '100%', // Make the button span full height of the container
           backgroundColor: 'red',
-          margin: 0, // Remove any unnecessary spacing
-          height: '100%', // Ensure button spans full height
         },
 
         deleteButtonText: {
           color: 'white',
           fontWeight: 'bold',
-          textAlign: 'center',
         },
         //deleteBackground: {
         //  ...StyleSheet.absoluteFillObject,
