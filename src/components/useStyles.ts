@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {StyleSheet, useWindowDimensions} from 'react-native';
+import {StyleSheet, useWindowDimensions, PixelRatio} from 'react-native';
 import {Colors} from '../lib/Colors';
 import {generateRandomColors} from '../lib/utils';
 
