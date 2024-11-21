@@ -26,46 +26,56 @@ export const useStyles = () => {
           backgroundColor: randomColor,
         },
         deleteBackground: {
-          flexDirection: 'row',
-          justifyContent: 'flex-end', // Align buttons to the right
-          alignItems: 'center',
           position: 'absolute',
           left: 0,
           right: 0,
           top: 0,
           bottom: 0,
           backgroundColor: 'red',
-          paddingHorizontal: 10, // Add spacing on the right side
-        },
-        buttonsContainer: {
           flexDirection: 'row', // Arrange buttons side by side
+          alignItems: 'center', // Vertically center buttons
+          padding: 0,
         },
+
+        buttonsContainer: {
+          position: 'absolute', // Ensure absolute positioning within the red background
+          right: 0, // Align the buttonsContainer to the right
+          top: 0,
+          bottom: 0, // Span the full height of the container
+          width: 160, // Set explicit width for two buttons (adjust as needed)
+          flexDirection: 'row',
+          justifyContent: 'space-between', // Ensure buttons abut each other
+          alignItems: 'stretch', // Make buttons span full height
+        },
+
         editButton: {
+          flex: 1, // Ensure both buttons take equal width
           justifyContent: 'center',
           alignItems: 'center',
-          width: 80,
-          height: '100%',
-          margin: 0,
-          borderRadius: 5,
           backgroundColor: 'orange',
+          margin: 0, // Remove any unnecessary spacing
+          height: '100%', // Ensure button spans full height
         },
 
         editButtonText: {
           color: 'white',
           fontWeight: 'bold',
+          textAlign: 'center',
         },
+
         deleteButton: {
+          flex: 1, // Ensure both buttons take equal width
           justifyContent: 'center',
           alignItems: 'center',
-          width: 50,
-          height: '100%',
-          margin: 0,
-          borderRadius: 5,
           backgroundColor: 'red',
+          margin: 0, // Remove any unnecessary spacing
+          height: '100%', // Ensure button spans full height
         },
+
         deleteButtonText: {
           color: 'white',
           fontWeight: 'bold',
+          textAlign: 'center',
         },
         //deleteBackground: {
         //  ...StyleSheet.absoluteFillObject,
