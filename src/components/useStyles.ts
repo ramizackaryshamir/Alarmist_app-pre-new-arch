@@ -57,8 +57,8 @@ export const useStyles = () => {
 
         editButtonText: {
           position: 'absolute',
-          right: 20,
           color: 'white',
+          fontSize: fontSize / 1.3,
           fontWeight: 'bold',
         },
         deleteButton: {
@@ -72,6 +72,7 @@ export const useStyles = () => {
 
         deleteButtonText: {
           color: 'white',
+          fontSize: fontSize / 1.3,
           fontWeight: 'bold',
         },
         //deleteBackground: {
