@@ -4,7 +4,8 @@ import {Colors} from '../lib/Colors';
 import {generateRandomColors} from '../lib/utils';
 
 export const useStyles = () => {
-  const {width, height} = useWindowDimensions();
+  const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = useWindowDimensions();
+  const scaleFontSize = (size: number) => size * PixelRatio.getFontScale();
 
   let randomColor = generateRandomColors().toString();
   console.log(generateRandomColors());
@@ -155,8 +156,8 @@ export const useStyles = () => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
-          width: width - 120,
-          height: height - 140,
+          width: SCREEN_WIDTH - 120,
+          height: SCREEN_HEIGHT - 140,
           borderWidth: 10,
           borderRadius: 15,
           backgroundColor: '#223240',
@@ -171,11 +172,11 @@ export const useStyles = () => {
           color: Colors.vibrantPink,
         },
         screenClockContainer: {
-          flexDirection: width > 500 ? 'row' : 'column',
+          flexDirection: SCREEN_WIDTH > 500 ? 'row' : 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          width: width,
-          height: height,
+          width: SCREEN_WIDTH,
+          height: SCREEN_HEIGHT,
           backgroundColor: Colors.vibrantPink,
         },
         screenClockText: {
@@ -188,7 +189,7 @@ export const useStyles = () => {
           position: 'relative',
           bottom: 0,
           paddingTop: 15,
-          width: width,
+          width: SCREEN_WIDTH,
           height: 55,
           backgroundColor: Colors.blackPurple3,
         },
@@ -196,10 +197,10 @@ export const useStyles = () => {
           fontVariant: ['small-caps', 'common-ligatures'],
           letterSpacing: 1,
           color: Colors.white,
-          fontSize: width > 500 ? 20 : 10,
+          fontSize: SCREEN_WIDTH > 500 ? 20 : 10,
         },
       }),
-    [width, height, randomColor],
+    [SCREEN_WIDTH, SCREEN_HEIGHT, randomColor],
   );
   return styles;
 };
