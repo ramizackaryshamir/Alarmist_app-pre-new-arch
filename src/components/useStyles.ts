@@ -1,11 +1,12 @@
 import {useMemo} from 'react';
 import {StyleSheet, useWindowDimensions, PixelRatio} from 'react-native';
+import {useResponsiveFont} from '../hooks/useResponsiveFont';
 import {Colors} from '../lib/Colors';
 import {generateRandomColors} from '../lib/utils';
 
 export const useStyles = () => {
   const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = useWindowDimensions();
-  const scaleFontSize = (size: number) => size * PixelRatio.getFontScale();
+  const fontSize = useResponsiveFont(16);
 
   let randomColor = generateRandomColors().toString();
   console.log(generateRandomColors());
