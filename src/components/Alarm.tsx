@@ -4,20 +4,17 @@ import {useStyles} from './useStyles';
 import {usePanResponder} from '../hooks/usePanResponder';
 import {AlarmProps} from '../types';
 
-const Alarm = (
-  {
-    alarmWeekday,
-    alarmDate,
-    alarmTime,
-    alarmRepeat,
-    alarmName,
-    onToggle,
-    onDelete,
-    onEdit,
-    alarmIsEnabled,
-  }: AlarmProps,
-  navigation,
-) => {
+const Alarm = ({
+  alarmWeekday,
+  alarmDate,
+  alarmTime,
+  alarmRepeat,
+  alarmName,
+  onToggle,
+  onDelete,
+  onEdit,
+  alarmIsEnabled,
+}: AlarmProps) => {
   const styles = useStyles();
 
   const {
@@ -30,26 +27,10 @@ const Alarm = (
   } = usePanResponder(onDelete, onEdit);
 
   const handleEditPress = () => {
-    navigation.navigate('Alarm Settings Screen', {
-      alarmData: {
-        alarmWeekday,
-        alarmDate,
-        alarmTime,
-        alarmRepeat,
-        alarmName,
-        isSnoozed: alarmIsEnabled,
-        alarmId: id,
-      },
-      isEditing: true,
-      onSave: (updatedAlarm) => {
-        if (updatedAlarm) {
-          onUpdateAlarm(id, updatedAlarm);
-        }
-      },
-    });
     onEdit();
     resetPosition();
   };
+
   // Handle delete action directly in the component
   const handleDeletePress = () => {
     onDelete();

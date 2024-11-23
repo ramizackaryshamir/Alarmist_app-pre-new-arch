@@ -21,13 +21,41 @@ const HomeScreen = ({navigation, route}: any) => {
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
   const styles = useStyles();
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
-  const handleDelete: any = useCallback((id: string) => {
+
+  const handleDelete: (id: string) => void = useCallback((id: string) => {
     //const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
     setAlarms((currentAlarms) =>
       currentAlarms.filter((alarm) => alarm.id !== id),
     );
   }, []);
 
+  const handleEdit: (id: string) => void = useCallback(
+    (id: string) => {
+      //handleEdit needs to accomplish the following:
+      //1. Go back to the Alarm Screen
+      navigation.navigate('Alarm Settings Screen');
+      //2. Apply the edits onGoback to the current Alarm being edited
+      //3. Update the alarms array with the new data for the current Alarm OR if deleted, remove the current Alarm fron the alarms array
+      //---IN DEVELOPMENT--//
+      //{
+      //onGoBack: (data) => {
+      //  setNewAlarm(formatAlarmData(data));
+      //},
+      //alarmData: {
+      //  alarmWeekday,
+      //  alarmDate,
+      //  alarmTime,
+      //  alarmRepeat,
+      //  alarmName,
+      //  isSnoozed: alarmIsEnabled,
+      //  alarmId: id,
+      //},
+      //  isEditing: true,
+      //});
+      //
+    },
+    [navigation],
+  );
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
 
   const formatAlarmData = (data) => ({
@@ -93,6 +121,7 @@ const HomeScreen = ({navigation, route}: any) => {
           alarmSound={item.sound}
           onToggle={() => toggleEnable(item.id)}
           onDelete={() => handleDelete(item.id)}
+          onEdit={() => handleEdit(item.id)}
           alarmIsEnabled={alarmIsEnabled[item.id]}
         />
       );
