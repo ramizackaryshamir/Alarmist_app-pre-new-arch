@@ -1,11 +1,17 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, Alert, TouchableOpacity, Text} from 'react-native';
+import {
+  View,
+  FlatList,
+  //Alert,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './useStyles.ts';
 import {useCheckAlarm} from '../hooks/useCheckAlarm.ts';
 import {NewAlarm} from '../types';
-import {generateRandomColors} from '../lib/utils.js';
+//import {generateRandomColors} from '../lib/utils.js';
 
 const HomeScreen = ({navigation, route}: any) => {
   const [newAlarm, setNewAlarm] = useState<NewAlarm>({
@@ -29,8 +35,9 @@ const HomeScreen = ({navigation, route}: any) => {
     );
   }, []);
 
-  const handleEdit: (id: string) => void = useCallback(
-    (id: string) => {
+  const handleEdit: (id: string) => void = useCallback(() =>
+    //(id: string) =>
+    {
       //handleEdit needs to accomplish the following:
       //1. Go back to the Alarm Screen
       navigation.navigate('Alarm Settings Screen');
@@ -53,12 +60,10 @@ const HomeScreen = ({navigation, route}: any) => {
       //  isEditing: true,
       //});
       //
-    },
-    [navigation],
-  );
+    }, [navigation]);
   console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
 
-  const formatAlarmData = (data) => ({
+  const formatAlarmData = (data: any) => ({
     weekday: data.newAlarmTime.slice(0, 3),
     date: data.newAlarmTime.slice(4, 15),
     time: data.newAlarmTime.slice(16, 21),
@@ -71,7 +76,7 @@ const HomeScreen = ({navigation, route}: any) => {
 
   const navigateToAlarmSettingsScreen = useCallback(() => {
     navigation.navigate('Alarm Settings Screen', {
-      onGoBack: (data) => {
+      onGoBack: (data: any) => {
         setNewAlarm(formatAlarmData(data));
       },
     });
@@ -108,7 +113,7 @@ const HomeScreen = ({navigation, route}: any) => {
   //console.groupEnd();
 
   const renderItem = useCallback(
-    ({item}) => {
+    ({item}: any) => {
       return (
         <Alarm
           key={item.id}
@@ -126,7 +131,7 @@ const HomeScreen = ({navigation, route}: any) => {
         />
       );
     },
-    [toggleEnable, handleDelete, alarmIsEnabled],
+    [toggleEnable, handleDelete, alarmIsEnabled, handleEdit],
   );
 
   return (
