@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, Platform} from 'react-native';
 import Checkbox from '../../Inputs/Checkbox';
 import {useStyles} from './useStyles';
 
@@ -20,13 +20,22 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}: any) => {
       });
     };
     navigation.setOptions({
-      headerLeft: () => (
-        <>
-          <TouchableOpacity onPress={handleGoBackToAlarmSettingsScreen}>
-            <Text style={styles.bottomSheetText}>Back</Text>
-          </TouchableOpacity>
-        </>
-      ),
+      headerLeft: () =>
+        Platform.Os === 'iOS' ? (
+          <>
+            <TouchableOpacity onPress={handleGoBackToAlarmSettingsScreen}>
+              <Text style={styles.bottomSheetText}>Back</Text>
+            </TouchableOpacity>
+          </>
+        ) : (
+          <>
+            <TouchableOpacity onPress={handleGoBackToAlarmSettingsScreen}>
+              <Text style={styles.bottomSheetText}>
+                Android Back Placeholder
+              </Text>
+            </TouchableOpacity>
+          </>
+        ),
     });
   }, [navigation, route.params, selectedDays, styles.bottomSheetText]);
 

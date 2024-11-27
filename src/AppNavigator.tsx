@@ -45,7 +45,6 @@ const AppNavigator = () => {
             component={AlarmSettingsScreen}
             options={{
               headerBackTitle: 'Cancel',
-
               headerRight: () => <Button title="Save" />,
             }}
           />
