@@ -28,42 +28,38 @@ const AppNavigator = () => {
               headerRight: () => <Button title="+" />,
             }}
           />
+        </Stack.Group>
+        <Stack.Group
+          screenOptions={{
+            headerShown: true,
+            headerStyle: {
+              backgroundColor:
+                theme === 'dark' ? Colors.blackPurple1 : Colors.vibrantWhite,
+            },
+            headerTintColor:
+              theme === 'dark' ? Colors.white : Colors.blackPurple1,
+          }}
+        >
           <Stack.Screen
             name="Alarm Settings Screen"
             component={AlarmSettingsScreen}
             options={{
-              headerStyle: {
-                backgroundColor:
-                  theme === 'dark' ? Colors.blackPurple1 : Colors.vibrantWhite,
-              },
               headerBackTitle: 'Cancel',
-              headerTintColor:
-                theme === 'dark' ? Colors.white : Colors.blackPurple1,
-              headerShown: true,
+
               headerRight: () => <Button title="Save" />,
-              //headerTintColor: '#F2D935',
-              //presentation: 'modal',
             }}
           />
           <Stack.Screen
             name="Repeat"
             component={AlarmSettingsRepeatOptionScreen}
             options={{
-              headerStyle: {backgroundColor: Colors.blackPurple1},
-              headerTintColor: Colors.white,
-              headerShown: true,
               headerLeft: () => <Button title="Back" />,
-              //headerTintColor: '#F2D935',
             }}
           />
           <Stack.Screen
             name="Sound"
             component={AlarmSettingsSoundOptionsScreen}
-            options={{
-              headerStyle: {backgroundColor: '#F2D935'},
-              headerShown: true,
-              //headerTintColor: '#F2D935',
-            }}
+            options={{}}
           />
         </Stack.Group>
         <Stack.Group>
@@ -71,35 +67,9 @@ const AppNavigator = () => {
             name="Clock Screen"
             component={ClockScreen}
             options={{
-              headerStyle: {
-                backgroundColor: Colors.blackPurple1,
-              },
-              headerTintColor: Colors.white,
               headerShown: false,
             }}
           />
-          {/*<Stack.Screen
-            name="Digital Clock"
-            component={DigitalClockScreen}
-            options={{
-              headerStyle: {
-                backgroundColor: '#F2D935',
-              },
-              headerTintColor: '#F2D935',
-              headerShown: false,
-            }}
-          />*/}
-          {/*<Stack.Screen
-            name="Screen Clock"
-            component={ScreenClockScreen}
-            options={{
-              headerStyle: {
-                backgroundColor: '#F2D935',
-              },
-              headerTintColor: '#F2D935',
-              headerShown: false,
-            }}
-          />*/}
           <Stack.Screen name="Menu" component={Menu} />
         </Stack.Group>
       </Stack.Navigator>
