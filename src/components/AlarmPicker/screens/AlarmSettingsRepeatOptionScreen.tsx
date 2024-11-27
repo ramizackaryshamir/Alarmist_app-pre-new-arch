@@ -21,7 +21,7 @@ const AlarmSettingsRepeatOptionScreen = ({navigation, route}: any) => {
     };
     navigation.setOptions({
       headerLeft: () =>
-        Platform.Os === 'iOS' ? (
+        Platform.OS === 'ios' ? (
           <>
             <TouchableOpacity onPress={handleGoBackToAlarmSettingsScreen}>
               <Text style={styles.bottomSheetText}>Back</Text>

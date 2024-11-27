@@ -28,12 +28,12 @@ const HomeScreen = ({navigation, route}: any) => {
   const styles = useStyles();
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
 
-  const handleDelete: (id: string) => void = useCallback((id: string) => {
-    //const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
-    setAlarms((currentAlarms) =>
-      currentAlarms.filter((alarm) => alarm.id !== id),
-    );
-  }, []);
+  //const handleDelete: (id: string) => void = useCallback((id: string) => {
+  //  //const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
+  //  setAlarms((currentAlarms) =>
+  //    currentAlarms.filter((alarm) => alarm.id !== id),
+  //  );
+  //}, []);
 
   const handleEdit: (id: string) => void = useCallback(() =>
     //(id: string) =>
@@ -73,33 +73,17 @@ const HomeScreen = ({navigation, route}: any) => {
     isSnoozed: data.isNewAlarmSnoozed,
     id: data.newAlarmId,
   });
-
-  const navigateToAlarmSettingsScreen = useCallback(() => {
-    navigation.navigate('Alarm Settings Screen', {
-      onGoBack: (data: any) => {
-        setNewAlarm(formatAlarmData(data));
-      },
-    });
-  }, [navigation]);
-
   useEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <TouchableOpacity onPress={navigateToAlarmSettingsScreen}>
-          <Text style={styles.headerIconText}>+</Text>
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation, navigateToAlarmSettingsScreen, styles.headerIconText]);
-
-  useEffect(() => {
-    if (route.params?.newAlarmTime) {
-      setAlarms((alarms) => [...alarms, newAlarm]);
+    if (route.params?.newAlarmData) {
+      setAlarms((alarms) => [
+        ...alarms,
+        formatAlarmData(route.params.newAlarmData),
+      ]);
     }
     //console.group('\x1b[40m');
     //console.log('Home route', route.params?.newAlarmTime);
     //console.groupEnd();
-  }, [route.params?.newAlarmTime, newAlarm]);
+  }, [route.params?.newAlarmData]);
 
   //console.group('\x1b[46m');
   //console.log('Home Screen');
@@ -125,13 +109,17 @@ const HomeScreen = ({navigation, route}: any) => {
           alarmName={item.name}
           alarmSound={item.sound}
           onToggle={() => toggleEnable(item.id)}
-          onDelete={() => handleDelete(item.id)}
+          onDelete={() =>
+            setAlarms((currentAlarms) =>
+              currentAlarms.filter((alarm) => alarm.id !== item.id),
+            )
+          }
           onEdit={() => handleEdit(item.id)}
           alarmIsEnabled={alarmIsEnabled[item.id]}
         />
       );
     },
-    [toggleEnable, handleDelete, alarmIsEnabled, handleEdit],
+    [toggleEnable, alarmIsEnabled, handleEdit],
   );
 
   return (
