@@ -5,16 +5,22 @@ import AlarmSettingsSnoozeOption from '../components/AlarmSettingsSnoozeOption';
 import {useStyles} from './useStyles';
 import {Colors} from '../../../lib/Colors';
 import {useDarkMode} from '../../../hooks/useDarkMode';
+import {useConsoleColors} from '../../../hooks/useConsoleColors';
 
 const AlarmSettingsScreen = ({navigation, route}: any) => {
   //This component sets the state for the alarm
   const styles = useStyles();
   const {theme} = useDarkMode();
+  const {BgGreenConsole, BgYellowConsole, BgBlueConsole, BgRedConsole} =
+    useConsoleColors();
   const [newAlarmTime, setNewAlarmTime] = useState<any>(new Date());
   const [newAlarmRepeat, setNewAlarmRepeat] = useState<Array<string>>([]);
   const [newAlarmName, setNewAlarmName] = useState<string>('');
   const [newAlarmSound, setNewAlarmSound] = useState<string>('');
   const [isNewAlarmSnoozed, setIsNewAlarmSnoozed] = useState<boolean>(false);
+  BgGreenConsole(newAlarmTime);
+  BgYellowConsole(newAlarmName);
+  BgBlueConsole(newAlarmSound);
 
   const handleToggleSwitch = () => {
     setIsNewAlarmSnoozed((prevState: boolean) => !prevState);
