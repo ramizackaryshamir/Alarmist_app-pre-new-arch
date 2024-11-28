@@ -1,19 +1,39 @@
 export const useConsoleColors = () => {
   // Foreground Colors
-  const FgBlackConsole = (message: string) => {
-    console.log('\x1b[30m%s\x1b[0m', message);
+  const FgBlackConsole = (message: boolean) => {
+    if (typeof message === 'string') {
+      console.log('\x1b[30m%s\x1b[0m', message);
+    }
+    if (typeof message === 'boolean') {
+      console.log('\x1b[30m%s\x1b[0m', `${message}`);
+    }
   };
 
-  const FgRedConsole = (message: string) => {
-    console.log('\x1b[31m%s\x1b[0m', message);
+  const FgRedConsole = (message: string | boolean) => {
+    if (typeof message === 'string') {
+      console.log('\x1b[31m%s\x1b[0m', message);
+    }
+    if (typeof message === 'boolean') {
+      console.log('\x1b[31m%s\x1b[0m', `${message}`);
+    }
   };
 
-  const FgGreenConsole = (message: string) => {
-    console.log('\x1b[32m%s\x1b[0m', message);
+  const FgGreenConsole = (message: string | boolean) => {
+    if (typeof message === 'string') {
+      console.log('\x1b[32m%s\x1b[0m', message);
+    }
+    if (typeof message === 'boolean') {
+      console.log('\x1b[32m%s\x1b[0m', `${message}`);
+    }
   };
 
-  const FgYellowConsole = (message: string) => {
-    console.log('\x1b[33m%s\x1b[0m', message);
+  const FgYellowConsole = (message: string | boolean) => {
+    if (typeof message === 'string') {
+      console.log('\x1b[33m%s\x1b[0m', message);
+    }
+    if (typeof message === 'boolean') {
+      console.log('\x1b[33m%s\x1b[0m', `${message}`);
+    }
   };
 
   const FgBlueConsole = (message: string) => {
