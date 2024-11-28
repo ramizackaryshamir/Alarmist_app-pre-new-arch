@@ -1,67 +1,54 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {
-  View,
-  FlatList,
-  //Alert,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, FlatList} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './useStyles.ts';
 import {useCheckAlarm} from '../hooks/useCheckAlarm.ts';
 import {NewAlarm} from '../types';
-//import {generateRandomColors} from '../lib/utils.js';
 
 const HomeScreen = ({navigation, route}: any) => {
-  const [newAlarm, setNewAlarm] = useState<NewAlarm>({
-    weekday: '',
-    date: '',
-    time: '',
-    repeat: [],
-    name: '',
-    sound: '',
-    isSnoozed: false,
-    id: '',
-  });
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
   const styles = useStyles();
-  const {alarmIsEnabled, toggleEnable} = useCheckAlarm(newAlarm);
 
-  //const handleDelete: (id: string) => void = useCallback((id: string) => {
-  //  //const updatedAlarms = alarms.filter((alarm) => alarm.id !== id);
-  //  setAlarms((currentAlarms) =>
-  //    currentAlarms.filter((alarm) => alarm.id !== id),
-  //  );
-  //}, []);
+  const {alarmIsEnabled, toggleEnable} = useCheckAlarm(alarms);
 
-  const handleEdit: (id: string) => void = useCallback(() =>
-    //(id: string) =>
-    {
-      //handleEdit needs to accomplish the following:
-      //1. Go back to the Alarm Screen
-      navigation.navigate('Alarm Settings Screen');
-      //2. Apply the edits onGoback to the current Alarm being edited
-      //3. Update the alarms array with the new data for the current Alarm OR if deleted, remove the current Alarm fron the alarms array
-      //---IN DEVELOPMENT--//
-      //{
-      //onGoBack: (data) => {
-      //  setNewAlarm(formatAlarmData(data));
-      //},
-      //alarmData: {
-      //  alarmWeekday,
-      //  alarmDate,
-      //  alarmTime,
-      //  alarmRepeat,
-      //  alarmName,
-      //  isSnoozed: alarmIsEnabled,
-      //  alarmId: id,
-      //},
-      //  isEditing: true,
-      //});
-      //
-    }, [navigation]);
-  console.log('newAlarm.time: ', newAlarm.time.slice(3, 5));
+  // Handle navigation to edit an alarm
+  const handleEdit = useCallback(
+    (id: string) => {
+      const currentAlarm = alarms.find((alarm) => alarm.id === id);
+
+      // Navigate to Alarm Settings Screen with the current alarm data
+      navigation.navigate('Alarm Settings Screen', {
+        alarmData: currentAlarm,
+        onGoBack: (updatedAlarm: NewAlarm | null) => {
+          if (updatedAlarm) {
+            // Update the alarm if changes are saved
+            setAlarms((currentAlarms) =>
+              currentAlarms.map((alarm) =>
+                alarm.id === updatedAlarm.id ? updatedAlarm : alarm,
+              ),
+            );
+          } else {
+            // Remove the alarm if it was deleted
+            setAlarms((currentAlarms) =>
+              currentAlarms.filter((alarm) => alarm.id !== id),
+            );
+          }
+        },
+      });
+    },
+    [alarms, navigation],
+  );
+
+  // Handle adding a new alarm
+  useEffect(() => {
+    if (route.params?.newAlarmData) {
+      setAlarms((current) => [
+        ...current,
+        formatAlarmData(route.params.newAlarmData),
+      ]);
+    }
+  }, [route.params?.newAlarmData]);
 
   const formatAlarmData = (data: any) => ({
     weekday: data.newAlarmTime.slice(0, 3),
@@ -73,52 +60,29 @@ const HomeScreen = ({navigation, route}: any) => {
     isSnoozed: data.isNewAlarmSnoozed,
     id: data.newAlarmId,
   });
-  useEffect(() => {
-    if (route.params?.newAlarmData) {
-      setAlarms((alarms) => [
-        ...alarms,
-        formatAlarmData(route.params.newAlarmData),
-      ]);
-    }
-    //console.group('\x1b[40m');
-    //console.log('Home route', route.params?.newAlarmTime);
-    //console.groupEnd();
-  }, [route.params?.newAlarmData]);
 
-  //console.group('\x1b[46m');
-  //console.log('Home Screen');
-  //console.log('alarms', alarms);
-  //console.log('newAlarm.time:', newAlarm.time);
-  //console.log('newAlarm.repeat:', newAlarm.repeat);
-  //console.log('newAlarm.name:', newAlarm.name);
-  //console.log('newAlarm.sound:', newAlarm.sound);
-  //console.log('newAlarm.isSnoozed:', newAlarm.isSnoozed);
-  //console.log('newAlarm.id:', newAlarm.id);
-  //console.groupEnd();
-
+  // Render alarms in the FlatList
   const renderItem = useCallback(
-    ({item}: any) => {
-      return (
-        <Alarm
-          key={item.id}
-          id={item.id}
-          alarmWeekday={item.weekday}
-          alarmDate={item.date}
-          alarmTime={item.time}
-          alarmRepeat={item.repeat}
-          alarmName={item.name}
-          alarmSound={item.sound}
-          onToggle={() => toggleEnable(item.id)}
-          onDelete={() =>
-            setAlarms((currentAlarms) =>
-              currentAlarms.filter((alarm) => alarm.id !== item.id),
-            )
-          }
-          onEdit={() => handleEdit(item.id)}
-          alarmIsEnabled={alarmIsEnabled[item.id]}
-        />
-      );
-    },
+    ({item}: any) => (
+      <Alarm
+        key={item.id}
+        id={item.id}
+        alarmWeekday={item.weekday}
+        alarmDate={item.date}
+        alarmTime={item.time}
+        alarmRepeat={item.repeat}
+        alarmName={item.name}
+        alarmSound={item.sound}
+        onToggle={() => toggleEnable(item.id)}
+        onDelete={() =>
+          setAlarms((current) =>
+            current.filter((alarm) => alarm.id !== item.id),
+          )
+        }
+        onEdit={() => handleEdit(item.id)}
+        alarmIsEnabled={alarmIsEnabled[item.id]}
+      />
+    ),
     [toggleEnable, alarmIsEnabled, handleEdit],
   );
 
@@ -127,9 +91,7 @@ const HomeScreen = ({navigation, route}: any) => {
       <View style={styles.homeScreenContainer}>
         <FlatList
           contentContainerStyle={styles.alarmsContainer}
-          //data renders alarms each time because javascript equates by reference and each alarms array obj is a new obj even if none of the data has changed
           data={alarms}
-          //useCallback memoizes renderItem so that FlatList won't rre-render each item in the list unnecessarily
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
         />
