@@ -9,7 +9,7 @@ export const useStyles = () => {
   const fontSize = useResponsiveFont(16);
 
   let randomColor = generateRandomColors().toString();
-  console.log(generateRandomColors());
+  //console.log(generateRandomColors());
 
   const styles = useMemo(
     () =>

@@ -5,8 +5,19 @@ import Alarm from '../components/Alarm';
 import {useStyles} from './useStyles.ts';
 import {useCheckAlarm} from '../hooks/useCheckAlarm.ts';
 import {NewAlarm} from '../types';
+import {useConsoleColors} from '../hooks/useConsoleColors.ts';
 
 const HomeScreen = ({navigation, route}: any) => {
+  const {
+    BgMagentaConsole,
+    BgCyanConsole,
+    BgWhiteConsole,
+    BgGrayConsole,
+    BgGreenConsole,
+    BgYellowConsole,
+    BgBlueConsole,
+    BgRedConsole,
+  } = useConsoleColors();
   const [alarms, setAlarms] = useState<Array<NewAlarm>>([]);
   const styles = useStyles();
 
@@ -16,7 +27,7 @@ const HomeScreen = ({navigation, route}: any) => {
   const handleEdit = useCallback(
     (id: string) => {
       const currentAlarm = alarms.find((alarm) => alarm.id === id);
-
+      BgMagentaConsole(currentAlarm);
       // Navigate to Alarm Settings Screen with the current alarm data
       navigation.navigate('Alarm Settings Screen', {
         alarmData: currentAlarm,
