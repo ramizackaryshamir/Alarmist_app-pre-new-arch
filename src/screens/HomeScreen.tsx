@@ -28,6 +28,9 @@ const HomeScreen = ({navigation, route}: any) => {
     (id: string) => {
       const currentAlarm = alarms.find((alarm) => alarm.id === id);
       BgMagentaConsole(currentAlarm);
+      BgCyanConsole(
+        `${currentAlarm.weekday} ${currentAlarm.date} ${currentAlarm.time}`,
+      );
       // Navigate to Alarm Settings Screen with the current alarm data
       navigation.navigate('Alarm Settings Screen', {
         alarmData: currentAlarm,

@@ -54,6 +54,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         isNewAlarmSnoozed,
         newAlarmId: Math.random().toString(),
       });
+      BgYellowConsole(newAlarmTime);
       navigation.goBack();
       navigation.navigate({
         name: 'Home',
@@ -67,6 +68,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
         merge: true,
       });
     };
+    BgGreenConsole(newAlarmTime);
     //console.group('\x1b[41m');
     //console.log('Alarm Settings Screen');
     //console.log('newAlarmRepeat: Alarm Settings Screen', newAlarmRepeat);
