@@ -47,7 +47,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   useEffect(() => {
     const handleSaveAndGoBackToHomeScreen = () => {
       route.params.onGoBack({
-        newAlarmTime: newAlarmTime.toString(),
+        newAlarmTime: newAlarmTime.toISOString(),
         newAlarmRepeat,
         newAlarmName,
         newAlarmSound,
@@ -59,7 +59,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
       navigation.navigate({
         name: 'Home',
         params: {
-          newAlarmTime: newAlarmTime.toString(),
+          newAlarmTime: newAlarmTime.toISOString(),
           newAlarmRepeat: newAlarmRepeat,
           newAlarmName: newAlarmName,
           newAlarmSound: newAlarmSound,
@@ -114,7 +114,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
     //console.log('newAlarmName:', newAlarmName);
     //console.log('newAlarmSound:', newAlarmSound);
     //console.log('isNewAlarmSnoozed:', isNewAlarmSnoozed);
-    console.groupEnd();
+    //console.groupEnd();
   }, [
     route.params?.newAlarmRepeat,
     route.params?.newAlarmSound,

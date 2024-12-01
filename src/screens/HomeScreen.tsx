@@ -34,20 +34,20 @@ const HomeScreen = ({navigation, route}: any) => {
   }, [route.params?.newAlarmData]);
 
   const formatAlarmData = (data: any) => ({
-    weekday: data.newAlarmTime.slice(0, 3),
-    date: data.newAlarmTime.slice(4, 15),
-    time: data.newAlarmTime.slice(16, 21),
-    repeat: data.newAlarmRepeat,
-    name: data.newAlarmName || 'Alarm',
-    sound: data.newAlarmSound,
-    isSnoozed: data.isNewAlarmSnoozed,
-    id: data.newAlarmId,
+    newAlarmId: data.newAlarmId,
+    newAlarmWeekday: data.newAlarmTime.slice(0, 3),
+    newAlarmDate: data.newAlarmTime.slice(4, 15),
+    newAlarmTime: data.newAlarmTime.slice(16, 21),
+    newAlarmRepeat: data.newAlarmRepeat,
+    newAlarmName: data.newAlarmName || 'Alarm',
+    newAlarmSound: data.newAlarmSound,
+    isNewAlarmSnoozed: data.isNewAlarmSnoozed,
   });
 
   // Handle navigation to edit an alarm
   const handleEdit = useCallback(
     (id: string) => {
-      const currentAlarm = alarms.find((alarm) => alarm.id === id);
+      const currentAlarm = alarms.find((alarm) => alarm.newAlarmId === id);
 
       if (currentAlarm) {
         try {
@@ -79,12 +79,13 @@ const HomeScreen = ({navigation, route}: any) => {
           // Navigate with serialized data
           navigation.navigate('Alarm Settings Screen', {
             alarmData: {
-              newAlarmTime: alarmDateTime.toISOString(), // Pass ISO string
-              newAlarmRepeat: currentAlarm.repeat,
-              newAlarmName: currentAlarm.name,
-              newAlarmSound: currentAlarm.sound,
-              isNewAlarmSnoozed: currentAlarm.isSnoozed,
-              newAlarmId: currentAlarm.id,
+              newAlarmTime: new Date().toISOString(),
+              // Pass ISO string
+              newAlarmRepeat: currentAlarm.newAlarmRepeat,
+              newAlarmName: currentAlarm.newAlarmName,
+              newAlarmSound: currentAlarm.newAlarmSound,
+              isNewAlarmSnoozed: currentAlarm.isNewAlarmSnoozed,
+              newAlarmId: currentAlarm.newAlarmId,
             },
           });
         } catch (error: any) {
@@ -105,22 +106,22 @@ const HomeScreen = ({navigation, route}: any) => {
   const renderItem = useCallback(
     ({item}: any) => (
       <Alarm
-        key={item.id}
-        id={item.id}
-        alarmWeekday={item.weekday}
-        alarmDate={item.date}
-        alarmTime={item.time}
-        alarmRepeat={item.repeat}
-        alarmName={item.name}
-        alarmSound={item.sound}
-        onToggle={() => toggleEnable(item.id)}
+        key={item.newAlarmId}
+        id={item.newAlarmId}
+        alarmWeekday={item.newAlarmWeekday}
+        alarmDate={item.newAlarmDate}
+        alarmTime={item.newAlarmTime}
+        alarmRepeat={item.newAlarmRepeat}
+        alarmName={item.newAlarmSound}
+        alarmSound={item.isNewAlarmSnoozed}
+        onToggle={() => toggleEnable(item.newAlarmId)}
         onDelete={() =>
           setAlarms((current) =>
-            current.filter((alarm) => alarm.id !== item.id),
+            current.filter((alarm) => alarm.newAlarmId !== item.newAlarmId),
           )
         }
-        onEdit={() => handleEdit(item.id)}
-        alarmIsEnabled={alarmIsEnabled[item.id]}
+        onEdit={() => handleEdit(item.newAlarmId)}
+        alarmIsEnabled={alarmIsEnabled[item.newAlarmId]}
       />
     ),
     [toggleEnable, alarmIsEnabled, handleEdit],
@@ -133,7 +134,7 @@ const HomeScreen = ({navigation, route}: any) => {
           contentContainerStyle={styles.alarmsContainer}
           data={alarms}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.newAlarmId}
         />
       </View>
       <Menu navigation={navigation} />

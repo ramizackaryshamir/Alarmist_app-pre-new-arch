@@ -3,9 +3,20 @@ import DatePicker from 'react-native-date-picker';
 import {TimePickerProps} from '../../../types';
 import {Colors} from '../../../lib/Colors';
 import {useDarkMode} from '../../../hooks/useDarkMode';
+import {useConsoleColors} from '../../../hooks/useConsoleColors';
 
 const TimePicker = ({newAlarmTime, onChange}: TimePickerProps) => {
   const {theme} = useDarkMode();
+  const {
+    BgMagentaConsole,
+    BgCyanConsole,
+    BgWhiteConsole,
+    BgGrayConsole,
+    BgGreenConsole,
+    BgYellowConsole,
+    BgBlueConsole,
+    BgRedConsole,
+  } = useConsoleColors();
   //TODO: NOTE: NewAlarm logic should be abstracted from TimePicker to its own component 07172024
   //TODO NOTE: Most likely to Home Screen component 07242024
   //
@@ -22,7 +33,7 @@ const TimePicker = ({newAlarmTime, onChange}: TimePickerProps) => {
   //  }, 4000);
   //  return () => clearInterval(checkAlarm);
   //}, [alarmTime]);
-
+  BgRedConsole(newAlarmTime);
   return (
     <>
       <DatePicker
