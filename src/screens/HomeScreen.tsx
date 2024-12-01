@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, Alert} from 'react-native';
 import Menu from '../components/Menu';
 import Alarm from '../components/Alarm';
 import {useStyles} from './useStyles.ts';
@@ -23,37 +23,6 @@ const HomeScreen = ({navigation, route}: any) => {
 
   const {alarmIsEnabled, toggleEnable} = useCheckAlarm(alarms);
 
-  // Handle navigation to edit an alarm
-  const handleEdit = useCallback(
-    (id: string) => {
-      const currentAlarm = alarms.find((alarm) => alarm.id === id);
-      BgMagentaConsole(currentAlarm);
-      BgCyanConsole(
-        `${currentAlarm.weekday} ${currentAlarm.date} ${currentAlarm.time}`,
-      );
-      // Navigate to Alarm Settings Screen with the current alarm data
-      navigation.navigate('Alarm Settings Screen', {
-        alarmData: currentAlarm,
-        onGoBack: (updatedAlarm: NewAlarm | null) => {
-          if (updatedAlarm) {
-            // Update the alarm if changes are saved
-            setAlarms((currentAlarms) =>
-              currentAlarms.map((alarm) =>
-                alarm.id === updatedAlarm.id ? updatedAlarm : alarm,
-              ),
-            );
-          } else {
-            // Remove the alarm if it was deleted
-            setAlarms((currentAlarms) =>
-              currentAlarms.filter((alarm) => alarm.id !== id),
-            );
-          }
-        },
-      });
-    },
-    [alarms, navigation],
-  );
-
   // Handle adding a new alarm
   useEffect(() => {
     if (route.params?.newAlarmData) {
@@ -74,6 +43,63 @@ const HomeScreen = ({navigation, route}: any) => {
     isSnoozed: data.isNewAlarmSnoozed,
     id: data.newAlarmId,
   });
+
+  // Handle navigation to edit an alarm
+  const handleEdit = useCallback(
+    (id: string) => {
+      const currentAlarm = alarms.find((alarm) => alarm.id === id);
+
+      if (currentAlarm) {
+        try {
+          // Log the date and time for debugging
+          console.log('Date:', currentAlarm.date);
+          console.log('Time:', currentAlarm.time);
+
+          // Parse date (e.g., "Wed Jan 1 2025") and time (e.g., "12:00 AM")
+          const dateParts = currentAlarm.date.split(' '); // ["Wed", "Jan", "1", "2025"]
+          const timeParts = currentAlarm.time.split(':'); // ["12", "00"]
+          const hour = parseInt(timeParts[0], 10);
+          const minute = parseInt(timeParts[1], 10);
+
+          // Convert 12-hour to 24-hour format
+          const isPM = currentAlarm.time.includes('PM');
+          const adjustedHour =
+            isPM && hour < 12 ? hour + 12 : hour === 12 && !isPM ? 0 : hour;
+
+          // Construct the date object
+          const alarmDateTime = new Date(
+            `${dateParts[1]} ${dateParts[2]} ${dateParts[3]} ${adjustedHour}:${minute}:00`,
+          );
+
+          // Validate if the date is valid
+          if (isNaN(alarmDateTime.getTime())) {
+            throw new Error('Invalid Date Format');
+          }
+
+          // Navigate with serialized data
+          navigation.navigate('Alarm Settings Screen', {
+            alarmData: {
+              newAlarmTime: alarmDateTime.toISOString(), // Pass ISO string
+              newAlarmRepeat: currentAlarm.repeat,
+              newAlarmName: currentAlarm.name,
+              newAlarmSound: currentAlarm.sound,
+              isNewAlarmSnoozed: currentAlarm.isSnoozed,
+              newAlarmId: currentAlarm.id,
+            },
+          });
+        } catch (error: any) {
+          console.error('Error creating date:', error.message);
+
+          // Use Alert.alert instead of alert
+          Alert.alert(
+            'Error',
+            'Failed to edit the alarm due to an invalid date or time.',
+          );
+        }
+      }
+    },
+    [alarms, navigation],
+  );
 
   // Render alarms in the FlatList
   const renderItem = useCallback(
