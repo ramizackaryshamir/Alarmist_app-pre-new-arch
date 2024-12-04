@@ -113,7 +113,7 @@ const HomeScreen = ({navigation, route}: any) => {
         alarmDate={item.newAlarmDate}
         alarmTime={item.newAlarmTime}
         alarmRepeat={item.newAlarmRepeat}
-        alarmName={item.newAlarmSound}
+        alarmName={item.newAlarmSound || 'Alarm'}
         alarmSound={item.isNewAlarmSnoozed}
         onToggle={() => toggleEnable(item.newAlarmId)}
         onDelete={() =>
