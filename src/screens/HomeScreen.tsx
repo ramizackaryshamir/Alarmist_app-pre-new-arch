@@ -6,7 +6,7 @@ import {useStyles} from './useStyles.ts';
 import {useCheckAlarm} from '../hooks/useCheckAlarm.ts';
 import {NewAlarm} from '../types';
 import {useConsoleColors} from '../hooks/useConsoleColors.ts';
-
+import {formatISO} from 'date-fns';
 const HomeScreen = ({navigation, route}: any) => {
   const {
     BgMagentaConsole,
@@ -48,21 +48,22 @@ const HomeScreen = ({navigation, route}: any) => {
   const handleEdit = useCallback(
     (id: string) => {
       const currentAlarm = alarms.find((alarm) => alarm.newAlarmId === id);
-
+      BgYellowConsole(currentAlarm);
+      BgYellowConsole(typeof currentAlarm);
       if (currentAlarm) {
         try {
           // Log the date and time for debugging
-          console.log('Date:', currentAlarm.date);
-          console.log('Time:', currentAlarm.time);
+          console.log('Date:', currentAlarm.newAlarmDate);
+          console.log('Time:', currentAlarm.newAlarmTime);
 
           // Parse date (e.g., "Wed Jan 1 2025") and time (e.g., "12:00 AM")
-          const dateParts = currentAlarm.date.split(' '); // ["Wed", "Jan", "1", "2025"]
-          const timeParts = currentAlarm.time.split(':'); // ["12", "00"]
+          const dateParts = currentAlarm.newAlarmDate.split(' '); // ["Wed", "Jan", "1", "2025"]
+          const timeParts = currentAlarm.newAlarmTime.split(':'); // ["12", "00"]
           const hour = parseInt(timeParts[0], 10);
           const minute = parseInt(timeParts[1], 10);
 
           // Convert 12-hour to 24-hour format
-          const isPM = currentAlarm.time.includes('PM');
+          const isPM = currentAlarm.newAlarmTime.includes('PM');
           const adjustedHour =
             isPM && hour < 12 ? hour + 12 : hour === 12 && !isPM ? 0 : hour;
 
@@ -79,7 +80,7 @@ const HomeScreen = ({navigation, route}: any) => {
           // Navigate with serialized data
           navigation.navigate('Alarm Settings Screen', {
             alarmData: {
-              newAlarmTime: new Date().toISOString(),
+              newAlarmTime: new Date(),
               // Pass ISO string
               newAlarmRepeat: currentAlarm.newAlarmRepeat,
               newAlarmName: currentAlarm.newAlarmName,
