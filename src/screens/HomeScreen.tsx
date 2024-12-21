@@ -7,6 +7,7 @@ import {useCheckAlarm} from '../hooks/useCheckAlarm.ts';
 import {NewAlarm} from '../types';
 import {useConsoleColors} from '../hooks/useConsoleColors.ts';
 import {formatISO} from 'date-fns';
+
 const HomeScreen = ({navigation, route}: any) => {
   const {
     BgMagentaConsole,
@@ -26,6 +27,7 @@ const HomeScreen = ({navigation, route}: any) => {
   // Handle adding a new alarm
   useEffect(() => {
     if (route.params?.newAlarmData) {
+      BgGreenConsole(route.params.newAlarmData);
       setAlarms((current) => [
         ...current,
         formatAlarmData(route.params.newAlarmData),

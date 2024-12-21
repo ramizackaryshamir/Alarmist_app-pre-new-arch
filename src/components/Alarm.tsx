@@ -3,6 +3,7 @@ import {View, Text, Switch, TouchableOpacity, Animated} from 'react-native';
 import {useStyles} from './useStyles';
 import {usePanResponder} from '../hooks/usePanResponder';
 import {AlarmProps} from '../types';
+import {useConsoleColors} from '../hooks/useConsoleColors';
 
 const Alarm = ({
   alarmWeekday,
@@ -15,6 +16,17 @@ const Alarm = ({
   onEdit,
   alarmIsEnabled,
 }: AlarmProps) => {
+  const {
+    BgMagentaConsole,
+    BgCyanConsole,
+    BgWhiteConsole,
+    BgGrayConsole,
+    BgGreenConsole,
+    BgYellowConsole,
+    BgBlueConsole,
+    BgRedConsole,
+  } = useConsoleColors();
+
   const styles = useStyles();
 
   const {
@@ -37,6 +49,7 @@ const Alarm = ({
     resetPosition();
   };
 
+  BgYellowConsole(alarmTime);
   return (
     <View style={styles.container}>
       {/*Red background*/}

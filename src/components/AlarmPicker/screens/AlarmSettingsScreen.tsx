@@ -28,7 +28,13 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   const [newAlarmName, setNewAlarmName] = useState<string>('');
   const [newAlarmSound, setNewAlarmSound] = useState<string>('');
   const [isNewAlarmSnoozed, setIsNewAlarmSnoozed] = useState<boolean>(false);
+  //toString() changes structure of date object
   BgRedConsole(newAlarmTime_ISO8601);
+  BgRedConsole(newAlarmTime_ISO8601.toString());
+  BgRedConsole(
+    `${newAlarmTime_ISO8601.toString()}.${newAlarmTime_ISO8601.getMilliseconds()}`,
+  );
+  //
   BgRedConsole(typeof newAlarmTime_ISO8601);
   const handleToggleSwitch = () => {
     setIsNewAlarmSnoozed((prevState: boolean) => !prevState);
@@ -50,7 +56,7 @@ const AlarmSettingsScreen = ({navigation, route}: any) => {
   useEffect(() => {
     const handleSaveAndGoBackToHomeScreen = () => {
       route.params.onGoBack({
-        newAlarmTime: newAlarmTime_ISO8601.toString(),
+        newAlarmTime: `${newAlarmTime_ISO8601.toString()}.${newAlarmTime_ISO8601.getMilliseconds()}`,
         newAlarmRepeat,
         newAlarmName,
         newAlarmSound,
