@@ -35,7 +35,6 @@ export const usePanResponder = (onDelete: any, onEdit: any) => {
     setIsShowDelete(true);
   };
 
-  // Reset swipe position smoothly
   const resetPosition = () => {
     Animated.spring(pan, {
       toValue: {x: 0, y: 0},
