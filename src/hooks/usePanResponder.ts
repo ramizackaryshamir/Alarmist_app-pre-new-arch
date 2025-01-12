@@ -68,7 +68,7 @@ export const usePanResponder = (onDelete: any, onEdit: any) => {
         } else if (gesture.dx < SWIPE_THRESHOLD_SNAP) {
           snapToPartial();
         } else {
-          resetPosition(); // Reset position if threshold not met
+          resetPosition();
         }
       },
     }),
